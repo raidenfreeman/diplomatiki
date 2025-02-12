@@ -1,6 +1,19 @@
-% Πάγκος Εργασίας Εκπομπών Mærsk
-% Γκίνης Κωνσταντίνος
-% 12 Φεβρουαρίου 2025
+---
+title: Πάγκος Εργασίας Εκπομπών Mærsk
+author: Γκίνης Κωνσταντίνος
+date: 12 Φεβρουαρίου 2025
+output: pdf_document
+lang: el
+mainfont: "Arial"
+numbersections: true
+geometry: margin=2.5cm
+fontsize: 14pt
+toc: yes
+header-includes:
+  - \usepackage{fontspec}
+  - \usepackage{polyglossia}
+  - \setdefaultlanguage[variant=modern]{greek}
+---
 
 <!-- pandoc rep.md -o ../rep.pdf --from markdown+pandoc_title_block --pdf-engine=xelatex --variable mainfont="Arial" -->
 
@@ -183,6 +196,6 @@
 <!-- @book{Last Name_2000, place={City}, edition={1st Edition}, title={Continuous Delivery: Reliable Software Releases through Build, Test, and Deployment Automation}, ISBN={9780321601919}, publisher={Addison-Wesley Professional}, author={Humble, Jex AND Farley, David}, year={2010}, month={Jul.} } -->
 
 
-Figure 1. - CC BY 4.0, https://commons.wikimedia.org/w/index.php?curid=140748311
+Σχήμα 1. - CC BY 4.0, https://commons.wikimedia.org/w/index.php?curid=140748311
 
-Figure 2. - By DonWells - Own work based on: XP-feedback.gif, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=27448045
+Σχήμα 2. - By DonWells - Own work based on: XP-feedback.gif, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=27448045
