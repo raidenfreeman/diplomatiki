@@ -15,7 +15,7 @@ header-includes:
   - \setdefaultlanguage[variant=modern]{greek}
 ---
 
-<!-- pandoc rep.md -o ../rep.pdf --from markdown+pandoc_title_block --pdf-engine=xelatex --variable mainfont="Arial" -->
+<!-- pandoc rep.md -o ../rep.pdf --from markdown+pandoc_title_block --pdf-engine=xelatex-->
 
 \pagebreak
 
