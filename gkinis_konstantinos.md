@@ -17,7 +17,7 @@ include-before:
 - '`\newpage{}`{=latex}'
 ---
 
-<!-- pandoc rep.md -o ../rep.pdf --from markdown+pandoc_title_block --pdf-engine=xelatex-->
+<!-- pandoc gkinis_konstantinos.md -o ../gkinis_konstantinos.pdf --from markdown+pandoc_title_block --pdf-engine=xelatex-->
 
 \pagebreak
 
