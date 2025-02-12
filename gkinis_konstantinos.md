@@ -3,11 +3,12 @@ title: Πάγκος Εργασίας Εκπομπών Mærsk
 author: Γκίνης Κωνσταντίνος
 date: 12 Φεβρουαρίου 2025
 output: pdf_document
+documentclass: extreport
 lang: el
 mainfont: "Arial"
 numbersections: true
 geometry: margin=2.5cm
-fontsize: 14pt
+fontsize: 12pt
 toc: yes
 header-includes:
   - \usepackage{fontspec}
