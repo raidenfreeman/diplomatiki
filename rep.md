@@ -13,6 +13,8 @@ header-includes:
   - \usepackage{fontspec}
   - \usepackage{polyglossia}
   - \setdefaultlanguage[variant=modern]{greek}
+include-before:
+- '`\newpage{}`{=latex}'
 ---
 
 <!-- pandoc rep.md -o ../rep.pdf --from markdown+pandoc_title_block --pdf-engine=xelatex-->
