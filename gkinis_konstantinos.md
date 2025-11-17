@@ -14,11 +14,15 @@ header-includes:
   - \usepackage{fontspec}
   - \usepackage{polyglossia}
   - \setdefaultlanguage[variant=modern]{greek}
+  - \newfontfamily\greekfont[Script=Greek]{Arial}
+  - \newfontfamily\greekfontsf[Script=Greek]{Arial}
+  - \newfontfamily\greekfonttt[Script=Greek]{Arial}
 include-before:
 - '`\newpage{}`{=latex}'
 ---
 
-<!-- pandoc gkinis_konstantinos.md -o ../gkinis_konstantinos.pdf --from markdown+pandoc_title_block --pdf-engine=xelatex -->
+<!-- install basictex & pandoc with brew -->
+<!-- pandoc gkinis_konstantinos.md -o gkinis_konstantinos.pdf --from markdown+pandoc_title_block --pdf-engine=xelatex -->
 
 \pagebreak
 
@@ -71,6 +75,12 @@ include-before:
 ## Περιορισμοί
 
 Αυτή τη στιγμή περιλαμβάνονται μόνο μετρήσεις κατηγορίας 1 και 3. Οι μετρήσεις κατηγορίας 2 θα υλοποιηθούν μέσα στο 2025.
+
+\pagebreak
+
+# Βελτιστοποίηση ανεφοδιασμού
+
+Ένα 
 
 \pagebreak
 
