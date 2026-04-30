@@ -1,3 +1,32 @@
+---
+title: Πάγκος Εργασίας Εκπομπών Mærsk
+author: Γκίνης Κωνσταντίνος
+date: 12 Φεβρουαρίου 2025
+output: pdf_document
+documentclass: extreport
+lang: el
+mainfont: "Arial"
+numbersections: true
+geometry: margin=2.5cm
+fontsize: 12pt
+toc: yes
+header-includes:
+  - \usepackage{fontspec}
+  - \usepackage{polyglossia}
+  - \setdefaultlanguage[variant=modern]{greek}
+  - \newfontfamily\greekfont[Script=Greek]{Arial}
+  - \newfontfamily\greekfontsf[Script=Greek]{Arial}
+  - \newfontfamily\greekfonttt[Script=Greek]{Arial}
+include-before:
+- '`\newpage{}`{=latex}'
+---
+
+<!-- install basictex & pandoc with brew -->
+<!-- pandoc gkinis_konstantinos.md -o gkinis_konstantinos.pdf --from markdown+pandoc_title_block --pdf-engine=xelatex -->
+
+\pagebreak
+
+Ο Πάγκος Εργασίας Εκπομπών (Emissions Workbench) είναι ένα σύστημα λογισμικού της Mærsk με στόχο τη διευκόλυνση της επίτευξης του στόχου της εταιρείας για καθαρές μηδενικές εκπομπές το 2040 (net zero 2040). Ξεκίνησε την ανάπτυξή του το Μάρτιο του 2023 και απέκτησε τους πρώτους χρήστες το Σεπτέμβριο του ίδιου έτους.
 
 
 # Η ανάγκη δημιουργίας του Πάγκου Εργασίας Εκπομπών
