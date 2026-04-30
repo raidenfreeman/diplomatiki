@@ -270,7 +270,9 @@ defmodule NrgWeb.OceanSimulatorLiveTest do
 - **Miro**: Οπτική συνεργασία, αρχιτεκτονικά διαγράμματα, daily hangout board
 - **Microsoft Teams**: Ασύγχρονη επικοινωνία, distribution lists ανά ομάδα
 
-Για εκμάθηση, η Maersk παρέχει πρόσβαση στο **O'Reilly Learning Portal** με ειδικό learning path για Elixir, καθώς και ένα εσωτερικό **Elixir Learning Path** — μια επιμελημένη συλλογή πόρων για τη σταδιακή εκμάθηση της γλώσσας.
+Για εκμάθηση, η Maersk παρέχει πρόσβαση στο **O'Reilly Learning Portal** με ειδικό learning path για Elixir, Kubernetes και Apache Kafka, καθώς και ένα εσωτερικό **Elixir Learning Path** — μια επιμελημένη συλλογή πόρων για τη σταδιακή εκμάθηση της γλώσσας, από βασικές αρχές ως προχωρημένες OTP concepts.
+
+Αξίζει να αναφερθεί ότι κατά το onboarding, ο νέος προγραμματιστής προστίθεται στο **distribution list** της ομάδας (nrg.DevTeam@maersk.com), ώστε να λαμβάνει αυτόματα κάθε επικοινωνία. Αυτή η απλή κίνηση ελαχιστοποιεί τον κίνδυνο να «χαθεί» ένα μέλος από την πληροφορία που κυκλοφορεί στην ομάδα.
 
 ### Distributed Team Logistics
 
