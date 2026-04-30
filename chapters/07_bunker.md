@@ -53,3 +53,87 @@ Shiptech → API → BoW UI → Operator edits → API → MBC Solver → Result
 4. **Σύγκριση αποτελεσμάτων**: Αφού ολοκληρωθεί το plan run, ο χειριστής βλέπει τα νέα αποτελέσματα σε σύγκριση με τα προηγούμενα. Το BoW υποστηρίζει πρόσβαση σε ιστορικά plans για ελεγξιμότητα.
 
 Ιδιαίτερο χαρακτηριστικό του BoW είναι η ενσωμάτωση δεδομένων *Remaining Fuel on Board* (RoB) που λαμβάνονται σε πραγματικό χρόνο από το STAR Connect μέσω Kafka (βλ. Κεφ. 5.4). Αυτά τα δεδομένα εμφανίζονται στη σελίδα τρέχοντος bunker plan, παρέχοντας στον χειριστή την πλέον πρόσφατη εικόνα των αποθεμάτων καυσίμου του πλοίου και αποτελούν είσοδο για τον υπολογισμό των ποσοτήτων ανεφοδιασμού στο επόμενο plan run.
+
+---
+
+## 7.4 Ο C++ Solver μέσω Erlang Ports
+
+### 7.4.1 Αρχιτεκτονική σύνδεσης με εξωτερικό επιλυτή
+
+Η επιλογή του MBC (*Multi-Bundle Connector*) ως εξωτερικό C++ εκτελέσιμο για τη βελτιστοποίηση οφείλεται σε δύο συμπληρωματικούς λόγους. Πρώτον, οι αλγόριθμοι γραμμικού προγραμματισμού απαιτούν ώριμες βιβλιοθήκες σε χαμηλού επιπέδου γλώσσα, με C++ να αποτελεί de facto επιλογή σε παραγωγικά solver περιβάλλοντα. Δεύτερον, ο MBC προϋπήρχε ήδη ως αποδεδειγμένο σύστημα στη Maersk και η επαναχρησιμοποίησή του μέσω του BOPS API εξοικονόμησε σημαντικό αναπτυξιακό κόστος.
+
+Η ενσωμάτωση του C++ εκτελεσίμου στον BEAM γίνεται μέσω **Erlang Ports**, και όχι μέσω NIFs (*Native Implemented Functions*). Η διαφορά είναι κρίσιμης σημασίας από αρχιτεκτονικής άποψης: τα NIFs εκτελούνται μέσα στον χώρο διευθύνσεων (*address space*) της BEAM VM, οπότε ένα segmentation fault ή ένας ατέρμων βρόχος σε native κώδικα καταρρίπτει ολόκληρο το node. Αντίθετα, τα Ports εκκινούν τον C++ κώδικα ως ξεχωριστή διεργασία του λειτουργικού συστήματος· εάν αυτή αποτύχει ή εξέλθει με σφάλμα, η BEAM VM παραμένει άθικτη και το supervision tree μπορεί να ανταποκριθεί κανονικά (βλ. Κεφ. 8.1 για αναλυτικότερη επεξήγηση των Erlang Ports).
+
+Η επικοινωνία γίνεται μέσω stdio σε δυαδική μορφή (*binary protocol*): το `Port` στέλνει τα δεδομένα εισόδου στο `stdin` του MBC και λαμβάνει τα αποτελέσματα από το `stdout` γραμμή προς γραμμή. Αυτή η σχεδίαση επιτρέπει στον BEAM GenServer να παρακολουθεί σε πραγματικό χρόνο τα log μηνύματα του solver κατά τη διάρκεια της εκτέλεσης.
+
+### 7.4.2 Υλοποίηση: BopsApi.Server
+
+Ο `BopsApi.Server` είναι ο GenServer που επιτηρεί μία εκτέλεση του MBC solver. Εκκινείται από τον `BopsApi.ServerSupervisor` με στρατηγική `:one_for_all`, που σημαίνει ότι εάν ο Server ή ο Jobs Scheduler αποτύχει, και οι δύο επανεκκινούνται μαζί — διατηρώντας έτσι τη συνοχή κατάστασης.
+
+```elixir
+defmodule BopsApi.Server do
+  use GenServer
+
+  alias BopsApi.Response
+  alias OpenTelemetry.Tracer
+
+  require Tracer
+
+  defmodule State do
+    defstruct [
+      :cmd,
+      :current_mbc_trace_ctx,
+      :log_batch_size,
+      :request,
+      :traceparent,
+      logs: []
+    ]
+
+    def new(opts) do
+      struct!(__MODULE__, opts)
+    end
+  end
+
+  def start_link(opts) do
+    GenServer.start_link(__MODULE__, opts, Keyword.take(opts, [:name]))
+  end
+
+  @impl GenServer
+  def init(opts) do
+    state =
+      State.new(
+        cmd: Keyword.fetch!(opts, :cmd),
+        log_batch_size: Keyword.get(opts, :log_batch_size, 50)
+      )
+
+    {:ok, state}
+  end
+
+  @impl GenServer
+  def handle_cast(:find_work, state) do
+    {:noreply, find_work(state)}
+  end
+
+  @impl GenServer
+  def handle_continue(:find_work, state) do
+    {:noreply, find_work(state)}
+  end
+```
+
+*Listing 7.4.1: BopsApi.Server — δομή κατάστασης και αρχικοποίηση GenServer (`bunker/api/lib/bops_api/server.ex`, γραμμές 1–44)*
+
+Στη δομή `State` αποθηκεύεται η εντολή εκτέλεσης του MBC (`cmd`), η αίτηση που επεξεργάζεται (`request`), το `traceparent` για distributed tracing με OpenTelemetry, και ένας buffer (`logs`) για τα μηνύματα εξόδου του solver.
+
+Μόλις ο Server λάβει ένα job από την ουρά, εκκινεί τον solver ως Port:
+
+```elixir
+port = Port.open({:spawn_executable, path}, [
+  :binary,
+  :exit_status,
+  args: [request.plan_id]
+])
+```
+
+Εν συνεχεία, τα μηνύματα εξόδου του solver φτάνουν ως `handle_info({_port, {:data, output}}, state)` και αποθηκεύονται προσωρινά στο `state.logs`. Όταν η διεργασία ολοκληρωθεί επιτυχώς (`{:exit_status, 0}`), ο Server ανακτά τα αποτελέσματα από τη βάση δεδομένων του MBC μέσω του `BopsApi.Mbc.result/1` και τα αποστέλλει στο BoW μέσω `Response.done/1`. Σε περίπτωση σφάλματος (`{:exit_status, N}` με `N ≠ 0`), καταγράφεται το `mbc_crash` και το σφάλμα γνωστοποιείται στο BoW μέσω `Response.error/1`.
+
+Αξίας σημείωσης είναι επίσης ο ενσωματωμένος μηχανισμός *distributed tracing*: ο Server αναλύει τις γραμμές εξόδου του solver αναζητώντας ειδικά prefixes (`Trace start:`, `Trace attribute:`, `Trace end:`), τα οποία μετατρέπει σε OpenTelemetry spans. Έτσι το trace του end-to-end plan run εκτείνεται από τον BEAM ως μέσα στα internals του C++ solver, παρέχοντας πλήρη ορατότητα στο σύστημα παρακολούθησης.
