@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "defaultMode": "auto",
+    "allow": [
+      "Read",
+      "Write(/Users/kg/Desktop/report/**)",
+      "Write(~/workspace/nrg/**)",
+      "Edit",
+      "Bash",
+      "Glob",
+      "Grep",
+      "Agent"
+    ],
+    "additionalDirectories": [
+      "/Users/kg/Desktop/report",
+      "~/workspace/nrg"
+    ]
+  }
+}
