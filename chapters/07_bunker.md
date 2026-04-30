@@ -137,3 +137,72 @@ port = Port.open({:spawn_executable, path}, [
 Εν συνεχεία, τα μηνύματα εξόδου του solver φτάνουν ως `handle_info({_port, {:data, output}}, state)` και αποθηκεύονται προσωρινά στο `state.logs`. Όταν η διεργασία ολοκληρωθεί επιτυχώς (`{:exit_status, 0}`), ο Server ανακτά τα αποτελέσματα από τη βάση δεδομένων του MBC μέσω του `BopsApi.Mbc.result/1` και τα αποστέλλει στο BoW μέσω `Response.done/1`. Σε περίπτωση σφάλματος (`{:exit_status, N}` με `N ≠ 0`), καταγράφεται το `mbc_crash` και το σφάλμα γνωστοποιείται στο BoW μέσω `Response.error/1`.
 
 Αξίας σημείωσης είναι επίσης ο ενσωματωμένος μηχανισμός *distributed tracing*: ο Server αναλύει τις γραμμές εξόδου του solver αναζητώντας ειδικά prefixes (`Trace start:`, `Trace attribute:`, `Trace end:`), τα οποία μετατρέπει σε OpenTelemetry spans. Έτσι το trace του end-to-end plan run εκτείνεται από τον BEAM ως μέσα στα internals του C++ solver, παρέχοντας πλήρη ορατότητα στο σύστημα παρακολούθησης.
+
+---
+
+## 7.5 Ενσωμάτωση με το Shiptech
+
+### 7.5.1 Αρχιτεκτονική ανταλλαγής δεδομένων
+
+Το Shiptech είναι το legacy σύστημα σχεδιασμού ναυτιλιακών δρομολογίων και ανεφοδιασμού της Maersk, χτισμένο πάνω σε SQL Server. Περιέχει τα ιστορικά δεδομένα πλοίων, δρομολογίων και bunker plans και αποτελεί το σύστημα αρχείου (*system of record*) για την πλευρά των χειριστών. Το BOPS λειτουργεί ως overlay: διαβάζει από το Shiptech, επεξεργάζεται δεδομένα μέσω του MBC solver και εγγράφει πίσω τα αποτελέσματα.
+
+Η ανάγνωση δεδομένων από το Shiptech γίνεται μέσω ODBC (*Open Database Connectivity*) με χρήση του Erlang ODBC adapter. Ο `Shiptech.Repo` διαχειρίζεται τη σύνδεση και εκτελεί ερωτήματα σε πίνακες του Shiptech, ανακτώντας στοιχεία όπως: `VesselVoyagedetailId` (μοναδικό αναγνωριστικό ταξιδιού), `VesselId`, χρονοδιαγράμματα λιμανιών (ETA/ETD), ποσότητες καυσίμου και τιμές αγοράς.
+
+Η εγγραφή αποτελεσμάτων επιστρέφει επίσης στο Shiptech μέσω αποθηκευμένων διαδικασιών (*stored procedures*). Η βασικότερη είναι η `sp_CreateModelRunDataWithString`, η οποία δέχεται ολόκληρο το αποτέλεσμα βελτιστοποίησης σε μορφή JSON και το αποθηκεύει σε πολλαπλούς πίνακες ατομικά (*atomically*), εντός μίας SQL Server transaction. Ομοίως, η `sp_UpdateBunkerPlanOperatorInputs` αντιγράφει στο Shiptech τυχόν διορθώσεις που εισήγαγε ο χειριστής μέσω του BoW.
+
+Η χρήση αποθηκευμένων διαδικασιών αντί για άμεσα `INSERT`/`UPDATE` ερωτήματα είναι σκόπιμη: το Shiptech διαθέτει σύνθετη σχεσιακή δομή με επιχειρησιακούς κανόνες (*business rules*) ενσωματωμένους στη βάση, και οι stored procedures ενθυλακώνουν αυτή την πολυπλοκότητα εξασφαλίζοντας συνέπεια δεδομένων ανεξαρτήτως του caller.
+
+### 7.5.2 Ορισμός υποδομής με Terraform
+
+Το BOPS API χρησιμοποιεί ξεχωριστή PostgreSQL βάση δεδομένων για τον MBC solver (η οποία διαφέρει από τη βάση του BoW). Η βάση αυτή αποθηκεύει προσωρινά τα δεδομένα εισόδου πριν την εκτέλεση του solver και τα αποτελέσματα αμέσως μετά, μέχρι να γραφούν στο Shiptech. Ο ορισμός της υποδομής γίνεται ως κώδικας με Terraform (βλ. Κεφ. 8.7 για Azure):
+
+```hcl
+resource "azurerm_postgresql_flexible_server" "bops-blue" {
+  name                = "bops-staging-blue"
+  resource_group_name = data.azurerm_resource_group.nrg.name
+  version             = var.postgres_version
+
+  administrator_login           = var.postgres_admin_username
+  administrator_password        = var.postgres_admin_password
+  public_network_access_enabled = false
+  auto_grow_enabled             = true
+  zone                          = "1"
+  location                      = "West Europe"
+  sku_name                      = "GP_Standard_D4s_v3"
+  storage_mb                    = 524288
+
+  tags = {
+    "app"         = "bops"
+    "app_id"      = "A3878"
+    "env"         = "staging"
+    "k8s_cluster" = "k8s_cluster"
+    "mop_ingest"  = "true"
+    "product_id"  = "sbti-portal"
+  }
+
+  authentication {
+    active_directory_auth_enabled = false
+    password_auth_enabled         = true
+  }
+}
+
+resource "azurerm_postgresql_flexible_server_database" "bops-blue" {
+  name      = "bops"
+  server_id = azurerm_postgresql_flexible_server.bops-blue.id
+}
+
+resource "azurerm_postgresql_flexible_server_database" "solver-blue" {
+  name      = "solver"
+  server_id = azurerm_postgresql_flexible_server.bops-blue.id
+}
+
+resource "azurerm_postgresql_flexible_server_configuration" "shared_preload_libraries" {
+  name      = "shared_preload_libraries"
+  server_id = azurerm_postgresql_flexible_server.bops-blue.id
+  value     = "pg_cron,pg_stat_statements"
+}
+```
+
+*Listing 7.5.1: Terraform ορισμός PostgreSQL Flexible Server για το BOPS staging περιβάλλον (`bunker/terraform/staging/database.tf`, γραμμές 1–53)*
+
+Αξιοσημείωτα στοιχεία αυτής της δήλωσης: ο server χρησιμοποιεί SKU `GP_Standard_D4s_v3` (4 vCores, general purpose) με 512 GB αποθηκευτικό χώρο, η δημόσια πρόσβαση είναι απενεργοποιημένη (`public_network_access_enabled = false`), και δημιουργούνται δύο ξεχωριστές βάσεις: `bops` (για τα δεδομένα εισόδου/εξόδου του BoW) και `solver` (αποκλειστικά για τα ενδιάμεσα δεδομένα του MBC). Το extension `pg_cron` φορτώνεται ως preload library για χρονοδρομολογημένες εργασίες, ενώ το `pg_stat_statements` επιτρέπει την παρακολούθηση επιδόσεων ερωτημάτων.
