@@ -2,7 +2,7 @@
 
 ## Στόχοι του πλάνου
 
-- **Στόχος μεγέθους:** 80-100 σελίδες A4, 12pt, mainfont Arial (όπως ορίζεται ήδη στο `gkinis_konstantinos.md`)
+- **Στόχος μεγέθους:** 80-100 σελίδες A4, 12pt, mainfont Arial (ορίζεται ήδη στο `gkinis_konstantinos.md`)
 - **Αναλογία περιεχομένου:** ~10% κώδικας/listings (περίπου 8-10 σελίδες), ~10-15% εικόνες/διαγράμματα, ~75-80% κείμενο (θεωρία/περιγραφή σε ίσες αναλογίες)
 - **Γλώσσα:** Ελληνικά
 - **Ύφος:** Διπλωματική Master, αντικειμενικό, τεκμηριωμένο, με τεχνική ακρίβεια. Διατηρείται το ύφος του υπάρχοντος κειμένου: σαφή θεωρητικά εισαγωγικά πριν τα τεχνικά, κάθε επιλογή τεχνολογίας/μεθόδου τεκμηριωμένη με αιτιολόγηση.
@@ -11,10 +11,10 @@
 ## Πηγές πληροφορίας
 
 - `presentations/ETPlatformTechMeet2025.pdf` — επίσημη παρουσίαση πυλώνων
-- `presentations/Nix Workshop.md` — εσωτερικό workshop για Nix (χρήσιμο για κεφ. τεχνολογίες)
+- `presentations/Nix Workshop.md` — εσωτερικό workshop για Nix
 - `nrg/README.md` — επισκόπηση μονο-αποθετηρίου
-- `nrg/guides/` — όλη η εσωτερική τεκμηρίωση (clean architecture, code style, observability, security, dremio, etw, people-operations)
-- `nrg/components/emissions_workbench/` — κύρια εφαρμογή (56 LiveViews, 11 contexts)
+- `nrg/guides/` — εσωτερική τεκμηρίωση (clean architecture, code style, observability, security, dremio, etw, people-operations)
+- `nrg/components/emissions_workbench/` — κύρια εφαρμογή
 - `nrg/components/bunker/` — BOPS / BoW
 - `nrg/components/ocean/` — vessel master data + EU ETS
 - `nrg/components/eco_products/` — placeholder, πραγματικός κώδικας στο emissions_workbench
@@ -23,647 +23,1281 @@
 - `nrg/flake.nix`, `nrg/team.json` — υποδομή/ομάδα
 - Υπάρχον κείμενο στο `gkinis_konstantinos.md` (~46KB) — ενσωματώνεται και επεκτείνεται
 
+## Επιβεβαιωμένα μετρικά για χρήση στο κείμενο
+
+Όλα τα παρακάτω αντλήθηκαν από τον κώδικα ή τα guides και πρέπει να χρησιμοποιηθούν στα αντίστοιχα κεφάλαια:
+
+- **Κώδικας:** 6.033 αρχεία `.ex`/`.exs`, 786 test files, 93.431 LOC στα core components
+- **Components (LOC):** emissions_workbench 67.877 / bunker/bow 16.738 / bunker/api 8.816
+- **Patterns:** 14+ LiveView modules (και πολλά LiveComponents σε 4 namespace: Eco Delivery, Energy Bank, Emissions Data Inventory, Admin) · 31 Oban workers · 294 Ecto schemas · 112 GenServers · 9 αρχεία Kafka integration με `:brod`
+- **Database:** 151 ξεχωριστοί πίνακες, 720+ migrations (499 emissions_workbench, 218 bunker/bow, 4 bunker/api)
+- **Infrastructure:** 57 Terraform `.tf` αρχεία · 20 GitHub workflows · 4 alert configurations (13+ alert rules στο `alerts/metrics/alerts.yaml`)
+- **Ομάδα:** 28 μέλη (17 Ευρώπη, 11 Ινδία) — distributed development
+- **Παραγωγική χρήση από:** Σεπτέμβριος 2023
+- **Έναρξη ανάπτυξης:** Μάρτιος 2023
+- **Επιχειρησιακά (από PDF):** 1300+ χρήστες (από 1000+ pre-launch) · 98K FFE / $31M USD ECO Delivery 2024 · ~32 deploys/ημέρα · αντιμετώπιση 2023 GIA audit · αυτόματη παραγωγή πιστοποιητικών για ECOv1 και ECOv2
+
+## Υπάρχουσες εικόνες προς ενσωμάτωση
+
+- `Carbon_Accounting_Scopes.png` (Κεφ. 3.2)
+- `Extreme_Programming_Loops.png` (Κεφ. 10.6)
+- `system_overview_diagram.png` (Κεφ. 9.1)
+- Screenshots από `presentations/` (πιθανώς UI shots για κεφ. 4-6)
+
+## Cross-cutting style guide (για όλους τους sub-agents)
+
+1. **Ορολογία**: Πρώτη εμφάνιση όρου σε ελληνικά με αγγλικό σε παρένθεση. Πχ "πλατφόρμα ως υπηρεσία (PaaS)". Αν δεν υπάρχει σαφής ελληνική απόδοση, χρήση αγγλικού όρου σε italics.
+2. **Αναφορές σε κώδικα**: Inline `monospace` για ονόματα modules/συναρτήσεων. Code listings σε fenced code blocks με γλώσσα (πχ ```` ```elixir ```` ).
+3. **Λίστες αρχείων**: Αν αναφέρεται πλήθος αρχείων, χρήση πραγματικών αριθμών (από επιβεβαιωμένα μετρικά).
+4. **Αιτιολόγηση επιλογών**: Κάθε σχεδιαστική απόφαση (πχ "επιλέχθηκε Elixir") πρέπει να συνοδεύεται από εξήγηση του γιατί, με αναφορά στις απαιτήσεις του προβλήματος.
+5. **Cross-references**: Όταν αναφέρεται έννοια που αναπτύσσεται αλλού, χρήση "βλ. Κεφ. X" ή "(Κεφ. X)".
+6. **Μη θαμπώνουμε με κώδικα**: Listings μόνο όπου είναι απαραίτητα για κατανόηση. Πάντα συνοδεύονται από 1-2 παραγράφους εξήγησης.
+7. **Πορεία διάρθρωσης**: Σύντομη εισαγωγή → ανάπτυξη → σύνδεση με επόμενο.
+8. **Για επεκτάσεις υπάρχοντος κειμένου**: Διατηρήστε φράσεις/παραγράφους που είναι ήδη καλά γραμμένες· επεκτείνετε με βάθος, μην αναγράφετε περιττά.
+
 ## Δομή κεφαλαίων και κατανομή σελίδων
 
-| # | Κεφάλαιο | Σελίδες | Σύνολο |
-|---|----------|---------|--------|
-| 1 | Εισαγωγή | 3-4 | 4 |
-| 2 | Πλαίσιο και πρόβλημα | 8-9 | 13 |
-| 3 | Θεωρητικό υπόβαθρο: Λογιστική αερίων θερμοκηπίου | 8-10 | 23 |
-| 4 | Ο Πάγκος Εργασίας Εκπομπών: Επισκόπηση | 4-5 | 28 |
-| 5 | Πυλώνας Α: Ocean Emissions και STAR Connect | 9-11 | 39 |
-| 6 | Πυλώνας Β: ECO Product Delivery και πιστοποιητικά | 9-10 | 49 |
-| 7 | Πυλώνας Γ: Bunker Optimization (Energy Markets) | 7-8 | 57 |
-| 8 | Τεχνολογίες | 11-13 | 70 |
-| 9 | Αρχιτεκτονική του συστήματος | 12-14 | 84 |
-| 10 | Εργασιακές μέθοδοι | 9-11 | 95 |
-| 11 | Συμπεράσματα | 3 | 98 |
-| 12 | Μελλοντική εργασία | 2 | 100 |
-| 13 | Βιβλιογραφία | 2-3 | 103 |
+| # | Κεφάλαιο | Σελίδες |
+|---|----------|---------|
+| 1 | Εισαγωγή | 3-4 |
+| 2 | Πλαίσιο και πρόβλημα | 8-9 |
+| 3 | Θεωρητικό υπόβαθρο: Λογιστική αερίων θερμοκηπίου | 8-10 |
+| 4 | Ο Πάγκος Εργασίας Εκπομπών: Επισκόπηση | 4-5 |
+| 5 | Πυλώνας Α: Ocean Emissions και STAR Connect | 9-11 |
+| 6 | Πυλώνας Β: ECO Product Delivery και πιστοποιητικά | 9-10 |
+| 7 | Πυλώνας Γ: Bunker Optimization | 7-8 |
+| 8 | Τεχνολογίες | 11-13 |
+| 9 | Αρχιτεκτονική του συστήματος | 12-14 |
+| 10 | Εργασιακές μέθοδοι | 9-11 |
+| 11 | Συμπεράσματα | 3 |
+| 12 | Μελλοντική εργασία | 2 |
+| 13 | Βιβλιογραφία | 2-3 |
 
-**Σύνολο: 87-104 σελίδες** (εντός στόχου).
+**Σύνολο: 87-104 σελίδες**
 
 ---
 
+# ΑΝΑΛΥΤΙΚΟ BRIEF ΑΝΑ ΚΕΦΑΛΑΙΟ
+
+> Κάθε κεφάλαιο παρακάτω περιλαμβάνει: **Δομή** (παράγραφοι/βασικά σημεία), **Πηγές** (συγκεκριμένα paths), **Code listings** (παραθέματα από repo), **Στοιχεία** (νούμερα/citations), **Όχι εδώ** (τι αποφεύγουμε για να μην επικαλυφθεί), **Cross-refs**.
+
 ## Κεφ. 1 — Εισαγωγή (3-4 σελίδες)
 
-**Σκοπός:** Σύντομη παρουσίαση του πλαισίου και των στόχων της εργασίας.
+### 1.1 Πλαίσιο της εργασίας
 
-### 1.1 Πλαίσιο
-- Maersk: μια από τις μεγαλύτερες εταιρείες ναυτιλίας/logistics παγκοσμίως
-- Ο τομέας της ναυτιλίας ως υπεύθυνος για ~3% παγκόσμιων εκπομπών CO₂
-- Πίεση από ρυθμιστικό πλαίσιο (CSRD, EU ETS Maritime, Fuels EU Maritime, IMO)
+**Δομή:**
+- Παρ. 1: Maersk ως one of the largest container shipping companies (700+ vessels), 130+ countries.
+- Παρ. 2: Συνεισφορά της θαλάσσιας μεταφοράς στις παγκόσμιες εκπομπές (≈3% global CO₂, IMO 2023 GHG strategy).
+- Παρ. 3: Ρυθμιστική πίεση (CSRD, EU ETS Maritime από 1/1/2024, Fuels EU Maritime από 1/1/2025) — σύντομη αναφορά, λεπτομέρειες στο Κεφ. 2.
 
 ### 1.2 Στόχος της εργασίας
-- Παρουσίαση του Πάγκου Εργασίας Εκπομπών (Emissions Workbench / NRG)
-- Περιγραφή τεχνολογιών, αρχιτεκτονικής και μεθόδων ανάπτυξης
-- Συνεισφορές: σχεδιαστικές αποφάσεις, τεχνικά μαθήματα
 
-### 1.3 Δομή του κειμένου
-- Σύντομη επισκόπηση κάθε κεφαλαίου
+**Δομή:**
+- Τι παρουσιάζεται: NRG / Emissions Workbench της ομάδας ET Platform.
+- Τι αναλύεται: τεχνολογικές αποφάσεις, αρχιτεκτονική, μεθοδολογία ανάπτυξης.
+- Τι δεν καλύπτεται: εμπορικά/συμβασιακά θέματα Maersk, λεπτομέρειες προσωπικών δεδομένων.
 
-**Πηγές:** `presentations/ETPlatformTechMeet2025.pdf`, υπάρχον intro στο `gkinis_konstantinos.md`
+### 1.3 Συνεισφορές της εργασίας
+
+**Δομή:** Σύντομη λίστα (5-7 bullets):
+- Τεκμηριωμένη παρουσίαση των τεσσάρων πυλώνων του ET Platform
+- Αρχιτεκτονική event-driven με BEAM σε εμπορικό περιβάλλον
+- Σύζευξη βιβλιογραφικού πλαισίου (GHG Protocol, ISCC, GLEC) με τεχνική υλοποίηση
+- Επίδραση των πρακτικών XP σε production team της Maersk
+- Επιχειρησιακά αποτελέσματα ($31M USD, 1300+ users)
+
+### 1.4 Δομή του κειμένου
+
+Σύντομη επισκόπηση κάθε κεφαλαίου σε 1-2 προτάσεις.
+
+**Πηγές:** PDF intro slides, υπάρχον κείμενο στο `gkinis_konstantinos.md`.
+
+**Όχι εδώ:** Λεπτομέρειες αρχιτεκτονικής (Κεφ. 9), τεχνολογιών (Κεφ. 8), μεθόδων (Κεφ. 10).
 
 ---
 
 ## Κεφ. 2 — Πλαίσιο και πρόβλημα (8-9 σελίδες)
 
-**Σκοπός:** Να εξηγήσει γιατί χρειάστηκε το λογισμικό. Επεκτείνει το υπάρχον κεφάλαιο "Η ανάγκη δημιουργίας του Πάγκου Εργασίας Εκπομπών".
+> Επεκτείνει σημαντικά το υπάρχον "Η ανάγκη δημιουργίας του Πάγκου Εργασίας Εκπομπών".
 
-### 2.1 Η Maersk και ο τομέας της θαλάσσιας μεταφοράς
-- Σύντομο profile εταιρείας, μέγεθος στόλου, εμπορική παρουσία
-- Συνεισφορά της ναυτιλίας στις παγκόσμιες εκπομπές
+### 2.1 Η Maersk και ο τομέας της θαλάσσιας μεταφοράς (1.5 σελ)
 
-### 2.2 Ο στόχος Net Zero 2040
-- Στόχος Maersk: καθαρές μηδενικές εκπομπές μέχρι το 2040 (10 χρόνια πριν τον στόχο IMO 2050)
-- 30% βιώσιμη ενέργεια χρήσης μέχρι το 2030
-- Μετάβαση στόλου σε εναλλακτικά καύσιμα (μεθανόλη, αμμωνία, βιοκαύσιμα)
+**Δομή:**
+- Σύντομο profile εταιρείας: ίδρυση 1904, A.P. Møller-Mærsk, διεθνής παρουσία.
+- Δραστηριότητες: Ocean (containers), Logistics & Services, Terminals, Towage.
+- Μέγεθος στόλου, transit volumes (αν υπάρχουν δημόσια στοιχεία).
+- Μετάβαση από καθαρά shipping company σε integrated logistics provider.
 
-### 2.3 Ρυθμιστικό πλαίσιο
-- **CSRD (Corporate Sustainability Reporting Directive)**: υποχρέωση EU
-- **EU ETS Maritime**: επέκταση συστήματος εμπορίας εκπομπών στη ναυτιλία (2024)
-- **Fuels EU Maritime**: ποιοτικοί στόχοι για καύσιμα
-- **IMO**: στόχοι μείωσης εκπομπών
+### 2.2 Συνεισφορά της ναυτιλίας στις εκπομπές (1 σελ)
 
-### 2.4 Η προηγούμενη χειρωνακτική διαδικασία (επέκταση υπάρχοντος)
-- Email προς Emissions Reporting Team
-- Manual εξαγωγή shipment data, manual εφαρμογή emissions
-- Excel-based, βδομάδες/μήνες καθυστέρηση
-- Σφάλματα κανονικοποίησης, αντιφάσεις, μη επαναληψιμότητα
+**Δομή:**
+- Παγκόσμιες εκπομπές: ≈3% global CO₂ (IMO 4th GHG Study).
+- Ποιοτικές πληροφορίες: HFO/VLSFO ως κυρίαρχα καύσιμα, sulfur emissions, NOₓ, particulate matter.
+- Δυσκολία απανθρακοποίησης: long-lived assets (vessels 25-30 χρόνια), high energy density requirements.
 
-### 2.5 Ομάδες χρηστών (1000+)
+### 2.3 Ο στόχος Net Zero 2040 της Maersk (1 σελ)
+
+**Δομή:**
+- Στόχος: καθαρές μηδενικές εκπομπές μέχρι το 2040 — 10 χρόνια πριν τον στόχο IMO 2050.
+- 30% sustainable energy usage μέχρι το 2030 (από PDF).
+- Επενδύσεις σε εναλλακτικά καύσιμα: methanol-ready vessels, ammonia, biodiesel.
+- Σχέσεις με ABS, Lloyd's για verifications.
+
+### 2.4 Ρυθμιστικό πλαίσιο (1.5 σελ)
+
+**Δομή:**
+- **CSRD (Corporate Sustainability Reporting Directive)**: ισχύει από οικονομικά έτη 2024 (large public-interest entities).
+- **EU ETS Maritime**: επέκταση Emissions Trading System σε ναυτιλία από 1/1/2024 (40% του CO₂ το 2024, 70% το 2025, 100% από 2026).
+- **Fuels EU Maritime**: ποιοτικοί στόχοι GHG intensity καυσίμων (από 2025, σταδιακή μείωση intensity).
+- **IMO MEPC**: 2023 strategy για 20-30% emission reduction by 2030, net-zero by 2050.
+- **CDP, GRESB**: voluntary disclosure frameworks.
+
+### 2.5 Η προηγούμενη χειρωνακτική διαδικασία (1.5 σελ)
+
+> Επέκταση υπάρχουσας περιγραφής στο `gkinis_konstantinos.md`.
+
+**Δομή:** Το PDF δείχνει 5 βήματα (slide 9):
+- Email request στην Emissions Reporting Team
+- Manual extract shipment data
+- Manual application of emissions factors
+- Report construction (Excel)
+- Email return to requester
+
+Επεκτείνεται με:
+- Γιατί ήταν ακατάλληλο: data freshness (weeks), normalization errors, no audit trail, μη επαναληψιμότητα, χαμένα δεδομένα, μη scalable.
+- Παράδειγμα τυπικής διαδικασίας (timeline 3-8 εβδομάδες ανά request).
+
+### 2.6 Ομάδες χρηστών (1 σελ)
+
+**Δομή:** Πίνακας με 6 user groups (από PDF slide 10):
 - ECO Delivery Ocean Products
 - Regional Product Management
 - Commercial Sustainability
 - Regional Sales
 - Contract Management
 - Account Managers
-- Πώς ο καθένας χρησιμοποιεί δεδομένα εκπομπών
 
-### 2.6 Ο εσωτερικός έλεγχος GIA του 2023
-- Ζητήματα που αναδείχθηκαν (data tracking, audit concerns, scalability)
-- Αντιμετώπιση μέσω του νέου λογισμικού
+Για κάθε ομάδα: τι δεδομένα ζητούν, σε ποιά συχνότητα, σε ποιά μορφή.
 
-**Πηγές:** PDF presentation slides 9-11, υπάρχον κείμενο, διαδικτυακή αναζήτηση για ρυθμιστικά
-**Στοιχεία προς ενσωμάτωση:** 1300+ users, $31M USD ECO Delivery 2024, 98K FFE
+### 2.7 Ο εσωτερικός έλεγχος GIA του 2023 (0.5 σελ)
+
+**Δομή:**
+- Group Internal Audit της Maersk → εντοπισμός ζητημάτων (αναφέρεται στο PDF: "Addressed the concerns raised in the 2023 internal GIA audit").
+- Ζητήματα: data tracking, audit trail, scalability, error rates.
+- Αυτό ήταν catalyst για ταχεία ανάπτυξη.
+
+**Πηγές:** PDF slides 8-12, web search για CSRD/EU ETS/Fuels EU Maritime, υπάρχον κείμενο.
+
+**Στοιχεία:** 1000+ users pre-launch, 1300+ τώρα, $31M USD το 2024 (από PDF — να αναφερθεί ως "indicative impact" εδώ).
+
+**Code listings:** Καμία (περιγραφικό κεφάλαιο).
+
+**Όχι εδώ:** Τεχνική περιγραφή της λύσης (Κεφ. 4-9), μεθοδολογία υπολογισμού (Κεφ. 3), εμπορικά αποτελέσματα μετρήσεων (Κεφ. 4).
+
+**Cross-refs:** Κεφ. 3 (μεθοδολογία), Κεφ. 4 (επισκόπηση λύσης).
 
 ---
 
 ## Κεφ. 3 — Θεωρητικό υπόβαθρο: Λογιστική αερίων θερμοκηπίου (8-10 σελίδες)
 
-**Σκοπός:** Πλαίσιο θεωρητικής γνώσης για να γίνουν κατανοητά τα τεχνικά κεφάλαια. Επεκτείνει το υπάρχον "Μέτρηση εκπομπών CO₂".
+> Επεκτείνει το υπάρχον "Μέτρηση εκπομπών CO₂".
 
-### 3.1 Το πρωτόκολλο GHG (Greenhouse Gas Protocol)
-- Ιστορικό (Kyoto 1997, GHGP από 2001)
-- Συνθήκη του Κυότο και τα 6 κύρια αέρια
-- Διεθνής υιοθέτηση και τυποποίηση
+### 3.1 Το πρωτόκολλο GHG (1.5 σελ)
 
-### 3.2 Κατηγορίες εκπομπών (Scopes)
-- Scope 1: άμεσες εκπομπές (στόλος, καύσιμα)
-- Scope 2: έμμεσες από αγορά ενέργειας
-- Scope 3: ανώτερη/κατώτερη αλυσίδα αξίας (15 categories)
-- Συνέπεια: Maersk → Scope 1 (ίδιος στόλος), Scope 3 (chartered vessels)
-- Επεξήγηση εικόνας `Carbon_Accounting_Scopes.png`
+**Δομή:**
+- Ιστορικό: 1997 Kyoto Protocol — 6 βασικά αέρια (CO₂, CH₄, N₂O, HFCs, PFCs, SF₆· από 2012 +NF₃).
+- 2001: GHG Protocol Corporate Standard (WBCSD + WRI).
+- Σχέσεις με ISO 14064, EN 16258 (transport).
+- Έννοια του CO₂ equivalent (CO₂e) και Global Warming Potential (GWP).
 
-### 3.3 Μεθοδολογίες μέτρησης
-- **Cost-based**: απλή, δευτερογενή δεδομένα, χαμηλή ακρίβεια
-- **Activity-based**: κατανομή ανά πραγματική δραστηριότητα, μέγιστη ακρίβεια
-- **Hybrid**: συνδυασμός — η επιλογή της Maersk
+### 3.2 Κατηγορίες εκπομπών (Scopes) (1.5 σελ)
 
-### 3.4 TTW vs WTW
-- Tank-to-Wheel (καύση επί του πλοίου)
-- Well-to-Wheel (συνολικός κύκλος ζωής καυσίμου)
-- Πότε χρησιμοποιείται κάθε ένας
+> Επέκταση υπάρχοντος.
 
-### 3.5 Mass Balance και Book-and-Claim
-- Φυσική ροή vs λογιστική ροή
-- Παραδείγματα από άλλες βιομηχανίες (πχ πράσινη ηλεκτρική ενέργεια)
-- Πώς πιστοποιείται
+**Δομή:**
+- Scope 1: Direct emissions (Maersk: ίδιος στόλος, σταθερές εγκαταστάσεις).
+- Scope 2: Indirect από αγορά ενέργειας (electricity, heat, steam, cooling). Σε Maersk: γραφεία, terminals.
+- Scope 3: Upstream + downstream value chain (15 categories — αναφορά συγκεκριμένα στις πιο σχετικές για ναυτιλία: 1. Purchased goods/services, 4. Upstream transportation, 11. Use of sold products).
+- Στη Maersk: chartered vessels → Scope 3 cat. 4 ή 7.
+- Εικόνα `Carbon_Accounting_Scopes.png` με συνοδευτική περιγραφή.
 
-### 3.6 Πρότυπα και πιστοποιήσεις
-- ISCC (International Sustainability and Carbon Certification)
-- SBTi (Science Based Targets initiative)
-- GLEC Framework (Global Logistics Emissions Council)
-- Proof of Sustainability (POS) έγγραφα
+### 3.3 Μεθοδολογίες μέτρησης (2 σελ)
 
-**Πηγές:** GHG Protocol website (web search), υπάρχον κείμενο, ISCC docs, SBTi guides
+**Δομή — 3 υποενότητες:**
+
+**3.3.1 Cost-based**
+- Δαπάνη × emission factor (πχ EEIO factors).
+- Πλεονεκτήματα: απλό, default fallback.
+- Μειονεκτήματα: χαμηλή ακρίβεια, εξάρτηση από τιμές.
+
+**3.3.2 Activity-based**
+- Πραγματικές δραστηριότητες × specific emission factor.
+- Παραδείγματα: tonne-km × g CO₂/tonne-km, fuel consumed × emission factor per liter.
+- Πλεονεκτήματα: ακρίβεια, επαληθευσιμότητα.
+- Μειονεκτήματα: data collection complexity.
+
+**3.3.3 Hybrid (επιλογή Maersk)**
+- Activity-based όπου διαθέσιμα δεδομένα, cost-based για κενά.
+- GHGP recommendation για scope 3.
+- Πώς εφαρμόζεται στο NRG (preview, λεπτομέρειες Κεφ. 5).
+
+### 3.4 TTW vs WTW (1 σελ)
+
+**Δομή:**
+- **Tank-to-Wheel (TTW)**: combustion-only, εκπομπές κατά την καύση καυσίμου.
+- **Well-to-Wheel (WTW)** ή Well-to-Wake: WTT (well-to-tank: production+transport) + TTW.
+- Σημαντικότητα WTW για σωστή σύγκριση εναλλακτικών καυσίμων (πχ blue/green hydrogen TTW=0 αλλά WTT μπορεί να είναι σημαντικό).
+- Ευρωπαϊκή μετάβαση από TTW σε WTW.
+
+### 3.5 Mass Balance και Book-and-Claim (1.5 σελ)
+
+**Δομή:**
+- **Φυσική ροή vs λογιστική ροή**: στη ναυτιλία, ένα συγκεκριμένο πλοίο μπορεί να μην έχει διαθέσιμο εναλλακτικό καύσιμο.
+- **Mass Balance**: ισοζύγιο εισόδων/εξόδων ανά (mass) εντός ορισμένου χρονικού παραθύρου και γεωγραφικού πεδίου. Βιβλιογραφία: ISCC, RSB.
+- **Book-and-Claim**: αποσύνδεση φυσικού και "claim" — ο πελάτης πληρώνει για συγκεκριμένη ποσότητα green fuel που χρησιμοποιείται κάπου αλλού στο σύστημα.
+- Παραδείγματα από άλλους κλάδους: Renewable Energy Certificates (RECs), Sustainable Aviation Fuel.
+- Επιπτώσεις στην εφαρμογή στη Maersk (preview για Κεφ. 6.4).
+
+### 3.6 Πρότυπα και πιστοποιήσεις (1.5 σελ)
+
+**Δομή — 4 standards:**
+- **ISCC (International Sustainability and Carbon Certification)**: chain-of-custody, mass balance approach, EU recognition under RED II.
+- **SBTi (Science Based Targets initiative)**: alignment με 1.5°C scenario, sector-specific guidance (maritime guidance pilot).
+- **GLEC Framework**: industry-led methodology για logistics emissions accounting.
+- **CDP, ISO 14001**: voluntary disclosure / management system frameworks.
+- Σύνδεση: η Maersk έχει SBTi-validated targets (πιθανή web verification).
+
+**Πηγές:** GHG Protocol (web), ISCC docs, SBTi portal, GLEC framework. Βιβλιογραφία θα συμπληρωθεί σε επόμενο βήμα.
+
+**Code listings:** Καμία.
+
+**Στοιχεία:** GHGP date 2001, Kyoto 1997, EU ETS Maritime 2024, Fuels EU Maritime 2025.
+
+**Όχι εδώ:** Τεχνικές λεπτομέρειες υπολογισμού στο NRG (Κεφ. 5-6), αρχιτεκτονική (Κεφ. 9).
+
+**Cross-refs:** Κεφ. 5.5 (πρακτική εφαρμογή hybrid), Κεφ. 6.3 (mass balance σε Energy Bank), Κεφ. 6.4 (POS/ISCC).
 
 ---
 
 ## Κεφ. 4 — Ο Πάγκος Εργασίας Εκπομπών: Επισκόπηση (4-5 σελίδες)
 
-**Σκοπός:** Υψηλού επιπέδου επισκόπηση πριν τα τεχνικά κεφάλαια.
+### 4.1 Στόχοι και αποστολή της ομάδας ET Platform (1 σελ)
 
-### 4.1 Στόχοι και αποστολή ομάδας ET Platform
-- Citation από PDF: «Ensure Maersk realises our Net Zero 2040 targets by providing definitive emissions data and technology services...»
-- Από Σεπ. 2023 παραγωγική χρήση
-- Άρχισε Μαρ. 2023
+**Δομή:**
+- Citation από PDF (slide 1):
+  > "Ensure Maersk realises our Net Zero 2040 targets by providing definitive emissions data and technology services that support customer decarbonization ambitions and drive ECO product adoption"
+- Στόχοι ομάδας: trusted data, transparency, scale.
+- Από Σεπ. 2023 παραγωγική χρήση (ξεκίνησε Μάρ. 2023).
 
-### 4.2 Οι τέσσερις πυλώνες
-- Σύντομη παρουσίαση καθενός με την αποστολή του:
-  - Ocean Emissions (decarbonisation roadmaps)
-  - ECO Product Delivery (30% βιώσιμη ενέργεια έως 2030)
-  - Energy Markets (bunker optimization, ETS)
-  - Customer Baseline Emissions / Certificates
-- Σχέσεις μεταξύ τους
+### 4.2 Οι τέσσερις πυλώνες (2 σελ)
 
-### 4.3 Επιτεύγματα και αντίκτυπος
-- 1300+ χρήστες (από 1000+ pre-launch)
-- 98K FFE / $31M USD ECO Delivery 2024
-- Αντιμετώπιση 2023 GIA audit
-- Αυτόματη παραγωγή πιστοποιητικών ECOv1/v2
+**Δομή — Πίνακας/διάγραμμα + παράγραφοι:**
 
-### 4.4 Επισκόπηση χαρακτηριστικών
-- Self-service web app
-- Εκδόσεις πιστοποιητικών
-- Excel exports
-- Real-time dashboards
+| Πυλώνας | Mission |
+|---------|---------|
+| Ocean Emissions / Customer Baseline | Trusted emissions information & insights for decarbonization roadmaps |
+| ECO Product Delivery | Integrated tech for rapid scale-up of ECO products → 30% sustainable energy by 2030 |
+| Energy Markets (Bunker) | Optimize bunker plans for lowest spend; foundation για green fuel sourcing in ETS |
+| Customer Baseline Emissions / Certificates | Customer-facing emissions data + certificates issuance |
 
-**Πηγές:** PDF presentation, README του NRG
+Citation από PDF (slides 4-7) για κάθε πυλώνα.
+
+Σχέσεις:
+- Ocean Emissions feeds Customer Baseline & Certificates
+- Bunker plans inform ETS surcharges in ECO pricing
+- Energy Bank (mass balance) ορίζει τι μπορεί να πουληθεί ως ECO
+
+### 4.3 Επιτεύγματα και αντίκτυπος (1 σελ)
+
+**Δομή — Bullet points με μετρικά:**
+- 1300+ onboarded users (slide 13)
+- 98K FFE / $31M USD ECO Delivery Ocean sales 2024 (slide 13)
+- Auto-generated certificates for ECO Delivery Ocean ECOv1 και ECOv2
+- Resolution of 2023 GIA audit concerns
+- ~32 deploys/ημέρα (operational metric)
+
+### 4.4 Επισκόπηση χαρακτηριστικών UI (1 σελ)
+
+**Δομή:** Βάσει PDF slide 12 (5 demo features):
+1. Search and Find Emissions Data (customer code + date range)
+2. Inspect Shipment Data on Route Level
+3. Download Customer Data (Excel exports)
+4. Generate Certificates for Customer
+5. Get Certificates and Reports (PDF + accompanying report)
+
+Αν είναι διαθέσιμα screenshots → ενσωμάτωση. Διαφορετικά περιγραφικά.
+
+**Πηγές:** PDF slides 1-13, `nrg/README.md`.
+
+**Code listings:** Καμία.
+
+**Στοιχεία:** Όλα τα παραπάνω metrics.
+
+**Όχι εδώ:** Λεπτομέρειες κάθε πυλώνα (Κεφ. 5-7), τεχνικές επιλογές (Κεφ. 8-9).
+
+**Cross-refs:** Κεφ. 5, 6, 7 (πυλώνες σε βάθος).
 
 ---
 
 ## Κεφ. 5 — Πυλώνας Α: Ocean Emissions και STAR Connect (9-11 σελίδες)
 
-**Σκοπός:** Λεπτομερής περιγραφή του πιο σύνθετου πυλώνα.
+### 5.1 Πρόκληση: Ακριβής καταγραφή εκπομπών στόλου (1 σελ)
 
-### 5.1 Πρόκληση: Ακριβής καταγραφή εκπομπών στόλου
-- Πολυπλοκότητα ναυτιλίας (διάφορα προϊόντα, lanes, container types)
-- Διαφορετικά δεδομένα για owned vs chartered vessels
+**Δομή:**
+- Πολυπλοκότητα: container shipping (πολλά proucts: ECO, EC2-EC5, FOSSIL· πολλές lanes)
+- Διαφορετικές πηγές: vessels owned vs chartered
+- Container types: Forty-Foot Equivalent (FFE), 20'/40', dry/reefer, etc.
+- Voyage-level vs container-level granularity.
 
-### 5.2 Πηγές δεδομένων
-- **Dremio data lake**: Enterprise data warehouse (`Infrastructure_GDA.Energy_Transition.*`)
-- **Shiptech**: legacy maritime order system (ODBC)
-- **Kafka streams**: real-time events
-- Container moves: data structure (size, type, FFE, lane, ETA)
+### 5.2 Πηγές δεδομένων (1.5 σελ)
 
-### 5.3 Vessel master data (ocean_api)
-- Vessel schema (IMO, name, ownership, flag_state)
-- GenServer-based API με `:pg` clustering
-- Παραδείγματα queries
+**Δομή:**
+- **Dremio data lake** (corporate data platform): `Infrastructure_GDA.Energy_Transition.*`, `EcoDelivery.ShipmentDetails`, `Common_Datasets.*`.
+- **Shiptech**: legacy maritime order/voyage system, accessed via ODBC.
+- **Kafka streams**: real-time events (vessel telemetry, shipment updates).
+- Container moves data structure: `container_size`, `container_type`, `loaded_ffe`, `lane_id`, `port_of_receipt`, `port_of_discharge`, `arrived_on`, `first_loaded_at`.
 
-### 5.4 STAR Connect: Real-time τηλεμετρία
-- Τι είναι το STAR Connect (Maersk vessel telematics)
-- Παραδείγματα δεδομένων: RemainingFuelOnBoard ανά τύπο (HSFO, VLSFO, LSDIS, ULSFO, μεθανόλη)
-- Ροή: STAR Connect → Kafka → BoW external_data_feeds
-- Κανονικοποίηση τύπων καυσίμου (`starconnect_fuel_type_to_bow`)
-- Σύνδεση με fuel consumption και emissions calculation
+**Code listing 5.2.1:** Από `nrg/components/emissions_workbench/lib/nrg/ocean/container_move.ex` lines 33-54 (Ecto schema container_move). Δείχνει modelling του container move με associations.
 
-### 5.5 Υπολογισμός εκπομπών
-- Trade Factors (route_code × container_size × product × year)
-- `Nrg.Ocean.EmissionsCalculator`
-- Container FFE × Emissions Factor → TTW/WTW emissions
+### 5.3 Vessel master data (ocean_api) (0.5 σελ)
 
-### 5.6 EU ETS surcharges
-- Πώς υπολογίζονται οι χρεώσεις πελάτη
-- Read-only από Dremio (`EUETSEmissionsTradeFactor`, `EUETSEmissionsSurcharge`, `EUETSPriceHistory`)
-- Quarterly validity (Q1-Q4)
+**Δομή:**
+- Component `nrg/components/ocean/ocean_api/`
+- GenServer-based με `:pg` (process groups) για clustering
+- Schemas: Vessel (IMO, name, ownership, flag_state, status)
+- Public API: `get_all_vessels()`, `all_active()`, `find_by_imo()`
 
-### 5.7 Customer Baseline Emissions
-- Αναζητήσεις χρήστη ανά πελάτη/route/timeframe
-- Reports για baseline emissions
-- LiveView UI για το feature
+### 5.4 STAR Connect: Real-time τηλεμετρία (2 σελ)
 
-**Πηγές:** `nrg/components/ocean/`, `nrg/components/emissions_workbench/lib/nrg/ocean/`, `nrg/components/bunker/bow/lib/bops/external_data_feeds/remaining_fuel_on_board.ex`
+**Δομή — λεπτομερής περιγραφή:**
+- **Τι είναι STAR Connect**: σύστημα vessel telematics της Maersk που παρέχει real-time engine/fuel data.
+- **Δεδομένα που παρέχει**:
+  - Remaining Fuel On Board (RoB) ανά τύπο: HSFO, VLSFO, LSDIS, ULSFO, μεθανόλη, βιοκαύσιμα.
+  - IMO number για vessel identification.
+  - Period timestamps.
+- **Ροή**: STAR Connect → Kafka topic → BoW external_data_feeds → ingestion στο PostgreSQL.
+- **Κανονικοποίηση τύπων**: `starconnect_fuel_type_to_bow()` → "hs"/"vls"/"mdo"/"uls".
+- **Σύνδεση**:
+  - Bunker (κεφ. 7): RoB → input για επόμενο plan run.
+  - Emissions (κεφ. 5.5): consumed fuel = ΔRoB → emission calculation.
+- **Γιατί Kafka**: ασύγχρονη ροή με backpressure, durability, ordering ανά vessel partition.
+- **Path**: `nrg/components/bunker/bow/lib/bops/external_data_feeds/remaining_fuel_on_board.ex` (αναφορά).
+
+### 5.5 Υπολογισμός εκπομπών (1.5 σελ)
+
+**Δομή:**
+- **Trade Factors**: composite key (route_code × container_size × product × year). Πίνακες `ocean_trade_factors_*`.
+- **EmissionsCalculator** (`Nrg.Ocean.EmissionsCalculator`): `get_ocean_emissions_for_route/N`.
+- Formula:
+  ```
+  emissions_kg = loaded_ffe × emissions_factor(route, product, year, size)
+  ```
+- TTW vs WTW factors: ratio ~1.0-1.4 ανά καύσιμο.
+- Calorific value normalization για cross-fuel comparison.
+
+**Code listing 5.5.1:** Από `nrg/components/emissions_workbench/lib/nrg/ocean/ingest/converters.ex` lines 55-73 (pipeline transformation με `with`).
+
+### 5.6 EU ETS surcharges (1 σελ)
+
+**Δομή:**
+- Component `nrg/components/ocean/eu_ets/`
+- Διαβάζει από Dremio: `EUETSEmissionsTradeFactor`, `EUETSEmissionsSurcharge`, `EUETSPriceHistory`, `EUETSMetadata`.
+- Quarterly validity (Q1-Q4) με run IDs για audit trail.
+- Applied as charge to customer per voyage: `(emissions × ETS_factor × EUA_price)`.
+- Σύνδεση με Fuels EU Maritime: incremental surcharge layer.
+
+### 5.7 Customer Baseline Emissions (1 σελ)
+
+**Δομή:**
+- LiveView feature: search by customer code + date range → emissions report.
+- Backend: aggregated queries πάνω σε `ocean_container_moves` joined με `customers`, `shipments`.
+- Output: WTW/TTW totals, fossil baseline vs ECO actual, savings %.
+- Audit trail per search (alert βασισμένο σε Loki, βλ. 9.10).
+
+**Code listing 5.7.1 (προαιρετικό):** Από LiveView mount/handle_event για search form. Path: `lib/nrg_web/live/eco_delivery/dashboard_live.ex` ή παρόμοιο.
+
+**Πηγές:**
+- `nrg/components/ocean/` (όλο)
+- `nrg/components/emissions_workbench/lib/nrg/ocean/` (κύρια domain)
+- `nrg/components/emissions_workbench/lib/nrg/ocean/ingest/`
+- `nrg/components/bunker/bow/lib/bops/external_data_feeds/remaining_fuel_on_board.ex`
+
+**Στοιχεία:** ECO products: EC3, ECO, EC2, EC4, EC5, ECM (από test). Trade factor schemas: `ocean_trade_factors_*`. Container types/sizes enum.
+
+**Όχι εδώ:** ECO certificates (Κεφ. 6), bunker plan optimization (Κεφ. 7), event sourcing internals (Κεφ. 9).
+
+**Cross-refs:** Κεφ. 6 (downstream usage σε ECO products), Κεφ. 7 (bunker shares STAR Connect feed), Κεφ. 8.4 (Kafka), Κεφ. 8.5 (Dremio), Κεφ. 9.5 (data ingestion pipeline).
 
 ---
 
 ## Κεφ. 6 — Πυλώνας Β: ECO Product Delivery (9-10 σελίδες)
 
-**Σκοπός:** Η πιο εμπορικά καίρια λειτουργικότητα.
+### 6.1 Τι είναι τα ECO Products (1 σελ)
 
-### 6.1 Τι είναι τα ECO Products
-- ECO Delivery Ocean: μεταφορά με εναλλακτικά καύσιμα
-- Customer value proposition
+**Δομή:**
+- ECO Delivery Ocean: μεταφορά containers με εναλλακτικά καύσιμα.
+- Customer value: αποδείξιμη μείωση scope 3 emissions.
+- Quantification: tonnes CO₂e saved ανά FFE / ανά voyage.
+- Παραδείγματα products: EC3, EC2, EC4, EC5, ECM (από test fixtures).
+- Sales mechanism: customer πληρώνει premium · η Maersk εξασφαλίζει ότι το αντίστοιχο φυσικό καύσιμο χρησιμοποιείται κάπου στον στόλο (mass balance).
 
-### 6.2 ECOv1 vs ECOv2
-- ECOv1: CO₂ basis, απόλυτες διαφορές, full grey emissions − green emissions
-- ECOv2: CO₂e basis, ποσοστιαία savings (`ttw_emissions_savings_percentage * green_fuel_percentage`)
-- Πότε επιλέγεται κάθε ένα
+### 6.2 ECOv1 vs ECOv2 (1.5 σελ)
 
-### 6.3 Energy Bank: λογιστική πράσινου καυσίμου
-- Πρόκληση: ισοζύγιο μεταξύ αγοράς και πώλησης πράσινου καυσίμου
-- **Event Sourcing και CQRS**:
-  - Commands → Events → Projections
-  - Επαληθευσιμότητα ιστορικού
-  - EventStore backend
-- Deposits (από fuel orders)
-- Withdrawals (από shipments)
-- Clearing accounts
+**Δομή:**
 
-### 6.4 Proof of Sustainability (POS) και ISCC
-- Έγγραφα POS από προμηθευτές
-- ISCC certification chain
-- `MatchedPos`: αντιστοίχηση shipment → POS
+**ECOv1 (CO₂ basis):**
+- Απόλυτη διαφορά (full grey emissions − green emissions)
+- Formula:
+  ```
+  green_fuel_needed = (calorific_grey × grey_fuel_used) / calorific_green
+  savings = (full_grey_emissions) − (green_emissions)
+  ```
+- Παραπομπή: `lib/nrg/products/eco.ex`
 
-### 6.5 Έκδοση πιστοποιητικών
-- Δομή πιστοποιητικού (concern, year, FFE, savings)
-- PDF generation
-- Azure Blob Storage για archival
-- Reissue logic όταν αλλάζουν δεδομένα
-- Void με reason
+**ECOv2 (CO₂e basis, ποσοστιαίο):**
+- Ποσοστιαία savings:
+  ```
+  ttw_savings = grey_emissions × ttw_emissions_savings_percentage × green_fuel_percentage
+  ```
+- Πιο ευέλικτο για πολλούς τύπους πράσινου καυσίμου.
+- Παραπομπή: `lib/nrg/products/eco2.ex`
 
-### 6.6 ECO Delivery Surcharges
-- Cost of Abatement
-- Formula: `grey_fuel_used * green_fuel_price_foe` ή `wtw_savings * abatement_cost`
+**Διαφορές πιστοποιητικού:**
+- Template: `parse_template(:co2) → "ECO1"`, `parse_template(:co2e) → "ECO2"`
+- Πεδίο "savings" εκφράζεται διαφορετικά (απόλυτο vs ποσοστιαίο).
 
-**Πηγές:** `nrg/components/emissions_workbench/lib/energy_bank.ex`, `lib/nrg/products/eco.ex` και `eco2.ex`, `lib/nrg/ocean/certificates.ex`, `lib/eco_delivery_surcharges/`
+### 6.3 Energy Bank: λογιστική πράσινου καυσίμου (3 σελ)
+
+**Δομή — υποενότητες:**
+
+**6.3.1 Πρόβλημα ισοζυγίου (0.5 σελ)**
+- Πώς εξασφαλίζουμε ότι δεν πουλάμε περισσότερο πράσινο καύσιμο από το διαθέσιμο.
+- Audit requirement: traceability to physical fuel orders.
+
+**6.3.2 Event Sourcing και CQRS (1 σελ)**
+- Commanded library, EventStore backend.
+- Commands → Aggregates → Events → Projections
+- Πλεονεκτήματα: full audit trail, event replay, time travel.
+- Schema: events ως immutable, projections ως read models.
+
+**Code listing 6.3.1:** Από `lib/energy_bank/application/transactions/withdraw_energy.ex` (lines 1-41) — Command + CommandHandler pattern.
+
+**6.3.3 Deposits / Withdrawals / Clearing accounts (0.75 σελ)**
+- **Deposits**: από fuel orders, εισαγωγή GJ/tonnes.
+- **Withdrawals**: από shipments σε ECO products.
+- **Clearing accounts**: ανά supplier/POS/period για logical separation.
+- Projections: `clearing_account_deposits`, `fuel_order_deliveries`.
+
+**6.3.4 Mass balance constraint (0.75 σελ)**
+- Cumulative Deposits ≥ cumulative Withdrawals (per account / per period).
+- Validation σε command handlers (cannot withdraw more than balance).
+- Τι γίνεται όταν παραβιάζεται (alert + manual review).
+
+### 6.4 Proof of Sustainability (POS) και ISCC (0.75 σελ)
+
+**Δομή:**
+- POS έγγραφα από προμηθευτές (refineries, biofuel producers).
+- ISCC certification chain — POS αναφέρει feedstock, sustainability claims, energy content.
+- `MatchedPos` projection: αντιστοίχηση `fuel_order_delivery → [POS]` με `pos_number`, `quantity`, `energy`.
+- Path: `lib/energy_bank/projections/fuel_orders_projector.ex`.
+
+### 6.5 Έκδοση πιστοποιητικών (2 σελ)
+
+**Δομή:**
+
+**6.5.1 Δομή πιστοποιητικού (0.5 σελ)**
+- Πεδία: customer concern_code, year, FFE moves, total emissions WTW, savings % (ECOv2) ή absolute (ECOv1), ISCC reference, period validity.
+- Σχήματα: `Nrg.Ocean.Certificates.Certificate`, embedded `EmissionsSummary`.
+
+**6.5.2 PDF generation και Azure Blob Storage (0.75 σελ)**
+- Process: aggregate emissions → format → render (πιθανώς via ChromicPDF ή PuppeteerHelper) → store στο Azure Blob.
+- Filename convention: `{concern}_{year}_{template}_{certificate_id}.pdf`.
+- Download endpoint: HTTP controller `lib/nrg_web/controllers/ocean/certificates_controller.ex` → `download/2`.
+
+**6.5.3 Reissue, void, history (0.75 σελ)**
+- Trigger reissue: όταν αλλάζουν δεδομένα (νέα emissions data ή POS).
+- Async via Oban worker.
+- Void with reason (audit metadata).
+- `CertificateHistoryReport` για timeline ανά πελάτη.
+
+**Code listing 6.5.1:** Oban worker από `lib/nrg/ocean/ingest/jobs/import_container_moves_batch.ex` (lines 1-36) — δείχνει pattern matching on perform/1, queue assignment.
+
+### 6.6 ECO Delivery Surcharges (0.75 σελ)
+
+**Δομή:**
+- Component `lib/eco_delivery_surcharges/`
+- Cost of Abatement formula:
+  ```
+  surcharge = grey_fuel_used × green_fuel_price_foe
+  ή
+  surcharge = wtw_savings × abatement_cost
+  ```
+- Pricing layer: customer-facing surcharge ανά voyage / contract.
+
+**Πηγές:**
+- `nrg/components/emissions_workbench/lib/energy_bank.ex`
+- `nrg/components/emissions_workbench/lib/energy_bank/`
+- `nrg/components/emissions_workbench/lib/nrg/products/eco.ex` και `eco2.ex`
+- `nrg/components/emissions_workbench/lib/nrg/ocean/certificates.ex`
+- `nrg/components/emissions_workbench/lib/nrg/ocean/certificates/`
+- `nrg/components/emissions_workbench/lib/eco_delivery_surcharges/`
+
+**Στοιχεία:** ECO1/ECO2 templates, FFE, calorific value, abatement cost.
+
+**Όχι εδώ:** Bunker optimization (Κεφ. 7), event sourcing internals (Κεφ. 9.9 για βαθύτερα), framework/library επιλογές (Κεφ. 8.16).
+
+**Cross-refs:** Κεφ. 3.5 (mass balance), Κεφ. 3.6 (ISCC), Κεφ. 5.5 (emissions calculation), Κεφ. 8.16 (EventStore), Κεφ. 9.9 (CQRS αρχιτεκτονική).
 
 ---
 
 ## Κεφ. 7 — Πυλώνας Γ: Bunker Optimization (Energy Markets) (7-8 σελίδες)
 
-**Σκοπός:** Κάλυψη ξεχωριστού subsystem (BOPS) με διαφορετική φύση.
+### 7.1 Το πρόβλημα ανεφοδιασμού (1 σελ)
 
-### 7.1 Το πρόβλημα ανεφοδιασμού
-- Πολυπλοκότητα: πολλά λιμάνια, διαφορετικές τιμές, ETS κόστη
-- Στόχος: ελάχιστο κόστος ανά voyage
-- Ταυτόχρονα προγραμματισμός για green fuel sourcing
+**Δομή:**
+- Πολυπλοκότητα: vessel rotations, multiple ports, fuel price variation, port call duration, ETS costs.
+- Constraints: physical fuel availability, vessel storage, regulatory (sulfur caps).
+- Στόχος: minimize total bunker spend over a planning horizon (συνήθως voyage rotation).
+- Σύνδεση με ETS και green fuels: future expansion για cost of carbon στο objective function.
 
-### 7.2 BOPS (Bunker Operations Planning System)
-- Αρχιτεκτονική: API + BoW + C++ solver (MBC)
-- Ροή: Shiptech → API → BoW → operator → Solver → BoW → Shiptech writeback
+### 7.2 BOPS (Bunker Operations Planning System) (1 σελ)
 
-### 7.3 BoW: Bunker on Water Workbench
-- Web UI για bunker plans
-- LiveView interface
-- Operator edits και approval workflow
+**Δομή:**
+- Acronym: BOPS.
+- Δομή 3 layers:
+  - **API** (`bunker/api/`): coordinator service, communicates με C++ solver.
+  - **BoW (Bunker on Water Workbench)** (`bunker/bow/`): web UI (Phoenix).
+  - **Solver (MBC = Multi-Bundle Connector)**: C++ linear programming.
+- Ροή:
+  ```
+  Shiptech → API → BoW UI → Operator edits → API → Solver (MBC) → Results → BoW → Shiptech writeback
+  ```
+- Διαφορές από emissions_workbench: συνεργασία με external native solver, διαφορετική φύση (transactional vs analytical).
 
-### 7.4 C++ Solver μέσω Erlang Ports
-- Linear programming για βελτιστοποίηση κόστους
-- Επικοινωνία Elixir ↔ C++ via Erlang Ports
-- Γιατί όχι NIFs (αξιοπιστία)
+### 7.3 BoW: Web UI (1.5 σελ)
 
-### 7.5 Shiptech integration
-- VesselVoyagedetailId, port_calls
-- Stored procedures (`sp_CreateModelRunDataWithString`, `sp_UpdateBunkerPlanOperatorInputs`)
+**Δομή:**
+- Phoenix LiveView app.
+- Σχήματα: vessels, bunker_plans, port_calls, schedules.
+- Operator workflow:
+  - Visualize current plan (vessel × ports × fuel quantities).
+  - Edit inputs (port costs, fuel availability constraints).
+  - Trigger plan run.
+  - Compare results vs previous.
+- Historical plans accessible (test: `see_historical_bunker_plans_test.exs`).
 
-### 7.6 Plan run scheduling
-- `PlanRunEnqueuer`
-- Triggers (manual, scheduled)
+### 7.4 C++ Solver μέσω Erlang Ports (1.5 σελ)
 
-### 7.7 Σύνδεση με ETS και green fuel
-- Bunker plan ως foundation για ETS optimization
-- Πώς θα επεκταθεί για green fuels (μελλοντικό)
+**Δομή:**
+- **Γιατί C++**: γραμμικός προγραμματισμός με ώριμες βιβλιοθήκες (πιθανώς CPLEX ή GLPK).
+- **Γιατί Ports αντί NIFs**:
+  - NIFs: shared address space → segfault σκοτώνει BEAM.
+  - Ports: separate OS process → απομόνωση σφαλμάτων.
+- Communication: stdio με binary protocol (συνήθως Erlang term format).
+- Distributed tracing: traceparent IDs propagation (test: `solve_test.exs`).
+- Path: `bunker/api/` (server.ex coordinates Port).
 
-**Πηγές:** `nrg/components/bunker/`, README.md, code/tests
+### 7.5 Shiptech integration (1 σελ)
+
+**Δομή:**
+- Shiptech: legacy SQL Server-based maritime planning system.
+- Data IN: VesselVoyagedetailId, port calls, vessel schedules, ETA/ETD.
+- Data OUT: bunker plan results (fuel estimates ανά port).
+- Stored procedures: `sp_CreateModelRunDataWithString` (insert results), `sp_UpdateBunkerPlanOperatorInputs` (operator changes back).
+- ODBC connectivity με `Shiptech.Repo`.
+
+### 7.6 Plan run scheduling (0.5 σελ)
+
+**Δομή:**
+- `PlanRunEnqueuer` (path: `bow/lib/bops/vessels/plan_run_enqueuer.ex`).
+- Triggers: scheduled (cron-like via Oban Pro? ή Quantum), manual (operator button).
+- Idempotency και deduplication.
+
+### 7.7 Σύνδεση με ETS και green fuel (0.5 σελ)
+
+**Δομή:**
+- Bunker plan ως foundation: ξέρουμε πού φορτώνουμε καύσιμο, πόσο, και την τιμή.
+- ETS layer: επιπλέον cost component στο objective function (μελλοντικό).
+- Green fuel sourcing: επιλογή πορτών με διαθέσιμο πράσινο καύσιμο, integration με Energy Bank deposits.
+
+**Code listing 7.4.1:** GenServer pattern από `lib/nrg_worker/director.ex` (lines 1-44) — δείχνει supervision και dynamic worker management. (Ή εναλλακτικά κάτι από bunker/api/server.ex αν διαθέσιμο.)
+
+**Code listing 7.5.1 (προαιρετικό):** Terraform azurerm_postgresql_flexible_server από `bunker/terraform/staging/database.tf` lines 1-53.
+
+**Πηγές:**
+- `nrg/components/bunker/README.md`
+- `nrg/components/bunker/api/`
+- `nrg/components/bunker/bow/`
+- `nrg/components/bunker/shiptech/`
+- `nrg/components/bunker/terraform/`
+
+**Στοιχεία:** 8 logic apps (activate_vessel, pre_processing, upload_bunker_plan, upload_user_input + variants), 4 environments (staging/production × api/logic_app), bunker/bow LOC 16,738 / bunker/api 8,816.
+
+**Όχι εδώ:** General Phoenix/LiveView (Κεφ. 8.2), Terraform deep dive (Κεφ. 8.9), CI/CD (Κεφ. 8.11).
+
+**Cross-refs:** Κεφ. 5.4 (STAR Connect feed κοινή με bunker), Κεφ. 8.1 (BEAM Ports rationale), Κεφ. 8.7 (Azure), Κεφ. 9.3 (monorepo).
 
 ---
 
 ## Κεφ. 8 — Τεχνολογίες (11-13 σελίδες)
 
-**Σκοπός:** Λεπτομερής τεκμηρίωση κάθε επιλογής τεχνολογίας. Επεκτείνει σημαντικά το υπάρχον "Τεχνολογία".
+> Επεκτείνει σημαντικά το υπάρχον "Τεχνολογία".
 
-### 8.1 BEAM, Erlang, Elixir
-- Ιστορικό BEAM (Ericsson, Erlang)
-- Elixir vs Erlang (συντακτικό, OTP)
-- **Πλεονεκτήματα BEAM**:
-  - Lightweight processes (10000s ταυτόχρονα)
-  - Preemptive scheduler
-  - "Let it crash" philosophy και supervision trees
-  - Hot code reloading
-- **Πλεονεκτήματα Elixir**:
-  - Functional, immutable
-  - Pattern matching
-  - Pipeline operator (`|>`)
-- Παράδειγμα κώδικα: pipeline επεξεργασίας δεδομένων
+**Συνολική προσέγγιση:** Κάθε τεχνολογία ~0.5-1 σελίδα. Δομή ανά υποενότητα: (i) τι είναι, (ii) γιατί επιλέχθηκε για το πρόβλημα, (iii) πώς χρησιμοποιείται στο NRG, (iv) εναλλακτικές που απορρίφθηκαν (όπου εφαρμόσιμο).
 
-### 8.2 Phoenix Framework & LiveView
-- Σχεδιαστική φιλοσοφία (Rails-inspired)
-- Generators (μειώνουν boilerplate)
-- **LiveView**:
-  - Server-rendered, με ασύγχρονες ενημερώσεις
-  - WebSocket transport
-  - PubSub για real-time UI
-  - Πλεονεκτήματα έναντι SPA frameworks
+### 8.1 BEAM, Erlang, Elixir (1.5 σελ)
 
-### 8.3 PostgreSQL & Ecto
-- Γιατί PostgreSQL
-- Ecto: query builder, migrations, schemas
-- Ξεχωριστές βάσεις ανά context (multi-tenancy)
-- Παράδειγμα schema/query
+> Επέκταση υπάρχοντος.
 
-### 8.4 Apache Kafka
-- Message broker / event streaming
-- Χρήση: STAR Connect feeds, ocean emissions ingestion
-- Producer/Consumer patterns σε Elixir
+- Ιστορικό: Ericsson, Erlang/OTP, BEAM VM, Elixir 2011.
+- BEAM υψηλού επιπέδου: preemptive scheduler, lightweight processes, message passing, supervision trees, "Let it crash".
+- Σύγκριση με JVM (heavy threads), Go (goroutines αλλά shared memory), Node.js (single-threaded).
+- Ports για native integration (κεφ. 7.4 cross-ref).
+- Hot code reloading (αν χρησιμοποιείται).
+- **Code listing 8.1.1:** Pipeline transformation από `lib/nrg/ocean/ingest/converters.ex` 55-73.
 
-### 8.5 Dremio
-- Federated SQL για data lake
-- Maersk Enterprise Data Warehouse
-- Authentication via personal access tokens
-- Streaming queries σε Elixir
+### 8.2 Phoenix Framework & LiveView (1 σελ)
 
-### 8.6 ODBC integrations
-- Για legacy συστήματα (Shiptech)
-- BEAM ODBC adapter
-- Παράδειγμα query
+- Phoenix: web framework (Plug-based, MVC-like).
+- LiveView: server-rendered UI με WebSocket για ασύγχρονη ενημέρωση.
+- Σύγκριση με SPAs (React/Vue): single codebase, latency στο WebSocket vs API roundtrips.
+- PubSub για real-time updates μεταξύ users/sessions.
+- Phoenix.Component για reusable templates.
+- **Code listing 8.2.1:** mount/handle_event από `lib/nrg_web/live/ocean_simulator_live.ex` 34-79.
 
-### 8.7 Microsoft Azure
-- Cloud platform choice
-- Resources: Postgres Flexible Server, AKS, Key Vault, Logic Apps, Blob Storage
-- 2 environments: staging + production
+### 8.3 PostgreSQL & Ecto (0.75 σελ)
 
-### 8.8 Kubernetes
-- Container orchestration
-- 3 replicas web server
-- Akamai load balancer + reverse proxy
-- Επανεκκίνηση και scaling
+- Γιατί PostgreSQL: ώριμη, ACID, JSON support, extensions (pg_cron, pg_stat_statements).
+- Ecto: 4-layer (Adapter, Schema, Changeset, Query).
+- Multi-tenancy / multi-database: ξεχωριστές DBs ανά context (Shiptech.Repo, EventStore).
+- Migrations: 720+ συνολικά, declarative, reversible.
+- **Code listing 8.3.1:** Ecto schema από `lib/nrg/ocean/container_move.ex` 33-54.
 
-### 8.9 Terraform
-- Infrastructure as Code
-- 4 περιβάλλοντα BOPS, αυτόνομο για NRG
-- 34+ azurerm resource types
-- Παράδειγμα module
+### 8.4 Apache Kafka (0.75 σελ)
 
-### 8.10 Nix και nix-darwin
-- Reproducible dev environment
-- Flakes (declarative dependencies)
-- Home Manager (user config)
-- Direnv για auto-loading
-- Σύνδεση με Nix Workshop παρουσίαση
+- Distributed log + message broker.
+- Χρήση: STAR Connect feeds, ocean emissions ingestion, event streaming μεταξύ components.
+- Producer/Consumer με `:brod` (Erlang client).
+- Topic partitioning ανά vessel (για ordering).
+- Consumer groups, offsets, idempotent processing.
+- 9 αρχεία με Kafka integration.
 
-### 8.11 GitHub Actions και Custom Runner
-- 23+ workflows
-- Custom NixOS runner στο Azure
-- 32 deploys/ημέρα
-- Workflow examples (build, test, IaC scan, security)
+### 8.5 Dremio (0.75 σελ)
 
-### 8.12 Maersk Design System (MDS)
-- Web components
-- Brand consistency
-- Storybook ως reference
+- Federated SQL για data lake (Maersk Enterprise platform).
+- Αντικατάσταση direct queries σε underlying systems.
+- Authentication: personal access tokens (DREMIO_API_KEY).
+- ODBC/Arrow Flight για streaming queries.
+- Schema namespaces: `Infrastructure_GDA.Energy_Transition.NetZero.*`, `Common_Datasets.*`, `Masterdata.*`.
 
-### 8.13 Observability stack
-- **Logs**: Grafana Loki + LogQL
-- **Metrics**: PromEx + Prometheus + Grafana
-- **Traces**: OpenTelemetry → OpenObserve
-- **MOP** (Maersk Observability Platform)
-- Πώς συνδέεται με alerts (επόμενο)
+### 8.6 ODBC integrations (0.5 σελ)
 
-### 8.14 HashiCorp Vault & agenix
-- Secrets management
-- AppRole auth (CI/CD)
-- agenix για declarative secrets via Nix
+- BEAM ODBC adapter (στο Erlang OTP).
+- Σύνδεση με Shiptech (SQL Server).
+- Πιο εκτεταμένη χρήση Dremio είναι μέσω ODBC ή Arrow.
 
-### 8.15 Oban
-- Background jobs σε PostgreSQL
-- Retry logic, scheduled jobs
-- Παράδειγμα workflow (certificate reissue)
+### 8.7 Microsoft Azure (1 σελ)
 
-### 8.16 EventStore
-- Event sourcing για Energy Bank
-- CQRS pattern
-- Παράδειγμα command/event
+- Cloud platform choice (group-wide standard στη Maersk).
+- Resources σε χρήση:
+  - PostgreSQL Flexible Server (Azure Database)
+  - Azure Kubernetes Service (AKS)
+  - Azure Key Vault (κάποια secrets)
+  - Logic Apps (BOPS workflow orchestration)
+  - Blob Storage (PDF certificates)
+  - API Management (BOPS gateway)
+  - Active Directory + SAML SSO
+- 2 environments (staging, production).
+- Cost vs control trade-off.
 
-**Πηγές:** Όλα τα guides, υπάρχον κείμενο, web search για βιβλιογραφικές αναφορές
+### 8.8 Kubernetes (0.75 σελ)
+
+- Container orchestration.
+- 3 replicas web server.
+- Akamai → Stargate (API gateway) → AKS ingress → pods.
+- Rolling deployments, health checks (readiness/liveness probes).
+- Custom `k8s` binary για deployment (Nix-based wrapper πάνω σε kubectl).
+
+### 8.9 Terraform (0.75 σελ)
+
+- Infrastructure as Code.
+- 57 `.tf` files.
+- 4 BOPS environments (staging/production × api/logic_app), αυτόνομο για NRG.
+- 34+ azurerm resource types σε χρήση.
+- State management.
+- **Code listing 8.9.1:** azurerm_postgresql_flexible_server από `bunker/terraform/staging/database.tf` 1-53.
+
+### 8.10 Nix και nix-darwin (1 σελ)
+
+- Reproducible package management.
+- Flakes (declarative, locked dependencies).
+- nix-darwin: Nix integration στο macOS.
+- Home Manager: user config (.zshrc, git, packages).
+- Direnv για auto-loading `flake.nix` ανά project.
+- Σύνδεση με `presentations/Nix Workshop.md` (εσωτερικό workshop).
+- **Code listing 8.10.1:** flake.nix app definition lines 100-105.
+
+### 8.11 GitHub Actions και Custom Runner (0.75 σελ)
+
+- 20 workflows (build, test, IaC scan, deployments, security).
+- Custom NixOS runner στο Azure (faster feedback vs GitHub-hosted).
+- AppRole auth με Vault για secrets.
+- Affected workspace apps (incremental builds).
+- ~32 deploys/ημέρα average.
+
+### 8.12 Maersk Design System (MDS) (0.5 σελ)
+
+- Web Components-based UI library.
+- Brand consistency across Maersk apps.
+- Storybook reference: https://mds.maersk.com/
+- Integration με Phoenix.Component.
+
+### 8.13 Observability stack (1 σελ)
+
+- **Logs**: Grafana Loki + LogQL.
+- **Metrics**: PromEx → Prometheus → Grafana. Έτοιμα dashboards για Phoenix, Oban, LiveView.
+- **Traces**: OpenTelemetry → OpenObserve (self-hosted, v0.14.4 στο flake).
+- **Alerts**: code στο `/alerts/` (13+ rules), notifications via Hedwig (Teams/email).
+- **Maersk Observability Platform (MOP)**: hosted dashboards, log ingestion.
+- **Code listing 8.13.1:** Alert rule από `alerts/metrics/alerts.yaml` 40-49 (ETW concurrent requests).
+
+### 8.14 HashiCorp Vault & agenix (0.5 σελ)
+
+- Vault: secrets management για prod/staging credentials, OIDC login.
+- AppRole auth pattern για CI/CD.
+- agenix: declarative encryption με age, για config-time secrets (πχ binary cache netrc).
+- Διαφορά: Vault για runtime, agenix για build-time.
+
+### 8.15 Oban (0.75 σελ)
+
+- Background job processor βασισμένο σε PostgreSQL.
+- 31 workers στο NRG.
+- Queues, retries, scheduled jobs.
+- Παράδειγμα χρήσεων: certificate reissue, container moves batch ingestion.
+- Sidekiq για Elixir (mental model).
+- **Code listing 8.15.1:** Oban worker από `lib/nrg/ocean/ingest/jobs/import_container_moves_batch.ex` 1-36.
+
+### 8.16 Commanded & EventStore (0.5 σελ)
+
+- Event sourcing library για Elixir.
+- EventStore (μήνας πακέτο `commanded_eventstore_adapter`) backend πάνω σε PostgreSQL.
+- Aggregates → Commands → Events → Projections.
+- Παράδειγμα: Energy Bank.
+
+### 8.17 Λοιπά υποστηρικτικά εργαλεία (0.5 σελ)
+
+- **Credo** (linter), **Dialyxir** (type checking).
+- **Telemetry** (instrumentation).
+- **Tuple** (pair programming).
+- **Livebook** (data exploration, `data-quality.livemd`).
+- **ChromicPDF** (πιθανώς για PDF generation).
+- **Workspace** (Elixir monorepo orchestration).
+
+**Πηγές:**
+- `nrg/flake.nix`
+- `nrg/mix.exs`
+- `nrg/guides/tech/about-our-dev-environment-and-tooling.md`
+- `nrg/guides/tech/code-style.md`
+- `nrg/guides/observability/`
+- `nrg/guides/security/`
+- `nrg/guides/dremio/`
+- `presentations/Nix Workshop.md`
+
+**Στοιχεία:** Όλα τα μετρικά από την κορυφή.
+
+**Όχι εδώ:** Πώς συνδέονται μεταξύ τους (Κεφ. 9), εργασιακές πρακτικές (Κεφ. 10).
+
+**Cross-refs:** Κεφ. 9 (architecture), Κεφ. 10.4 (CI/CD policy).
 
 ---
 
 ## Κεφ. 9 — Αρχιτεκτονική του συστήματος (12-14 σελίδες)
 
-**Σκοπός:** Σύνδεση των τεχνολογιών σε ολοκληρωμένη αρχιτεκτονική.
+### 9.1 Επισκόπηση συστήματος (1 σελ)
 
-### 9.1 Επισκόπηση συστήματος
-- Διάγραμμα `system_overview_diagram.png` με αναλυτικές περιγραφές
-- Logical και physical view
+- Διάγραμμα `system_overview_diagram.png` με αναλυτικές περιγραφές.
+- Logical view (components και αλληλεπιδράσεις) vs physical view (deployment).
+- High-level data flow.
 
-### 9.2 Clean Architecture στην πράξη
-- Στρώματα: Entities → Use Cases → Adapters → Frameworks
-- Polymorphic Gateway interfaces
-- Humble Object pattern σε boundaries
-- Παράδειγμα: Certificates feature ως case study
+### 9.2 Clean Architecture στην πράξη (1.5 σελ)
 
-### 9.3 Monorepo οργάνωση
-- Workspace + Mix umbrella
-- Components: emissions_workbench, bunker, ocean, eco_products, net_zero
-- Affected app detection για incremental builds
+> Επέκταση από guide `clean-architecture.md`.
 
-### 9.4 Components και τα όριά τους
-- DAG εξαρτήσεων
-- Internal vs public APIs
-- Όρια: τι κάνει το καθένα, τι δεν κάνει
+**Δομή:**
+- 4 levels: Entities, Use Cases, Adapters/Gateways, Frameworks/Drivers.
+- Polymorphic Gateway interfaces (αντί για direct Repo calls).
+- Humble Object pattern σε boundaries (LiveView, Controllers).
+- Παράδειγμα: Certificates feature ως case study (use case → gateway → adapter → repo).
+- Πώς ενσωματώνεται με Phoenix (συνηθισμένα patterns vs Clean).
 
-### 9.5 Data ingestion pipeline
-- **Polling sources**: Dremio (ODBC streaming), Shiptech (ODBC)
-- **Streaming**: Kafka consumers (OceanEmission.Ingestion.KafkaConsumer)
-- **Job processing**: Oban workers
-- Staging tables → enrichment → main tables
-- Idempotency και exactly-once semantics
+### 9.3 Monorepo οργάνωση (1 σελ)
 
-### 9.6 Web layer
-- LiveView modules ανά feature area
-- MDS components
-- Στατικά assets
+- Workspace + Mix umbrella combination.
+- 5 components: emissions_workbench, bunker, ocean, eco_products (mostly placeholder), net_zero (placeholder).
+- DAG of dependencies.
+- Affected app detection για incremental CI.
+- Pros (atomic refactoring, shared tooling) vs cons (build complexity).
 
-### 9.7 Authentication & Authorization
-- SAML SSO με Azure AD
-- AD groups (πχ "SBTi Developers")
-- Role-based access control
-- Privileged Identity Management (PIM) για production
+### 9.4 Components και τα όριά τους (1 σελ)
 
-### 9.8 Persistence layer
-- PostgreSQL Flexible Server (Azure)
-- Multiple databases ανά context
-- Backup/restore strategy
-- Data Protection backup vault
+- Πίνακας: component → ρόλος → public API.
+- Internal vs public APIs (Elixir δεν έχει access modifiers — convention).
+- Όρια domain (DDD bounded contexts).
 
-### 9.9 Event sourcing για Energy Bank
-- Commands → Aggregates → Events → Projections
-- Event versioning
-- Re-projection για new read models
+### 9.5 Data ingestion pipeline (2 σελ)
 
-### 9.10 Observability αρχιτεκτονική
-- Telemetry events σε όλη τη ροή
-- Trace propagation
-- Alerts as code (`/alerts/`)
-  - 13+ rules: CrashLoop, ETW concurrency, DB storage, data freshness, Oban failures
-  - Loki-based για log alerts
-- Hedwig για notifications
+**Δομή:**
 
-### 9.11 Deployment topology
-- 3 replicas Phoenix
-- Akamai → Stargate → Kubernetes
-- Rolling deployments
-- Migrations strategy
+**9.5.1 Polling sources (0.75 σελ)**
+- Dremio queries (ODBC streaming).
+- Shiptech queries.
+- Schedule via Oban (πχ καθημερινά).
+- Idempotency (last_updated bookmark).
 
-### 9.12 Disaster recovery & reproducibility
-- Terraform για full system rebuild
-- Nix για reproducible builds
-- Database backups + restore tests (weekly automated)
-- Disaster scenarios και RTO/RPO
+**9.5.2 Streaming (0.75 σελ)**
+- Kafka consumers (`OceanEmission.Ingestion.KafkaConsumer`).
+- Backpressure με GenStage / Broadway (αν χρησιμοποιείται).
+- Topic partitioning για ordering.
+- Consumer offset management.
 
-**Πηγές:** Όλα τα code & guides
+**9.5.3 Job processing (0.5 σελ)**
+- Staging tables (RawOceanContainerMove) → enrichment → main tables.
+- Oban worker pipeline.
+- Error handling: dead-letter queue, retries, alerts.
+
+**Code listing 9.5.1:** Reuse Oban worker από Κεφ. 8.15 ή GenServer από `nrg_worker/director.ex`.
+
+### 9.6 Web layer (0.75 σελ)
+
+- LiveView modules ανά feature area.
+- 4 namespaces: Eco Delivery (13), Energy Bank (7), Emissions Data Inventory (14), Admin (7), Ocean Emission Web (6).
+- LiveComponents reuse.
+- MDS integration.
+- Static assets (esbuild, esbuild Phoenix).
+
+### 9.7 Authentication & Authorization (0.75 σελ)
+
+- SAML SSO με Azure AD.
+- AD groups (πχ "SBTi Developers", "ECO Sales") για RBAC.
+- Roles σε LiveView mounts (`with_authenticated_request(ctx, roles: ~ROLES(admin))`).
+- Privileged Identity Management (PIM) για production access.
+
+### 9.8 Persistence layer (0.75 σελ)
+
+- PostgreSQL Flexible Server (Azure).
+- Multiple databases ανά context (separation of concerns, blast radius).
+- Backup strategy: Azure Data Protection (daily/weekly), restore tests (κρίσιμο για audit).
+- DB migrations cadence: continuous (κάθε deploy).
+
+### 9.9 Event sourcing για Energy Bank (1.5 σελ)
+
+> Πιο τεχνικά λεπτομερής από Κεφ. 6.3.
+
+**Δομή:**
+- Aggregates → state machines (πχ `ClearingAccount` aggregate).
+- Commands → validation → events.
+- Events → immutable log → projections.
+- Projector pipeline: subscribe to events, update read models.
+- Re-projection: rebuild from events (μηχανισμός για schema changes).
+- Eventual consistency: command return ≠ projection updated (αν χρειαστεί `wait_until`).
+
+**Code listing 9.9.1:** Reuse Command από Κεφ. 6.3.1.
+
+### 9.10 Observability αρχιτεκτονική (1.5 σελ)
+
+> Επέκταση κεφ. 8.13 με αρχιτεκτονικό view.
+
+**Δομή:**
+- Telemetry events σε όλη τη ροή (Phoenix, Ecto, Oban, custom).
+- Trace propagation: HTTP → BEAM → DB → Kafka.
+- Alert rules:
+  - Pods CrashLoop (30s)
+  - Cluster node unreachability
+  - ETW concurrent requests (>5)
+  - Non-200 spike (>200/10min)
+  - DB storage >80%
+  - Data freshness (Ingestion 72h, Enrichment 6h, Energy Bank deposits)
+  - Vessel Voyage data stale (>49h)
+  - Oban job failures
+  - Unallocated emissions >2%
+  - Energy Bank Projector failures
+- Notifications: Hedwig → Teams/email.
+
+**Code listing 9.10.1:** Reuse alert rule από Κεφ. 8.13.1.
+
+### 9.11 Deployment topology (0.75 σελ)
+
+- 3 replicas Phoenix web pods.
+- 1 worker pod (background processing).
+- Akamai → Stargate → AKS ingress → pods.
+- Rolling deployments via Kubernetes.
+- Migrations strategy: pre-deploy migrations, backward-compatible only (zero-downtime).
+
+### 9.12 Disaster recovery & reproducibility (0.5 σελ)
+
+- Terraform για full system rebuild.
+- Nix για reproducible builds.
+- Database backups + automated weekly restore tests (workflow `db-restore-from-backup.yml`).
+- Disaster scenarios: AKS cluster failure → switch to backup region (αν εφαρμόζεται), DB failure → restore from PITR.
+- RTO/RPO indicative.
+
+**Πηγές:**
+- `nrg/guides/tech/clean-architecture.md`
+- `nrg/guides/observability/`
+- `nrg/guides/security/`
+- `nrg/guides/tech/postgres-dbs-in-azure.md`
+- `nrg/guides/tech/migrating-kubernetes-clusters.md`
+- `nrg/alerts/metrics/alerts.yaml`
+- `nrg/components/*/infrastructure/`
+- Όλος ο κώδικας
+
+**Στοιχεία:** 720 migrations, 151 tables, 13+ alert rules, 3 web replicas, 2 environments.
+
+**Όχι εδώ:** Tech choices σε λεπτομέρεια (Κεφ. 8), agile practices (Κεφ. 10).
+
+**Cross-refs:** Κεφ. 8 (κάθε τεχνολογία), Κεφ. 10 (deployment cadence).
 
 ---
 
 ## Κεφ. 10 — Εργασιακές μέθοδοι (9-11 σελίδες)
 
-**Σκοπός:** Εκτεταμένη επανασύνταξη του υπάρχοντος "Εργασιακές μέθοδοι".
+> Εκτεταμένη επανασύνταξη του υπάρχοντος "Εργασιακές μέθοδοι".
 
-### 10.1 Agile και Extreme Programming (XP)
-- Σύντομο ιστορικό XP (Kent Beck, 1996)
-- Αξίες: Communication, Simplicity, Feedback, Courage, Respect
-- Σύγκριση με Scrum (γιατί XP)
+### 10.1 Agile και Extreme Programming (1.5 σελ)
 
-### 10.2 Pair Programming
-- Επέκταση υπάρχοντος
-- Ρόλοι (driver/navigator)
-- Tools (Tuple)
-- Εμπειρικά αποτελέσματα από την ομάδα
-- Mob programming και πότε χρησιμοποιείται
+**Δομή:**
+- Σύντομο ιστορικό XP (Kent Beck, "Extreme Programming Explained" 1999).
+- Αξίες XP: Communication, Simplicity, Feedback, Courage, Respect.
+- 12 πρακτικές XP (πλήρης λίστα).
+- Σύγκριση με Scrum: γιατί η ομάδα επέλεξε XP (έμφαση στις τεχνικές πρακτικές, χαμηλότερο overhead ceremonies).
+- Πιθανή αναφορά σε pivot από Scrum (αν συνέβη).
 
-### 10.3 TDD (Test Driven Development)
-- Επέκταση υπάρχοντος
-- Red-Green-Refactor cycle
-- Property-based testing (`ExUnitProperties`)
-- Acceptance tests
-- Test coverage culture
+### 10.2 Pair Programming (1 σελ)
 
-### 10.4 Continuous Integration / Continuous Delivery
-- Επέκταση υπάρχοντος
-- Trunk-based development (single branch)
-- 32 deploys/ημέρα μέσος όρος
-- Custom GitHub runner
-- Feature flags / dark launching (αν εφαρμόζεται)
-- Rollback strategy
+> Επέκταση υπάρχοντος.
 
-### 10.5 Vertical Ownership
-- Επέκταση υπάρχοντος
-- Δραστηριότητες ομάδας: hardware, network, DBs, code, ops, observability, UI/UX
-- Σύγκριση με horizontal teams
-- Πλεονεκτήματα/μειονεκτήματα
+**Δομή:**
+- Ρόλοι (driver/navigator) — διατήρηση υπάρχοντος.
+- Tools: Tuple (αναφορά onboarding), VS Code Live Share.
+- Mob/Ensemble programming: πότε χρησιμοποιείται (συνήθως σε σύνθετο σχεδιασμό).
+- Εμπειρικά αποτελέσματα (αναφορά στο υπάρχον).
+- Σχέση με knowledge sharing (επέκταση).
+- Παρατηρήσεις από distributed setting (Ευρώπη/Ινδία 28 μέλη).
 
-### 10.6 Feedback Loops
-- Επέκταση υπάρχοντος (εικόνα `Extreme_Programming_Loops.png`)
-- Από δευτερόλεπτα (pairing) → λεπτά (tests) → ημέρα (standup) → εβδομάδες (planning) → μήνες (στρατηγική)
-- Ασύγχρονη feedback collection
+### 10.3 TDD - Test Driven Development (1 σελ)
 
-### 10.7 Onboarding & Knowledge Sharing
-- Buddy system
-- Week 1 / Week 2 milestones
-- KT sessions
-- Tools για κατανεμημένη ομάδα (23+ developers, Ευρώπη/Ινδία)
+> Επέκταση υπάρχοντος.
 
-### 10.8 Code Review μέσω pairing
-- Γιατί δεν χρησιμοποιούνται PRs (συνήθως)
-- Εξαιρέσεις: external contributions, security review
+**Δομή:**
+- Red-Green-Refactor cycle.
+- Test pyramid: unit, integration, acceptance, E2E.
+- Property-based testing με `ExUnitProperties` (αναφορά test "for generated container moves are valid").
+- Acceptance tests (αναφορά υπάρχοντος).
+- Test coverage culture (786 test files, ~13% του κώδικα).
+- Παράδειγμα: 5 tests στο `ocean_simulator_live_test.exs` δείχνουν incremental TDD.
 
-**Πηγές:** Υπάρχον κείμενο, `nrg/guides/people-operations/`, `tech/code-style.md`
+**Code listing 10.3.1:** LiveView TDD test από `test/nrg_web/live/ocean_simulator_live_test.exs` 1-50.
+
+### 10.4 Continuous Integration / Continuous Delivery (1.5 σελ)
+
+> Επέκταση υπάρχοντος.
+
+**Δομή:**
+- Trunk-based development (single `main` branch).
+- ~32 deploys/ημέρα στο production environment.
+- Custom NixOS GitHub runner (κεφ. 8.11 cross-ref).
+- Workflow categories:
+  - Build/test (emissions-workbench.yml, bops.yml)
+  - Security (iac-scan.yml με Checkov, Prisma Cloud SAST)
+  - Cache (cache-send.yml, cache-build-image.yml)
+  - DB (db-restore-from-backup.yml — weekly Friday)
+  - Infrastructure (deploy-openobserve.yaml, repave-github-runner.yml)
+  - Notifications (teams-notify.yml)
+- Affected workspace apps για incremental builds.
+- Rollback: revert PR → νέα έκδοση μέσω deploy.
+- Feature flags (αν χρησιμοποιούνται).
+
+### 10.5 Vertical Ownership (1 σελ)
+
+> Επέκταση υπάρχοντος.
+
+**Δομή:**
+- Ευθύνες ομάδας (αναφορά υπάρχουσας λίστας).
+- Σύγκριση με horizontal teams: η ομάδα δεν εξαρτάται από SRE/DBA/InfoSec teams.
+- Πλεονεκτήματα: ταχύτητα, αυτονομία.
+- Μειονεκτήματα: cognitive load, βάθος εξειδίκευσης.
+- Πώς αντιμετωπίζεται το cognitive load: knowledge sharing μέσω pairing.
+
+### 10.6 Feedback Loops (1 σελ)
+
+> Επέκταση υπάρχοντος.
+
+**Δομή:**
+- Εικόνα `Extreme_Programming_Loops.png`.
+- Multi-scale feedback (δευτερόλεπτα → μήνες).
+- Συσκευές κάθε loop:
+  - Pair (sec-min)
+  - Tests + compiler (min)
+  - Daily standup (day)
+  - Acceptance tests + production telemetry (days-week)
+  - Iteration planning (week)
+  - Strategic alignment (month)
+- Real-time feedback από production (1300+ users) μέσω observability + direct user feedback.
+
+### 10.7 Onboarding & Knowledge Sharing (1 σελ)
+
+**Δομή:**
+- Buddy system (αναφορά `people-operations/`).
+- Week 1: docs change + repo familiarity.
+- Week 2: code change + production release.
+- KT sessions: shipping basics, technical architecture, production deployment.
+- Distribution lists για επικοινωνία (Outlook/Teams).
+- Tools: Tuple, Confluence, Jira, Miro.
+- Distributed team logistics (28 μέλη, Ευρώπη/Ινδία timezone overlap).
+- Learning resources: O'Reilly portal, Elixir Learning Path.
+
+### 10.8 Code Review μέσω pairing (0.5 σελ)
+
+**Δομή:**
+- Συνήθως δεν χρησιμοποιούνται PRs εσωτερικά (κώδικας merged απευθείας στο main από pairs).
+- Αιτιολόγηση: pairing ≈ continuous code review.
+- Εξαιρέσεις: external contributions, security-sensitive changes.
+- Trade-offs: γρήγορη παράδοση vs traceability via PR comments (mitigated με commit messages).
+
+### 10.9 Hiring & Team Composition (0.5 σελ)
+
+**Δομή:**
+- Hiring criteria (από people-operations): test-writing culture, pairing willingness.
+- Σχέση με XP "Whole Team" practice.
+- Distribution Europe/India.
+
+**Πηγές:**
+- Υπάρχον κείμενο (όλο)
+- `nrg/guides/people-operations/`
+- `nrg/guides/tech/code-style.md`
+- `nrg/guides/tech/working-in-the-project.md`
+- Βιβλιογραφία: Kent Beck "Extreme Programming Explained", Kent Beck "Test-Driven Development By Example"
+
+**Στοιχεία:** 28 μέλη (17 EU, 11 IN), 32 deploys/ημέρα, 786 test files, 20 workflows, 4 environments BOPS.
+
+**Code listings:** TDD test (10.3.1).
+
+**Όχι εδώ:** Implementation details (Κεφ. 8-9).
+
+**Cross-refs:** Κεφ. 8.11 (CI/CD tech), Κεφ. 9 (architecture).
 
 ---
 
 ## Κεφ. 11 — Συμπεράσματα (3 σελίδες)
 
-### 11.1 Σύνοψη της λύσης
-- Τι προβλήματα λύνει
-- Πώς
+### 11.1 Σύνοψη της λύσης (1 σελ)
 
-### 11.2 Επιτυχίες και μετρήσεις αντίκτυπου
-- 1300+ users, 98K FFE, $31M USD
-- Audit compliance
-- Operational metrics
+**Δομή:**
+- Επίτευγμα: από manual διαδικασία μηνών σε self-service real-time πλατφόρμα.
+- Αρχιτεκτονικά highlights: BEAM, event sourcing, Clean Architecture, vertical ownership.
+- Διαχείριση πολυπλοκότητας: monorepo + Workspace, Nix για reproducibility.
 
-### 11.3 Μαθήματα από την υλοποίηση
-- Τεχνικές επιλογές που λειτούργησαν
-- Trade-offs
-- Τι θα γινόταν διαφορετικά
+### 11.2 Επιτυχίες και μετρήσεις αντίκτυπου (1 σελ)
+
+**Δομή — Πίνακας μετρικών:**
+- 1300+ users (από <100 κατά τη χειρωνακτική εποχή).
+- 98K FFE / $31M USD ECO Delivery sales 2024.
+- Audit compliance (GIA 2023).
+- Auto certificates (πιθανώς πολλές χιλιάδες ετησίως).
+- 32 deploys/ημέρα (high velocity).
+- 720+ migrations χωρίς downtime.
+- 786 tests / 6033 source files.
+
+### 11.3 Μαθήματα από την υλοποίηση (1 σελ)
+
+**Δομή:**
+- Επιλογές που λειτούργησαν:
+  - BEAM για ανοχή σφαλμάτων και παραλληλία.
+  - Event sourcing για audit trails.
+  - Pair programming για knowledge sharing.
+  - Vertical ownership για velocity.
+  - Nix για reproducibility.
+- Trade-offs:
+  - Cognitive load από vertical ownership (mitigated με pairing).
+  - Monorepo build complexity (mitigated με Workspace).
+  - Cloud costs vs self-hosting.
+  - Event sourcing complexity για onboarding.
+- Τι θα γινόταν διαφορετικά:
+  - Πιθανώς νωρίτερα Scope 2 inclusion.
+  - Καλύτερη ενσωμάτωση από την αρχή με Bunker (BOPS).
+
+**Όχι εδώ:** Νέα αρχιτεκτονικά στοιχεία (συνοψίζουμε ήδη ειπωμένα).
 
 ---
 
 ## Κεφ. 12 — Μελλοντική εργασία (2 σελίδες)
 
-### 12.1 Scope 2 measurements
-- Programmed για 2025
-- Πεδίο εφαρμογής
+### 12.1 Scope 2 measurements (0.5 σελ)
 
-### 12.2 Επεκτάσεις στόλου
-- Land-side reporting (trucks, terminals)
-- Air freight emissions
+- Έρχεται 2025 (αναφορά υπάρχοντος).
+- Πεδίο: γραφεία, terminals, electricity για cold ironing.
+- Τεχνική πρόκληση: integration με facility management systems.
 
-### 12.3 SBTi reporting expansion
-- Net Zero progress tracking
+### 12.2 Επεκτάσεις στόλου / activity coverage (0.5 σελ)
 
-### 12.4 Προηγμένα analytics
-- Πρόβλεψη εκπομπών
-- Decarbonization scenarios
+- Land-side reporting (trucks, rail, terminal equipment).
+- Air freight emissions (Maersk Air Cargo).
+- Last-mile delivery.
+
+### 12.3 SBTi reporting expansion (0.25 σελ)
+
+- Net Zero progress tracking.
+- Annual SBTi disclosures.
+
+### 12.4 Προηγμένα analytics (0.5 σελ)
+
+- Predictive emissions: ML models για forecast.
+- Decarbonization scenarios: what-if analysis για fleet transitions.
+- Optimization beyond bunker: route + bunker + fuel mix joint optimization.
+
+### 12.5 Bunker + Energy Bank σύνδεση (0.25 σελ)
+
+- Αυτόματη επιλογή πορτών με green fuel availability.
+- Pre-allocation στο Energy Bank από bunker plans.
+
+**Cross-refs:** Κεφ. 7.7, Κεφ. 9.
 
 ---
 
 ## Κεφ. 13 — Βιβλιογραφία (2-3 σελίδες)
 
-**Σημείωση:** Συμπληρώνεται σε επόμενο βήμα. Αρχικοί υποψήφιοι:
-- GHG Protocol (corporate standard, scope 3 standard)
-- Kent Beck — Extreme Programming Explained
-- Joe Armstrong — Programming Erlang
-- Saša Jurić — Elixir in Action
-- Robert Martin — Clean Architecture
-- Greg Young — CQRS / Event Sourcing
-- ISCC documentation
-- SBTi maritime sector guidance
-- IMO GHG strategy
-- EU ETS Maritime regulations
+> Συμπληρώνεται σε επόμενο βήμα. Αρχικοί υποψήφιοι:
+
+- **Πρότυπα/Πρωτόκολλα**:
+  - GHG Protocol Corporate Standard (2004 revised)
+  - GHG Protocol Scope 3 Standard (2011)
+  - ISO 14064-1, 14064-2
+  - GLEC Framework v3 (2023)
+  - ISCC EU System Documents
+  - SBTi Maritime Guidance
+  - IMO 2023 GHG Strategy (MEPC.377(80))
+  - CSRD Directive (EU) 2022/2464
+  - EU ETS Maritime Regulation (EU) 2023/957
+  - Fuels EU Maritime Regulation (EU) 2023/1805
+
+- **Βιβλία/Tech**:
+  - Kent Beck — "Extreme Programming Explained: Embrace Change" (2nd ed. 2004)
+  - Kent Beck — "Test-Driven Development: By Example" (2002)
+  - Robert C. Martin — "Clean Architecture" (2017)
+  - Joe Armstrong — "Programming Erlang" (2nd ed. 2013)
+  - Saša Jurić — "Elixir in Action" (3rd ed. 2024)
+  - Greg Young — "CQRS Documents" (2010, web-published)
+  - Vaughn Vernon — "Implementing Domain-Driven Design" (2013)
+
+- **Web/Standards**:
+  - GHG Protocol website
+  - GLEC website
+  - SBTi portal
+  - IMO MEPC pages
 
 ---
 
-## Οδηγίες προς sub-agents συγγραφής
+# ΟΔΗΓΙΕΣ ΠΡΟΣ SUB-AGENTS ΣΥΓΓΡΑΦΗΣ
 
-Κάθε sub-agent θα λάβει:
+## Πρότυπο prompt για κάθε sub-agent
 
-1. **Brief του κεφαλαίου** (το αντίστοιχο τμήμα από αυτό το πλάνο)
-2. **Πηγές προς ανάγνωση** (συγκεκριμένα paths)
-3. **Στόχος σελίδων**
-4. **Style guide**:
-   - Διπλωματική Master, Ελληνικά
-   - Mainfont Arial 12pt
-   - Τεκμηρίωση κάθε σχεδιαστικής επιλογής
-   - Σαφή θεωρητικά εισαγωγικά πριν τα τεχνικά
-   - Ορολογία αγγλική σε παρένθεση όπου εμφανίζεται για πρώτη φορά
-5. **Υπάρχον κείμενο**: τμήματα του `gkinis_konstantinos.md` που θα ενσωματωθούν/αντικατασταθούν
-6. **Commit policy**:
-   - Έπειτα από κάθε υποκεφάλαιο, commit στο git
-   - Conventional message: `Κεφ. X.Y: <τίτλος>` ή αγγλικά `Chapter X.Y: ...`
-7. **Code listings**: αυτούσια από το repo (όχι abstractions), με path comment, ≤ 30 γραμμές ανά listing
-8. **Διαγράμματα**: προτείνονται mermaid ή textual descriptions (αργότερα γίνονται εικόνες)
+```
+Είσαι sub-agent για τη συγγραφή ΕΝΟΣ συγκεκριμένου κεφαλαίου διπλωματικής Master στα Ελληνικά.
+
+ΠΛΑΙΣΙΟ:
+- Repo: /Users/kg/Desktop/report
+- Κύριο αρχείο: gkinis_konstantinos.md (markdown με YAML frontmatter, mainfont Arial 12pt, ελληνικά)
+- Κώδικας: /Users/kg/Desktop/report/nrg (symlink στο /Users/kg/workspace/nrg)
+- Πλάνο: /Users/kg/Desktop/report/plan.md (διάβασε ΟΛΟΚΛΗΡΟ το πλάνο πρώτα για κατανόηση συνολικής δομής, μετά εστίασε στο δικό σου κεφάλαιο)
+- Παρουσίαση: /Users/kg/Desktop/report/presentations/ETPlatformTechMeet2025.pdf
+
+ΕΡΓΑΣΙΑ:
+- Γράψε το κεφάλαιο: <Κεφ. X — Τίτλος>
+- Στόχος σελίδων: <από πλάνο>
+- Δομή: <από πλάνο>
+- Ενσωμάτωσέ το στο gkinis_konstantinos.md ως νέο κεφάλαιο ή αντικαθιστώντας υπάρχον (όπου επικαλύπτεται).
+
+ΟΔΗΓΙΕΣ:
+1. Διάβασε το plan.md (ολόκληρο), εστιάζοντας στο δικό σου κεφάλαιο.
+2. Διάβασε τις πηγές που αναφέρονται.
+3. Διάβασε το υπάρχον τμήμα στο gkinis_konstantinos.md (αν υπάρχει).
+4. Γράψε το κεφάλαιο ένα υποκεφάλαιο τη φορά:
+   - Επεξεργάσου το gkinis_konstantinos.md (Edit tool).
+   - Commit μετά από κάθε υποκεφάλαιο με μήνυμα:
+     "Κεφ. X.Y: <Τίτλος υποκεφαλαίου>"
+   - Συνεχισε με το επόμενο.
+5. Ύφος: Ακολούθησε το cross-cutting style guide του πλάνου (ελληνικά, αγγλικός όρος σε παρένθεση πρώτη φορά, αιτιολόγηση επιλογών, code listings στους ακριβείς αριθμούς γραμμών που αναφέρονται).
+6. Έλεγξε ότι το κείμενο ρέει και ταιριάζει με το ύφος του ήδη γραμμένου τμήματος.
+7. Αν χρειάζονται εικόνες/διαγράμματα που δεν υπάρχουν, χρήση mermaid blocks ή textual descriptions με placeholder.
+8. Στο τέλος: report ολιγόλογο για το τι ολοκληρώθηκε.
+
+ΑΠΑΓΟΡΕΥΣΕΙΣ:
+- ΜΗΝ αλλάξεις άλλα κεφάλαια (μόνο το δικό σου).
+- ΜΗΝ προσθέσεις σχόλια σε κώδικα του repo (στο /nrg/).
+- ΜΗΝ commit-άρεις με force ή με --no-verify.
+- ΜΗΝ διαγράψεις το plan.md.
+- ΜΗΝ ξεπεράσεις σημαντικά τον στόχο σελίδων (±20%).
+```
 
 ## Κατανομή κεφαλαίων σε 3-parallel sub-agent batches
 
-**Batch 1 (παράλληλα):**
-- Κεφ. 2 — Πλαίσιο και πρόβλημα
-- Κεφ. 3 — Θεωρητικό υπόβαθρο
-- Κεφ. 4 — Επισκόπηση πάγκου εργασίας
+**Batch 1 (παράλληλα, ξεκινούν πρώτα):**
+- B1.A — Κεφ. 2: Πλαίσιο και πρόβλημα
+- B1.B — Κεφ. 3: Θεωρητικό υπόβαθρο
+- B1.C — Κεφ. 4: Επισκόπηση πάγκου εργασίας
 
-**Batch 2 (παράλληλα):**
-- Κεφ. 5 — Ocean Emissions
-- Κεφ. 6 — ECO Product Delivery
-- Κεφ. 7 — Bunker Optimization
+**Batch 2 (παράλληλα, μετά Batch 1):**
+- B2.A — Κεφ. 5: Ocean Emissions και STAR Connect
+- B2.B — Κεφ. 6: ECO Product Delivery
+- B2.C — Κεφ. 7: Bunker Optimization
 
-**Batch 3 (παράλληλα):**
-- Κεφ. 8 — Τεχνολογίες
-- Κεφ. 9 — Αρχιτεκτονική
-- Κεφ. 10 — Εργασιακές μέθοδοι
+**Batch 3 (παράλληλα, μετά Batch 2):**
+- B3.A — Κεφ. 8: Τεχνολογίες
+- B3.B — Κεφ. 9: Αρχιτεκτονική
+- B3.C — Κεφ. 10: Εργασιακές μέθοδοι
 
-**Batch 4 (παράλληλα):**
-- Κεφ. 1 — Εισαγωγή (γράφεται μετά για συνεκτικότητα)
-- Κεφ. 11 — Συμπεράσματα
-- Κεφ. 12 — Μελλοντική εργασία
+**Batch 4 (παράλληλα, τελευταίο):**
+- B4.A — Κεφ. 1: Εισαγωγή (γράφεται τελευταίο για συνέπεια)
+- B4.B — Κεφ. 11: Συμπεράσματα
+- B4.C — Κεφ. 12: Μελλοντική εργασία
 
-**Επόμενο βήμα:** Βιβλιογραφία (Κεφ. 13).
+**Επόμενο step (μετά τη διπλωματική):** Κεφ. 13: Βιβλιογραφία.
 
-## Ροή εργασίας με σταδιακή ολοκλήρωση
+## Σχήμα προοδευτικής εκτέλεσης
 
-- Κάθε batch: 3 sub-agents τρέχουν παράλληλα
-- Όταν ολοκληρωθεί ένας από το batch, ξεκινά ο επόμενος (από το επόμενο batch ή το ίδιο)
-- Συνολικά 12 sub-agents για συγγραφή κεφαλαίων + 1 για βιβλιογραφία
-- Κάθε agent commit-άρει τη δουλειά του ανά υποκεφάλαιο
-- Στο τέλος γίνεται final pass για συνέπεια ύφους και cross-references
+- Παράλληλα 3 sub-agents τη φορά.
+- Όταν ολοκληρωθεί ένας του τρέχοντος batch, ξεκινά ο επόμενος.
+- Από το επόμενο batch, ξεκινούν agents όταν αδειάζει slot (όχι μετά την πλήρη ολοκλήρωση του batch).
+- Συνολικά: 12 chapter-writing agents.
+- Κάθε agent commit-άρει ανά υποκεφάλαιο (σχήμα ~6-12 commits ανά κεφάλαιο).
 
-## Risk register
+## Τελικό editorial pass
 
-| Κίνδυνος | Μετριασμός |
-|---------|-----------|
-| Token overrun | Αποθήκευση progress σε `plan.md` και commits κάθε φάση |
-| Επικαλύψεις μεταξύ κεφαλαίων | Σαφή όρια στο plan, cross-references |
-| Τεχνικές ανακρίβειες | Αναφορά σε συγκεκριμένα paths· verification στο τέλος |
-| Στυλιστική ασυνέπεια | Final editorial pass μετά τα batches |
-| Έλλειψη βιβλιογραφικών αναφορών | Δεδομένη — γίνεται σε επόμενο βήμα |
+Μετά την ολοκλήρωση όλων των batches:
+1. Διάβασμα ολόκληρου του gkinis_konstantinos.md
+2. Έλεγχος για:
+   - Συνέπεια ορολογίας
+   - Cross-references
+   - Επανάληψη υλικού
+   - Ροή ύφους
+   - Τυπογραφία (μη συνεπείς fonts, λείπουν blank lines)
+3. Διορθώσεις
+4. Commit "Editorial pass: συνέπεια και ροή"
+
+## Κατάσταση συντήρησης πλάνου
+
+- Το plan.md ενημερώνεται όταν ένας sub-agent εντοπίζει αναγκαία αλλαγή.
+- Πιθανές αλλαγές: page count adjustment, νέο υποκεφάλαιο, αναδιάταξη.
+- Commits στο plan.md χωριστά από commits στο gkinis_konstantinos.md.
+
+## Risk register (επικαιροποιημένο)
+
+| Κίνδυνος | Πιθανότητα | Επίπτωση | Μετριασμός |
+|---------|-----------|----------|-----------|
+| Token overrun | Μεσαία | Υψηλή | Commits ανά υποκεφάλαιο, 3 παράλληλοι agents (όχι 12) |
+| Επικαλύψεις κεφαλαίων | Υψηλή | Μεσαία | "Όχι εδώ" sections, cross-refs σαφή |
+| Ασυνέπεια ύφους | Μεσαία | Μεσαία | Cross-cutting style guide, final editorial pass |
+| Τεχνικές ανακρίβειες | Μεσαία | Υψηλή | Verification στους sources που δίνονται· final review |
+| Έλλειψη βιβλιογραφικών | Δεδομένη | Χαμηλή | Επόμενο step μετά τη διπλωματική |
+| Sub-agent αλλάζει άλλο κεφάλαιο | Χαμηλή | Υψηλή | Σαφής απαγόρευση στο prompt |
+| Git conflicts μεταξύ parallel agents | Μεσαία | Μεσαία | Commits με δικά τους chapter prefixes· διαφορετικά section του αρχείου |
