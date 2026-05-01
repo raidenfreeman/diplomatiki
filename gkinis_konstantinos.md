@@ -2537,8 +2537,100 @@ defmodule NrgWeb.OceanSimulatorLiveTest do
 
 # Κεφάλαιο 13 — Βιβλιογραφία
 
-<!-- Συμπληρώνεται σε επόμενο βήμα. Αρχικοί υποψήφιοι αναφέρονται στο plan.md κεφ. 13. -->
+## 13.1 Διεθνή πρότυπα και πρωτόκολλα
 
-Σχήμα 1. — *Carbon Accounting Scopes*. CC BY 4.0, https://commons.wikimedia.org/w/index.php?curid=140748311
+[CEN EN 16258, 2012] — European Committee for Standardization. *Methodology for calculation and declaration of energy consumption and GHG emissions of transport services (freight and passengers)*. EN 16258:2012. Brussels: CEN.
 
-Σχήμα 2. — *Extreme Programming Feedback Loops*. By DonWells — Own work based on XP-feedback.gif, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=27448045
+[GHG Protocol Corporate Standard, 2004] — World Resources Institute & World Business Council for Sustainable Development. *The Greenhouse Gas Protocol: A Corporate Accounting and Reporting Standard* (Revised Edition). Washington, DC / Geneva. Διαθέσιμο στο https://ghgprotocol.org/corporate-standard.
+
+[GHG Protocol Scope 2 Guidance, 2015] — World Resources Institute. *GHG Protocol Scope 2 Guidance: An amendment to the GHG Protocol Corporate Standard*. Washington, DC. Διαθέσιμο στο https://ghgprotocol.org/scope-2-guidance.
+
+[GHG Protocol Scope 3 Standard, 2011] — World Resources Institute & World Business Council for Sustainable Development. *Corporate Value Chain (Scope 3) Accounting and Reporting Standard*. Washington, DC / Geneva. Διαθέσιμο στο https://ghgprotocol.org/standards/scope-3-standard.
+
+[GLEC Framework v3.0, 2023] — Smart Freight Centre. *Global Logistics Emissions Council Framework for Logistics Emissions Accounting and Reporting* (Version 3.0). Amsterdam: Smart Freight Centre. Διαθέσιμο στο https://www.smartfreightcentre.org/en/our-programs/global-logistics-emissions-council/.
+
+[IPCC AR5, 2013] — Intergovernmental Panel on Climate Change. *Climate Change 2013: The Physical Science Basis. Contribution of Working Group I to the Fifth Assessment Report*. Cambridge University Press.
+
+[ISCC System Document ISCC-203, 2023] — ISCC System GmbH. *Requirements for Traceability* (System Document 203, Version 4.0). Cologne: ISCC. Διαθέσιμο στο https://www.iscc-system.org/.
+
+[ISO 14064-1, 2018] — International Organization for Standardization. *Greenhouse gases — Part 1: Specification with guidance at the organization level for quantification and reporting of greenhouse gas emissions and removals*. ISO 14064-1:2018. Geneva.
+
+[SBTi Corporate Manual, 2023] — Science Based Targets initiative. *SBTi Corporate Net-Zero Standard Criteria* (Version 1.2) και *Maritime Transport Sector Decarbonization Approach*. Διαθέσιμα στο https://sciencebasedtargets.org/.
+
+[UNFCCC, 2012] — United Nations Framework Convention on Climate Change. *Doha Amendment to the Kyoto Protocol*. Διαθέσιμο στο https://unfccc.int/process/the-kyoto-protocol/the-doha-amendment.
+
+## 13.2 Διεθνής Ναυτιλιακός Οργανισμός (IMO)
+
+[IMO 4th GHG Study, 2020] — International Maritime Organization. *Fourth IMO Greenhouse Gas Study 2020*. London: IMO. Διαθέσιμο στο https://www.imo.org/en/OurWork/Environment/Pages/Fourth-IMO-Greenhouse-Gas-Study-2020.aspx.
+
+[MARPOL Annex VI, 2008] — International Maritime Organization. *MARPOL Annex VI: Regulations for the Prevention of Air Pollution from Ships*. London: IMO.
+
+[MEPC.377(80), 2023] — International Maritime Organization. *2023 IMO Strategy on Reduction of GHG Emissions from Ships*. Resolution MEPC.377(80). Marine Environment Protection Committee, 80th session. London: IMO.
+
+## 13.3 Ευρωπαϊκή νομοθεσία
+
+[CSRD, 2022] — Ευρωπαϊκή Ένωση. *Οδηγία (ΕΕ) 2022/2464 του Ευρωπαϊκού Κοινοβουλίου και του Συμβουλίου της 14ης Δεκεμβρίου 2022 σχετικά με την υποβολή εκθέσεων βιωσιμότητας από τις εταιρείες*. *Επίσημη Εφημερίδα της ΕΕ* L 322/15. Διαθέσιμη στο https://eur-lex.europa.eu/eli/dir/2022/2464.
+
+[EU ETS Maritime, 2023] — Ευρωπαϊκή Ένωση. *Οδηγία (ΕΕ) 2023/959 για την επέκταση του Ευρωπαϊκού Συστήματος Εμπορίας Εκπομπών στις θαλάσσιες μεταφορές*. *Επίσημη Εφημερίδα της ΕΕ* L 130/134. Διαθέσιμη στο https://eur-lex.europa.eu/eli/dir/2023/959.
+
+[FuelEU Maritime, 2023] — Ευρωπαϊκή Ένωση. *Κανονισμός (ΕΕ) 2023/1805 του Ευρωπαϊκού Κοινοβουλίου και του Συμβουλίου της 13ης Σεπτεμβρίου 2023 σχετικά με τη χρήση ανανεώσιμων και χαμηλών εκπομπών άνθρακα καυσίμων στις θαλάσσιες μεταφορές*. *Επίσημη Εφημερίδα της ΕΕ* L 234/48. Διαθέσιμος στο https://eur-lex.europa.eu/eli/reg/2023/1805.
+
+[MRV Maritime, 2015] — Ευρωπαϊκή Ένωση. *Κανονισμός (ΕΕ) 2015/757 για την παρακολούθηση, αναφορά και επαλήθευση των εκπομπών διοξειδίου του άνθρακα από θαλάσσιες μεταφορές*. *Επίσημη Εφημερίδα της ΕΕ* L 123/55.
+
+[RED II, 2018] — Ευρωπαϊκή Ένωση. *Οδηγία (ΕΕ) 2018/2001 του Ευρωπαϊκού Κοινοβουλίου και του Συμβουλίου της 11ης Δεκεμβρίου 2018 σχετικά με την προώθηση της χρήσης ενέργειας από ανανεώσιμες πηγές* (αναδιατύπωση). *Επίσημη Εφημερίδα της ΕΕ* L 328/82.
+
+## 13.4 Βιβλία και τεχνική βιβλιογραφία
+
+[Armstrong, 2013] — Armstrong, J. (2013). *Programming Erlang: Software for a Concurrent World* (2nd Edition). Pragmatic Bookshelf. ISBN 978-1-937785-53-6.
+
+[Beck, 2002] — Beck, K. (2002). *Test-Driven Development: By Example*. Addison-Wesley Professional. ISBN 978-0-321-14653-3.
+
+[Beck & Andres, 2004] — Beck, K. & Andres, C. (2004). *Extreme Programming Explained: Embrace Change* (2nd Edition). Addison-Wesley Professional. ISBN 978-0-321-27865-4.
+
+[Evans, 2003] — Evans, E. (2003). *Domain-Driven Design: Tackling Complexity in the Heart of Software*. Addison-Wesley Professional. ISBN 978-0-321-12521-7.
+
+[Humble & Farley, 2010] — Humble, J. & Farley, D. (2010). *Continuous Delivery: Reliable Software Releases through Build, Test, and Deployment Automation*. Addison-Wesley Professional. ISBN 978-0-321-60191-9.
+
+[Jurić, 2024] — Jurić, S. (2024). *Elixir in Action* (3rd Edition). Manning Publications. ISBN 978-1-63343-911-2.
+
+[Martin, 2017] — Martin, R. C. (2017). *Clean Architecture: A Craftsman's Guide to Software Structure and Design*. Prentice Hall. ISBN 978-0-13-449416-6.
+
+[Thomas, 2018] — Thomas, D. (2018). *Programming Elixir ≥ 1.6*. Pragmatic Bookshelf. ISBN 978-1-68050-299-2.
+
+[Vernon, 2013] — Vernon, V. (2013). *Implementing Domain-Driven Design*. Addison-Wesley Professional. ISBN 978-0-321-83457-7.
+
+[Young, 2010] — Young, G. (2010). *CQRS Documents*. Self-published whitepaper. Διαθέσιμο στο https://cqrs.files.wordpress.com/2010/11/cqrs_documents.pdf.
+
+## 13.5 Διαδικτυακοί πόροι και τεκμηρίωση τεχνολογιών
+
+[Apache Kafka, 2024] — Apache Software Foundation. *Apache Kafka Documentation*. Διαθέσιμο στο https://kafka.apache.org/documentation/.
+
+[CDP, 2024] — Carbon Disclosure Project. *CDP Climate Change Questionnaire και Methodology*. Διαθέσιμο στο https://www.cdp.net/.
+
+[Commanded, 2024] — Commanded Library Authors. *Commanded — Use Commanded to build Elixir CQRS/ES applications*. Διαθέσιμο στο https://hexdocs.pm/commanded/.
+
+[Ecto, 2024] — Dashbit. *Ecto Documentation*. Διαθέσιμο στο https://hexdocs.pm/ecto/.
+
+[Maersk, 2024] — A.P. Møller-Mærsk. *Sustainability Report 2024 — Towards Net Zero by 2040*. Copenhagen: A.P. Møller-Mærsk. Διαθέσιμο στο https://www.maersk.com/sustainability/reports-and-resources.
+
+[Maersk Design System, 2024] — A.P. Møller-Mærsk. *Maersk Design System*. Διαθέσιμο στο https://designsystem.maersk.com/.
+
+[Nix, 2024] — NixOS Foundation. *Nix Reference Manual* και *Nix Flakes Documentation*. Διαθέσιμο στο https://nix.dev/.
+
+[Oban, 2024] — Sorentwo. *Oban — Robust job processing in Elixir*. Διαθέσιμο στο https://hexdocs.pm/oban/.
+
+[OpenTelemetry, 2024] — Cloud Native Computing Foundation. *OpenTelemetry Specification*. Διαθέσιμο στο https://opentelemetry.io/docs/specs/.
+
+[Phoenix Framework, 2024] — Phoenix Framework Authors. *Phoenix Framework Documentation* και *LiveView Documentation*. Διαθέσιμα στο https://hexdocs.pm/phoenix/ και https://hexdocs.pm/phoenix_live_view/.
+
+[PostgreSQL, 2024] — PostgreSQL Global Development Group. *PostgreSQL 16 Documentation*. Διαθέσιμο στο https://www.postgresql.org/docs/16/.
+
+[Terraform, 2024] — HashiCorp. *Terraform Documentation*. Διαθέσιμο στο https://developer.hashicorp.com/terraform/docs.
+
+## 13.6 Πηγές εικόνων
+
+Σχήμα 1 (Κεφ. 3.2). — *Carbon Accounting Scopes*. Άδεια Creative Commons CC BY 4.0. Διαθέσιμο στο https://commons.wikimedia.org/w/index.php?curid=140748311.
+
+Σχήμα 2 (Κεφ. 10.6). — *Extreme Programming Feedback Loops*. Don Wells — προσωπικό έργο βάσει XP-feedback.gif. Άδεια Creative Commons CC BY-SA 3.0. Διαθέσιμο στο https://commons.wikimedia.org/w/index.php?curid=27448045.
+
+Σχήμα 3 (Κεφ. 9.1). — *Αρχιτεκτονική Συστήματος*. Πρωτότυπο διάγραμμα της ομάδας ET Platform της Maersk, αναπαραγόμενο με άδεια.
