@@ -1313,23 +1313,12 @@ resource "azurerm_postgresql_flexible_server" "bops-blue" {
   administrator_password        = var.postgres_admin_password
   public_network_access_enabled = false
   auto_grow_enabled             = true
-  zone                          = "1"
-  location                      = "West Europe"
-  sku_name                      = "GP_Standard_D4s_v3"
-  storage_mb                    = 524288
 
   tags = {
     "app"         = "bops"
-    "app_id"      = "A3878"
     "env"         = "staging"
     "k8s_cluster" = "k8s_cluster"
     "mop_ingest"  = "true"
-    "product_id"  = "sbti-portal"
-  }
-
-  authentication {
-    active_directory_auth_enabled = false
-    password_auth_enabled         = true
   }
 }
 
@@ -1352,7 +1341,7 @@ resource "azurerm_postgresql_flexible_server_configuration" "shared_preload_libr
 
 *Λήμμα 7.5.1: Terraform ορισμός PostgreSQL Flexible Server για το BOPS staging περιβάλλον*
 
-Αξιοσημείωτα στοιχεία αυτής της δήλωσης: ο server χρησιμοποιεί SKU `GP_Standard_D4s_v3` (4 vCores, general purpose) με 512 GB αποθηκευτικό χώρο, η δημόσια πρόσβαση είναι απενεργοποιημένη (`public_network_access_enabled = false`), και δημιουργούνται δύο ξεχωριστές βάσεις: `bops` (για τα δεδομένα εισόδου/εξόδου του BoW) και `solver` (αποκλειστικά για τα ενδιάμεσα δεδομένα του MBC). Το extension `pg_cron` φορτώνεται ως preload library για χρονοδρομολογημένες εργασίες, ενώ το `pg_stat_statements` επιτρέπει την παρακολούθηση επιδόσεων ερωτημάτων.
+Αξιοσημείωτα στοιχεία αυτής της δήλωσης: η δημόσια πρόσβαση είναι απενεργοποιημένη (`public_network_access_enabled = false`), και δημιουργούνται δύο ξεχωριστές βάσεις: `bops` (για τα δεδομένα εισόδου/εξόδου του BoW) και `solver` (αποκλειστικά για τα ενδιάμεσα δεδομένα του MBC). Το extension `pg_cron` φορτώνεται ως preload library για χρονοδρομολογημένες εργασίες, ενώ το `pg_stat_statements` επιτρέπει την παρακολούθηση επιδόσεων ερωτημάτων.
 
 ---
 
@@ -1450,7 +1439,7 @@ end
 
 ## 8.2 Phoenix Framework και LiveView
 
-Το **Phoenix Framework** είναι το web framework της Elixir, με φιλοσοφία παρόμοια με το Ruby on Rails: επίκεντρο η παραγωγικότητα, σαφής διαχωρισμός ευθυνών (Router → Controller/LiveView → Template) και πλούσια εργαλεία γραμμής εντολών (*generators*). Εδράζεται στη βιβλιοθήκη **Plug** για σύνθεση middleware, και δεν εισάγει νέο στοίβα εκτός BEAM — όλο το HTTP request handling γίνεται εντός BEAM processes.
+Το **Phoenix Framework** είναι το web framework της Elixir, με φιλοσοφία παρόμοια με το Ruby on Rails: επίκεντρο η παραγωγικότητα, σαφής διαχωρισμός ευθυνών (Router → Controller/LiveView → Template) και πλούσια εργαλεία γραμμής εντολών (*generators*). Στηρίζεται στη βιβλιοθήκη **Plug** για σύνθεση middleware, ενώ όλο το HTTP request handling γίνεται εντός BEAM processes.
 
 Η κύρια καινοτομία που χρησιμοποιείται εκτεταμένα στο NRG είναι το **Phoenix LiveView**: αντί να αποστέλλεται στατικό HTML ή να επικοινωνεί το frontend με REST/GraphQL API, η κατάσταση (*state*) της σελίδας διαχειρίζεται σε ένα BEAM process ανά σύνδεση. Οι αλλαγές αποστέλλονται στον browser μέσω μόνιμης σύνδεσης **WebSocket** ως διαφορά (*diff*) του DOM. Το αποτέλεσμα είναι εμπειρία χρήστη αντίστοιχη *Single-Page Application* (SPA) χωρίς ξεχωριστή βάση κώδικα JavaScript — ένα ενιαίο Elixir module ελέγχει τόσο την επιχειρησιακή λογική όσο και την παρουσίαση. Στο NRG υπάρχουν 14+ LiveView modules κατανεμημένα σε τέσσερα namespaces: Eco Delivery, Energy Bank, Emissions Data Inventory και Admin.
 
@@ -1513,8 +1502,6 @@ end
 
 Η βάση δεδομένων που επιλέχθηκε είναι η **PostgreSQL**, ώριμη ανοιχτού κώδικα σχεσιακή βάση δεδομένων (*relational database*) με πλήρη υποστήριξη **ACID** συναλλαγών (*transactions*), τύπους JSON/JSONB για ημιδομημένα δεδομένα, και πλούσιο οικοσύστημα επεκτάσεων. Στο NRG η PostgreSQL φιλοξενείται ως διαχειριζόμενη υπηρεσία **Azure Database for PostgreSQL Flexible Server**, που αναλαμβάνει backups, patches και υψηλή διαθεσιμότητα.
 
-Το μέγεθος της βάσης είναι σημαντικό: **151 ξεχωριστοί πίνακες** και **720+ migrations** συνολικά (499 στο emissions_workbench, 218 στο bunker/bow, 4 στο bunker/api). Κάθε component του monorepo διατηρεί τη δική του βάση δεδομένων και το δικό του `Repo` module, εφαρμόζοντας αρχή ελάχιστης πρόσβασης (*principle of least privilege*) και περιορίζοντας το «blast radius» τυχόν λανθασμένων queries.
-
 Η βιβλιοθήκη **Ecto** είναι το επίπεδο αλληλεπίδρασης με τη βάση στην Elixir. Αποτελείται από τέσσερα στρώματα: *Adapter* (σύνδεση με PostgreSQL driver), *Schema* (αντιστοίχηση Elixir struct σε πίνακα), *Changeset* (επικύρωση και μετασχηματισμός δεδομένων πριν την αποθήκευση) και *Query* (composable DSL για SQL queries). Η προσέγγιση αυτή διαχωρίζει σαφώς τον ορισμό δεδομένων από την επικύρωση, επιτρέποντας διαφορετικά changesets για δημιουργία, ενημέρωση και επικύρωση στο ίδιο schema.
 
 **Λήμμα 8.3.1** — Ecto schema `ContainerMove`:
@@ -1555,19 +1542,13 @@ end
 - **Ocean emissions ingestion**: εισαγωγή container move δεδομένων από εσωτερικά Maersk συστήματα.
 - **Event streaming μεταξύ components**: ασύγχρονη επικοινωνία με αποσύνδεση (*decoupling*) παραγωγού-καταναλωτή.
 
-Το NRG χρησιμοποιεί τη βιβλιοθήκη **`:brod`** — τον Erlang-native Kafka client — που ενσωματώνεται φυσικά στη BEAM χωρίς JNI ή FFI. Συνολικά υπάρχουν **9 αρχεία** με ενσωμάτωση Kafka στο codebase. Τα topics διαιρούνται σε partitions ανά vessel (με κλειδί το IMO number), διασφαλίζοντας διατακτική επεξεργασία (*ordering*) για κάθε πλοίο. Οι καταναλωτές ανήκουν σε *consumer groups*, επιτρέποντας οριζόντια κλιμάκωση και ανάκτηση από τον τελευταίο επεξεργασμένο *offset* σε περίπτωση επανεκκίνησης.
+Το NRG χρησιμοποιεί τη βιβλιοθήκη **`:brod`** — τον Erlang-native Kafka client — που ενσωματώνεται φυσικά στη BEAM χωρίς JNI ή FFI. Τα topics διαιρούνται σε partitions ανά vessel (με κλειδί το IMO number), διασφαλίζοντας διατακτική επεξεργασία (*ordering*) για κάθε πλοίο. Οι καταναλωτές ανήκουν σε *consumer groups*, επιτρέποντας οριζόντια κλιμάκωση και ανάκτηση από τον τελευταίο επεξεργασμένο *offset* σε περίπτωση επανεκκίνησης.
 
 ## 8.5 Dremio
 
 Το **Dremio** είναι πλατφόρμα ομοσπονδιακής αναζήτησης SQL (*federated SQL query engine*) που επιτρέπει ερωτήματα σε διάφορες πηγές δεδομένων (αρχεία Parquet, S3, βάσεις δεδομένων) μέσω ενός ενιαίου SQL interface χωρίς ETL (*Extract-Transform-Load*). Στη Maersk χρησιμοποιείται ως η εταιρική πλατφόρμα data lake.
 
-Το NRG προσπελαύνει το Dremio για ανάκτηση κύριων δεδομένων (*master data*) και ιστορικών εκπομπών από namespaces όπως:
-- `Infrastructure_GDA.Energy_Transition.NetZero.*` — δεδομένα εκπομπών στόλου
-- `EcoDelivery.ShipmentDetails` — λεπτομέρειες αποστολών
-- `Common_Datasets.*` — κοινά επιχειρησιακά δεδομένα
-- `Masterdata.*` — master data αναφοράς
-
-Η σύνδεση γίνεται μέσω ODBC ή Arrow Flight (για streaming queries μεγάλου όγκου), με αυθεντικοποίηση μέσω personal access token (`DREMIO_API_KEY`). Ο λόγος χρήσης Dremio αντί για απευθείας πρόσβαση στα υποκείμενα συστήματα είναι η αποσύνδεση: το NRG δεν χρειάζεται να γνωρίζει τη φυσική αποθήκευση των δεδομένων, και οι αλλαγές στο data lake δεν επηρεάζουν τις εφαρμογές εφόσον το SQL interface παραμένει σταθερό.
+Η σύνδεση γίνεται μέσω ODBC ή Arrow Flight (για streaming queries μεγάλου όγκου). Το Dremio ουσιαστικά παρέχει ένα επίπεδο αφαίρεσης (abstraction layer) πάνω από τις φυσικές βάσεις δεδομένων στο data lake.
 
 ## 8.6 ODBC ενσωματώσεις
 
@@ -1577,7 +1558,7 @@ end
 
 ## 8.7 Microsoft Azure
 
-Το **Microsoft Azure** είναι η πλατφόρμα νέφους (*cloud platform*) που χρησιμοποιεί η Maersk ως εταιρικό πρότυπο για τις υποδομές της. Η επιλογή δεν έγινε από την ομάδα ET Platform αλλά κληρονομήθηκε ως εταιρική απαίτηση, γεγονός που εξαλείφει τις ανησυχίες περί vendor lock-in στη συγκεκριμένη περίπτωση.
+Το **Microsoft Azure** είναι η πλατφόρμα νέφους (*cloud platform*) που χρησιμοποιεί η Maersk για τις υποδομές της. Η επιλογή δεν έγινε από την ομάδα ET Platform αλλά κληρονομήθηκε ως εταιρική απαίτηση.
 
 Οι υπηρεσίες Azure που χρησιμοποιούνται στο NRG περιλαμβάνουν:
 - **Azure Database for PostgreSQL Flexible Server**: διαχειριζόμενη βάση δεδομένων για emissions_workbench, bunker/bow και EventStore.
