@@ -641,6 +641,7 @@ end
 **Αρχιτεκτονική GenServer με `:pg`.** Το `OceanApi.VesselApi` υλοποιείται ως `GenServer` που εκκινεί με `start_link/1` και εγγράφεται σε process group μέσω `:pg.join(@name, self())`. Αυτή η επιλογή επιτρέπει σε πολλαπλές επαναλήψεις του server να τρέχουν ταυτόχρονα σε ένα distributed BEAM cluster: η `find_server/0` εντοπίζει ένα διαθέσιμο process, διανέμοντας φυσικά τη φόρτωση χωρίς explict load balancer (βλ. Κεφ. 9 για την κατανεμημένη αρχιτεκτονική).
 
 **Δημόσιο API.** Οι τρεις κύριες συναρτήσεις που εκτίθενται είναι:
+
 - `get_all_vessels/0` — επιστρέφει όλα τα γνωστά πλοία
 - `all_active/0` — φιλτράρει μόνο ενεργά πλοία (χωρίς `deleted_at`)
 - `find_by_imo/1` — αναζήτηση βάσει IMO number
@@ -1561,6 +1562,7 @@ end
 Το **Microsoft Azure** είναι η πλατφόρμα νέφους (*cloud platform*) που χρησιμοποιεί η Maersk για τις υποδομές της. Η επιλογή δεν έγινε από την ομάδα ET Platform αλλά κληρονομήθηκε ως εταιρική απαίτηση.
 
 Οι υπηρεσίες Azure που χρησιμοποιούνται στο NRG περιλαμβάνουν:
+
 - **Azure Database for PostgreSQL Flexible Server**: διαχειριζόμενη βάση δεδομένων για emissions_workbench, bunker/bow και EventStore.
 - **Azure Kubernetes Service (AKS)**: εκτέλεση των containerized εφαρμογών (βλ. 8.8).
 - **Azure Blob Storage**: αποθήκευση PDF πιστοποιητικών ECO Delivery (βλ. Κεφ. 6.5).
@@ -2000,6 +2002,7 @@ end
 Ο κανόνας αυτός αξιολογείται κάθε λεπτό και ενεργοποιείται αν εντοπιστούν περισσότερα από 5 ταυτόχρονα requests στο ETW για διάστημα 5 λεπτών. Η ετικέτα `hedwig_scope: nrg-errors-scope` δρομολογεί την ειδοποίηση μέσω Hedwig — εσωτερικό σύστημα ειδοποίησης της Maersk — σε κανάλια Teams και email.
 
 Πέρα από τα τεχνικά alerts (CrashLoopBackOff, cluster unreachability, non-200 spike), το σύστημα παρακολουθεί **επιχειρησιακές μετρικές**:
+
 - Ο Ingestion Worker δεν έχει αναφέρει θετικό count εισαγωγής εντός 72 ωρών.
 - Ο Enrichment Worker δεν έχει ολοκληρώσει εργασία εντός 6 ωρών.
 - Δεδομένα πλοίων (*Vessel Voyage data*) πιο παλαιά από 49 ώρες.
@@ -2021,6 +2024,7 @@ end
 **Εισερχόμενος traffic** ακολουθεί την αλυσίδα: Akamai CDN → Stargate (εσωτερικό API gateway Maersk) → Azure Kubernetes Service ingress controller → Kubernetes pods. Το Akamai παρέχει DDoS προστασία και global routing, ενώ το Stargate επιβάλλει εταιρικές πολιτικές ασφαλείας και rate limiting.
 
 **Kubernetes pods** οργανώνονται σε δύο τύπους:
+
 - **3 web server replicas**: εξυπηρέτηση HTTP/WebSocket traffic, Phoenix LiveView connections, certificate downloads.
 - **1 worker pod**: background processing — Oban jobs, Kafka consumers, Nrg Worker processes που διαχειρίζεται ο Director.
 
@@ -2045,6 +2049,7 @@ end
 **Δοκιμασμένη αποκατάσταση βάσης δεδομένων:** Εβδομαδιαία αυτοματοποιημένη επαλήθευση αντιγράφων ασφαλείας μέσω του workflow `db-restore-from-backup.yml`. Η αποκατάσταση χρησιμοποιεί *Point-In-Time Recovery (PITR)* της Azure, επιτρέποντας επαναφορά της βάσης σε οποιοδήποτε χρονικό σημείο εντός του παραθύρου διατήρησης.
 
 Τα ενδεικτικά μεγέθη αποκατάστασης — αν και δεν έχουν δοκιμαστεί σε πλήρη αποτυχία AKS cluster — εκτιμώνται ως εξής:
+
 - **RTO (Recovery Time Objective):** Υποδομή ~2 ώρες (Terraform apply), εφαρμογή ~30 λεπτά (Kubernetes deploy), βάση δεδομένων από PITR ~1 ώρα.
 - **RPO (Recovery Point Objective):** Ελάχιστη απώλεια δεδομένων λόγω PITR και continuous backups.
 
