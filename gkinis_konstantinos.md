@@ -15,7 +15,11 @@ header-includes:
   - \setdefaultlanguage[variant=modern]{greek}
   - \newfontfamily\greekfont[Script=Greek]{FreeSans}
   - \newfontfamily\greekfontsf[Script=Greek]{FreeSans}
-  - \newfontfamily\greekfonttt[Script=Greek]{FreeSans}  
+  - \newfontfamily\greekfonttt[Script=Greek]{FreeSans} 
+  - \usepackage{xurl}
+  - \setlength{\emergencystretch}{3em}
+  - \DeclareUrlCommand\inlinecode{\urlstyle{tt}}
+  - \renewcommand{\texttt}[1]{\inlinecode{#1}}
 include-before:
 - '`\newpage{}`{=latex}'
 ---
