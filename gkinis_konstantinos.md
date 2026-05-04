@@ -921,7 +921,7 @@ wtw_savings = wtw_on_full_grey_fuel × wtw_emissions_savings_percentage × green
 
 Η υλοποίηση στηρίζεται στη βιβλιοθήκη `Commanded` που παρέχει πλαίσιο για Command → Aggregate → Event → Projection ροή, και στο `EventStore` ως backend αποθήκευσης events (βλ. Κεφ. 8.16). Κάθε εντολή εκφράζεται ως struct που εξακριβώνεται πριν εκτελεστεί, και κάθε handler ορίζει ρητά το behavior `Commanded.Commands.Handler`.
 
-**Listing 6.3.1** — Command και CommandHandler για ανάληψη ενέργειας από την Energy Bank:
+**Λήμμα 6.3.1** — Command και CommandHandler για ανάληψη ενέργειας από την Energy Bank:
 
 ```elixir
 defmodule EnergyBank.Application.Transactions.WithdrawEnergy do
@@ -1042,7 +1042,7 @@ end
 
 Ομοίως, η συνάρτηση `bulk_issue_certificates/2` επιτρέπει μαζική έκδοση για ένα ολόκληρο έτος — χρήσιμο κατά την αρχική ενεργοποίηση νέου έτους ή μετά από μαζική επανεπεξεργασία δεδομένων.
 
-**Listing 6.5.1** — Oban worker για εισαγωγή παρτίδας κινήσεων κοντέινερ:
+**Λήμμα 6.5.1** — Oban worker για εισαγωγή παρτίδας κινήσεων κοντέινερ:
 
 ```elixir
 defmodule Nrg.Ocean.Ingest.Jobs.ImportContainerMovesBatch do
@@ -1267,7 +1267,7 @@ defmodule BopsApi.Server do
   end
 ```
 
-*Listing 7.4.1: BopsApi.Server — δομή κατάστασης και αρχικοποίηση GenServer*
+*Λήμμα 7.4.1: BopsApi.Server — δομή κατάστασης και αρχικοποίηση GenServer*
 
 Στη δομή `State` αποθηκεύεται η εντολή εκτέλεσης του MBC (`cmd`), η αίτηση που επεξεργάζεται (`request`), το `traceparent` για distributed tracing με OpenTelemetry, και ένας buffer (`logs`) για τα μηνύματα εξόδου του solver.
 
@@ -1350,7 +1350,7 @@ resource "azurerm_postgresql_flexible_server_configuration" "shared_preload_libr
 }
 ```
 
-*Listing 7.5.1: Terraform ορισμός PostgreSQL Flexible Server για το BOPS staging περιβάλλον*
+*Λήμμα 7.5.1: Terraform ορισμός PostgreSQL Flexible Server για το BOPS staging περιβάλλον*
 
 Αξιοσημείωτα στοιχεία αυτής της δήλωσης: ο server χρησιμοποιεί SKU `GP_Standard_D4s_v3` (4 vCores, general purpose) με 512 GB αποθηκευτικό χώρο, η δημόσια πρόσβαση είναι απενεργοποιημένη (`public_network_access_enabled = false`), και δημιουργούνται δύο ξεχωριστές βάσεις: `bops` (για τα δεδομένα εισόδου/εξόδου του BoW) και `solver` (αποκλειστικά για τα ενδιάμεσα δεδομένα του MBC). Το extension `pg_cron` φορτώνεται ως preload library για χρονοδρομολογημένες εργασίες, ενώ το `pg_stat_statements` επιτρέπει την παρακολούθηση επιδόσεων ερωτημάτων.
 
@@ -1422,7 +1422,7 @@ end
 
 Η Elixir ως **συναρτησιακή** (*functional*) γλώσσα ενθαρρύνει φυσικά pipelines μετασχηματισμού δεδομένων με αμετάβλητες δομές (*immutable data structures*). Μόνο στα άκρα του pipeline — εισαγωγή δεδομένων και αποθήκευση — υπάρχουν παρενέργειες (*side effects*), γεγονός που περιορίζει σημαντικά τα σημεία αστοχίας.
 
-**Listing 8.1.1** — Pipeline μετασχηματισμού αρχείου εισόδου:
+**Λήμμα 8.1.1** — Pipeline μετασχηματισμού αρχείου εισόδου:
 
 ```elixir
 def from_raw(%Ingest.RawOceanContainerMove{record: record}, to: :shipment_attrs) do
@@ -1446,7 +1446,7 @@ def from_raw(%Ingest.RawOceanContainerMove{record: record}, to: :shipment_attrs)
 end
 ```
 
-Το listing αποτυπώνει χαρακτηριστικά στοιχεία της Elixir: η έκφραση `with` αποσυνθέτει σειριακά τον μετασχηματισμό, κάθε βήμα επιστρέφει είτε την τιμή είτε αιτιολογημένο σφάλμα, και ο κλάδος `else` χειρίζεται κάθε πιθανή αποτυχία ρητά. Το αποτέλεσμα είναι κώδικας ευανάγνωστος, χωρίς εξαιρέσεις (*exceptions*) που «ξεφεύγουν» ανεξέλεγκτα.
+Το λήμμα αποτυπώνει χαρακτηριστικά στοιχεία της Elixir: η έκφραση `with` αποσυνθέτει σειριακά τον μετασχηματισμό, κάθε βήμα επιστρέφει είτε την τιμή είτε αιτιολογημένο σφάλμα, και ο κλάδος `else` χειρίζεται κάθε πιθανή αποτυχία ρητά. Το αποτέλεσμα είναι κώδικας ευανάγνωστος, χωρίς εξαιρέσεις (*exceptions*) που «ξεφεύγουν» ανεξέλεγκτα.
 
 ## 8.2 Phoenix Framework και LiveView
 
@@ -1456,7 +1456,7 @@ end
 
 Η σύγκριση με SPA frameworks (React, Vue): η προσέγγιση με LiveView μειώνει τον κώδικα που συντηρεί η ομάδα και εξαλείφει το «impedance mismatch» μεταξύ backend και frontend τύπων. Το μειονέκτημα είναι η απαίτηση μόνιμης WebSocket σύνδεσης, άρα αυξημένη εξάρτηση από τη διαθεσιμότητα του server.
 
-**Listing 8.2.1** — `mount/3` και `handle_event/3` από `OceanSimulatorLive`:
+**Λήμμα 8.2.1** — `mount/3` και `handle_event/3` από `OceanSimulatorLive`:
 
 ```elixir
 @impl Phoenix.LiveView
@@ -1517,7 +1517,7 @@ end
 
 Η βιβλιοθήκη **Ecto** είναι το επίπεδο αλληλεπίδρασης με τη βάση στην Elixir. Αποτελείται από τέσσερα στρώματα: *Adapter* (σύνδεση με PostgreSQL driver), *Schema* (αντιστοίχηση Elixir struct σε πίνακα), *Changeset* (επικύρωση και μετασχηματισμός δεδομένων πριν την αποθήκευση) και *Query* (composable DSL για SQL queries). Η προσέγγιση αυτή διαχωρίζει σαφώς τον ορισμό δεδομένων από την επικύρωση, επιτρέποντας διαφορετικά changesets για δημιουργία, ενημέρωση και επικύρωση στο ίδιο schema.
 
-**Listing 8.3.1** — Ecto schema `ContainerMove`:
+**Λήμμα 8.3.1** — Ecto schema `ContainerMove`:
 
 ```elixir
 schema "ocean_container_moves" do
@@ -1612,7 +1612,7 @@ end
 
 Στο NRG, ολόκληρο το περιβάλλον ανάπτυξης — Elixir, Erlang, Node.js, εργαλεία CI, k8s binary — ορίζεται στο `flake.nix`. Η ενσωμάτωση **nix-darwin** επιτρέπει τη χρήση Nix σε macOS, καλύπτοντας το development laptop κάθε μηχανικού. Το **Home Manager** διαχειρίζεται ρυθμίσεις χρήστη (`.zshrc`, git config, packages). Το **direnv** φορτώνει αυτόματα το περιβάλλον `flake.nix` κάθε φορά που ο χρήστης μπαίνει στον κατάλογο του project.
 
-**Listing 8.10.1** —`flake.nix`:
+**Λήμμα 8.10.1** —`flake.nix`:
 
 ```nix
 nrg = addK8sToApp {
@@ -1653,7 +1653,7 @@ nrg = addK8sToApp {
 
 **Alerts**: Κανόνες ειδοποίησης (*alert rules*) ορίζονται ως κώδικας στο `/alerts/` directory, με **13+ κανόνες** σε YAML. Ειδοποιήσεις αποστέλλονται μέσω **Hedwig** (εσωτερικό Maersk routing layer) σε Microsoft Teams channels ή email.
 
-**Listing 8.13.1** — Κανόνας ειδοποίησης για ETW requests:
+**Λήμμα 8.13.1** — Κανόνας ειδοποίησης για ETW requests:
 
 ```yaml
 - alert: Too many concurrent requests to ETW
@@ -1872,7 +1872,7 @@ defmodule NrgWorker.Director do
 end
 ```
 
-**Listing 9.5.1:** `NrgWorker.Director` GenServer — δυναμική διαχείριση workers μέσω subscription σε αλλαγές διαμόρφωσης.
+**Λήμμα 9.5.1:** `NrgWorker.Director` GenServer — δυναμική διαχείριση workers μέσω subscription σε αλλαγές διαμόρφωσης.
 
 Η αρχιτεκτονική αυτή επιτρέπει run-time ενεργοποίηση ή απενεργοποίηση κάθε worker χωρίς επανεκκίνηση της εφαρμογής — κρίσιμο για λειτουργική ευελιξία σε production περιβάλλον. Ο Director εγγράφεται (`subscribe`) σε αλλαγές ρυθμίσεων και αντιδρά άμεσα, ακολουθώντας το BEAM μοτίβο της επικοινωνίας μέσω μηνυμάτων. Η χρήση `{:continue, :apply_current_worker_config}` στο `init/1` εξασφαλίζει ότι η αρχική διαμόρφωση εφαρμόζεται αμέσως μετά την εκκίνηση, χωρίς να μπλοκαριστεί ο supervisor.
 
@@ -1933,7 +1933,7 @@ end
 
 Η δομή λειτουργεί ως εξής: ένα **Command** εκφράζει πρόθεση (πχ "ανάληψη ποσότητας ενέργειας"), επικυρώνεται και διαβιβάζεται στο αντίστοιχο **Aggregate** (`ClearingAccount`). Το Aggregate εφαρμόζει τους επιχειρησιακούς κανόνες (πχ ο λογαριασμός πρέπει να έχει επαρκές υπόλοιπο), και αν η επικύρωση επιτύχει, παράγει ένα **Event** (`EnergyWithdrawn`) που αποθηκεύεται αμετάβλητα στο EventStore. Τα Events τροφοδοτούν **Projections** — read models που υπολογίζουν τρέχουσα κατάσταση (πχ τρέχον υπόλοιπο clearing account).
 
-Το παρακάτω listing παρουσιάζει το Command και τον CommandHandler για ανάληψη ενέργειας:
+Το παρακάτω λήμμα παρουσιάζει το Command και τον CommandHandler για ανάληψη ενέργειας:
 
 ```elixir
 defmodule EnergyBank.Application.Transactions.WithdrawEnergy do
@@ -1979,7 +1979,7 @@ defmodule EnergyBank.Application.Transactions.WithdrawEnergy do
 end
 ```
 
-**Listing 9.9.1:** `EnergyBank.Application.Transactions.WithdrawEnergy` — Command και CommandHandler για ανάληψη ενέργειας από clearing account.
+**Λήμμα 9.9.1:** `EnergyBank.Application.Transactions.WithdrawEnergy` — Command και CommandHandler για ανάληψη ενέργειας από clearing account.
 
 Αξίζει να σημειωθεί η διαχωριστική γραμμή ευθύνης: το `Command` module χρησιμοποιεί Ecto για επικύρωση εισόδου (cast, validate_required), ενώ το `CommandHandler` αναθέτει την επιχειρησιακή λογική αποκλειστικά στο `Withdrawal.withdraw/2` domain module. Ο CommandHandler δεν γνωρίζει τίποτα για βάσεις δεδομένων — εφαρμόζει Clean Architecture στο επίπεδο event sourcing.
 
@@ -2014,7 +2014,7 @@ end
         description: We've made too many concurrent requests to ETW in an environment.
 ```
 
-**Listing 9.10.1:** Alert rule για ανίχνευση υπερβολικής παράλληλης φόρτωσης των External Trade Workbench (ETW) workers.
+**Λήμμα 9.10.1:** Alert rule για ανίχνευση υπερβολικής παράλληλης φόρτωσης των External Trade Workbench (ETW) workers.
 
 Ο κανόνας αυτός αξιολογείται κάθε λεπτό και ενεργοποιείται αν εντοπιστούν περισσότερα από 5 ταυτόχρονα requests στο ETW για διάστημα 5 λεπτών. Η ετικέτα `hedwig_scope: nrg-errors-scope` δρομολογεί την ειδοποίηση μέσω Hedwig — εσωτερικό σύστημα ειδοποίησης της Maersk — σε κανάλια Teams και email.
 
@@ -2157,7 +2157,7 @@ end
 
 Με 786 αρχεία τεστ που που καλύπτουν περίπου το 80% του συνολικού κώδικα, η ομάδα διατηρεί υψηλή κάλυψη ως μη διαπραγματεύσιμη αρχή. Τα τεστ δημιουργούν εμπιστοσύνη που επιτρέπει τις ~32 παραδόσεις ανά ημέρα χωρίς φόβο παλινδρόμησης.
 
-### Code Listing 10.3.1: LiveView Acceptance Test
+### Code Λήμμα 10.3.1: LiveView Acceptance Test
 
 Το ακόλουθο απόσπασμα από το αρχείο `test/nrg_web/live/ocean_simulator_live_test.exs` δείχνει τον τρόπο με τον οποίο γράφονται acceptance tests για LiveView σελίδες. Τα πέντε τεστ του πρώτου `describe` block ελέγχουν διαφορετικές πτυχές της αρχικής κατάστασης της σελίδας — τίτλο, φόρμα, επιλογές προϊόντων, επιλεγμένο έτος — αποτυπώνοντας με σαφήνεια τις προδιαγραφές του χαρακτηριστικού:
 
