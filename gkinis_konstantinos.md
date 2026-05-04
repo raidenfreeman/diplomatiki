@@ -4,7 +4,6 @@ author: Γκίνης Κωνσταντίνος
 date: 12 Φεβρουαρίου 2025
 output: pdf_document
 documentclass: extreport
-lang: el
 mainfont: "Arial"
 numbersections: false
 geometry: margin=2.5cm
