@@ -921,7 +921,7 @@ wtw_savings = wtw_on_full_grey_fuel × wtw_emissions_savings_percentage × green
 
 Η υλοποίηση στηρίζεται στη βιβλιοθήκη `Commanded` που παρέχει πλαίσιο για Command → Aggregate → Event → Projection ροή, και στο `EventStore` ως backend αποθήκευσης events (βλ. Κεφ. 8.16). Κάθε εντολή εκφράζεται ως struct που εξακριβώνεται πριν εκτελεστεί, και κάθε handler ορίζει ρητά το behavior `Commanded.Commands.Handler`.
 
-**Listing 6.3.1** — Command και CommandHandler για ανάληψη ενέργειας από τον Energy Bank (`lib/energy_bank/application/transactions/withdraw_energy.ex`, γραμμές 1–41):
+**Listing 6.3.1** — Command και CommandHandler για ανάληψη ενέργειας από την Energy Bank:
 
 ```elixir
 defmodule EnergyBank.Application.Transactions.WithdrawEnergy do
@@ -971,7 +971,7 @@ end
 
 ### 6.3.3 Καταθέσεις, Αναλήψεις και Λογαριασμοί Εκκαθάρισης
 
-Το Energy Bank οργανώνει τη ροή πράσινης ενέργειας σε τρεις τύπους λειτουργιών:
+Η Energy Bank οργανώνει τη ροή πράσινης ενέργειας σε τρεις τύπους λειτουργιών:
 
 **Καταθέσεις (Deposits)**: κάθε φορά που ένα πλοίο παραλαμβάνει βυθιζόμενο πράσινο καύσιμο (*bunkered green fuel*), η αντίστοιχη ποσότητα σε gigajoules εγγράφεται ως κατάθεση. Τα δεδομένα αντλούνται από τον `FuelOrderTracking` component, ο οποίος παρακολουθεί τις φυσικές παραγγελίες καυσίμου και τις παραδόσεις τους ανά πλοίο και λιμάνι ανεφοδιασμού (*Port of Supply* — POS). Το projection `EnergyBank.Projections.FuelOrdersProjector` ακούει events από τον `FuelOrderTracking.Dispatcher` και δημιουργεί εγγραφές στους πίνακες `energy_bank_projections.fuel_orders_2` και `fuel_order_deliveries_2`.
 
@@ -998,7 +998,7 @@ end
 
 Η πιστοποίηση αυτή εκδίδεται από τον οργανισμό *ISCC* (*International Sustainability and Carbon Certification*), ο οποίος διαπιστεύει ολόκληρη την αλυσίδα παραγωγής και διανομής βιοκαυσίμων. Χωρίς έγκυρο ISCC πιστοποιητικό για μια παρτίδα καυσίμου, η Maersk δεν μπορεί νόμιμα να πωλήσει ECO product που να αναφέρεται σε εκείνη την παρτίδα (βλ. Κεφ. 3.6 για το ευρύτερο ρυθμιστικό πλαίσιο ISCC).
 
-Η υλοποίηση αντιστοίχισης POS με φυσικές παραδόσεις καυσίμου γίνεται μέσω του `EnergyBank.Projections.FuelOrdersProjector`. Στο projection schema `FuelOrderDelivery` ορίζεται ένα `embeds_many :matched_pos` που περιέχει τα πεδία `pos_number`, `quantity` (σε τόνους) και `energy` (σε GJ) για κάθε αντίστοιχο POS έγγραφο. Αυτή η αντιστοίχιση εξασφαλίζει ότι κάθε ανάληψη ενέργειας από τον Energy Bank μπορεί να αναχθεί σε συγκεκριμένα POS έγγραφα, παρέχοντας πλήρη ιχνηλασιμότητα από το πιστοποιητικό πελάτη έως τη φυσική παρτίδα βιοκαυσίμου.
+Η υλοποίηση αντιστοίχισης POS με φυσικές παραδόσεις καυσίμου γίνεται μέσω του `EnergyBank.Projections.FuelOrdersProjector`. Στο projection schema `FuelOrderDelivery` ορίζεται ένα `embeds_many :matched_pos` που περιέχει τα πεδία `pos_number`, `quantity` (σε τόνους) και `energy` (σε GJ) για κάθε αντίστοιχο POS έγγραφο. Αυτή η αντιστοίχιση εξασφαλίζει ότι κάθε ανάληψη ενέργειας από την Energy Bank μπορεί να αναχθεί σε συγκεκριμένα POS έγγραφα, παρέχοντας πλήρη ιχνηλασιμότητα από το πιστοποιητικό πελάτη έως τη φυσική παρτίδα βιοκαυσίμου.
 
 Η διαχείριση POS εγγράφων στο σύστημα περιλαμβάνει επίσης τη διάκριση μεταξύ *εκτιμώμενης* (`status: "estimated"`) και *επιβεβαιωμένης* (`status: "delivered"`) κατάστασης παράδοσης, καθώς η τελική ποσότητα καυσίμου μπορεί να διαφέρει ελαφρώς από την αρχική παραγγελία. Η πλατφόρμα διαχειρίζεται αυτή την αβεβαιότητα διατηρώντας τις εκτιμήσεις ως προσωρινές εγγραφές που αντικαθίστανται όταν ληφθεί η επίσημη επιβεβαίωση από τον προμηθευτή.
 
