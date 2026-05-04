@@ -1042,7 +1042,7 @@ end
 
 Ομοίως, η συνάρτηση `bulk_issue_certificates/2` επιτρέπει μαζική έκδοση για ένα ολόκληρο έτος — χρήσιμο κατά την αρχική ενεργοποίηση νέου έτους ή μετά από μαζική επανεπεξεργασία δεδομένων.
 
-**Listing 6.5.1** — Oban worker για εισαγωγή παρτίδας κινήσεων κοντέινερ (`lib/nrg/ocean/ingest/jobs/import_container_moves_batch.ex`, γραμμές 1–36). Δείχνει το pattern Oban worker με pattern matching σε πολλαπλές παραλλαγές ορισμάτων:
+**Listing 6.5.1** — Oban worker για εισαγωγή παρτίδας κινήσεων κοντέινερ:
 
 ```elixir
 defmodule Nrg.Ocean.Ingest.Jobs.ImportContainerMovesBatch do
@@ -1109,7 +1109,6 @@ def calculate_maersk_cost_of_abatement(%{
 end
 ```
 
-*(Πηγή: `lib/eco_delivery_surcharges/domain/surcharges.ex`, γρ. 2-12)*
 
 Ο αριθμητής αντιπροσωπεύει το επιπλέον κόστος του πράσινου καυσίμου σε σχέση με τη συμβατική επιλογή (VLSFO, *Very Low Sulphur Fuel Oil*, ως καύσιμο αναφοράς). Ο παρονομαστής εκφράζει την ποσότητα CO₂e που αποφεύγεται ανά μονάδα γκρίζου καυσίμου, υπολογισμένη ως ο συντελεστής εκπομπών WTW του γκρίζου καυσίμου επί το ποσοστιαίο όφελος εκπομπών. Έτσι, το αποτέλεσμα εκφράζεται σε δολάρια ή ευρώ ανά τόνο CO₂e και επιτρέπει σύγκριση τύπου *apples to apples* ανάμεσα σε διαφορετικά εναλλακτικά καύσιμα.
 
@@ -1134,7 +1133,6 @@ def calculate_surcharge(%{
 end
 ```
 
-*(Πηγή: `lib/eco_delivery_surcharges/domain/surcharges.ex`, γρ. 14-40)*
 
 Η πρώτη φόρμουλα είναι η απλούστερη και χρησιμοποιείται όταν η Maersk έχει συγκεκριμένο ζευγάρι ποσότητας καυσίμου και τιμής πράσινου καυσίμου: η χρέωση είναι απλώς το γινόμενο των δύο. Όπως φαίνεται στα σχόλια του κώδικα, αυτή η φόρμουλα προέκυψε από αλγεβρική απλοποίηση μιας αρχικής έκφρασης που περιείχε την τιμή VLSFO ως όρο αναφοράς — οι όροι `+vlsfo_price` και `−vlsfo_price` αλληλοαναιρούνται, αφήνοντας μόνο το γινόμενο `grey_fuel_used × green_fuel_price_foe`. Η δεύτερη φόρμουλα χρησιμοποιείται όταν η σύμβαση με τον πελάτη βασίζεται απευθείας σε τόνους εξοικονόμησης CO₂e που πιστώνονται.
 
@@ -1152,7 +1150,7 @@ end
 
 Ο ανεφοδιασμός καυσίμου (*bunkering*) αποτελεί έναν από τους σημαντικότερους παράγοντες κόστους στην εμπορική ναυτιλία. Για έναν στόλο της κλίμακας της Maersk, με εκατοντάδες πλοία να εκτελούν περιστροφικά δρομολόγια (*vessel rotations*) σε δεκάδες λιμάνια ανά τον κόσμο, οι αποφάσεις που αφορούν στο ποσό καυσίμου που θα φορτωθεί σε κάθε λιμάνι συνιστούν πρόβλημα βελτιστοποίησης με πολλαπλές μεταβλητές και αυστηρούς περιορισμούς.
 
-Τα βασικά στοιχεία της πολυπλοκότητας είναι τα εξής. Πρώτον, η τιμή καυσίμου διαφέρει σημαντικά μεταξύ λιμανιών και κυμαίνεται στον χρόνο: ένας χειριστής (*operator*) μπορεί να επιλέξει να φορτώσει περισσότερο καύσιμο σε ένα φθηνό λιμάνι και λιγότερο σε ένα ακριβό, εφόσον το πλοίο έχει επαρκή αποθηκευτική ικανότητα. Δεύτερον, κάθε λιμάνι έχει περιορισμένο διαθέσιμο χρόνο παραμονής (*port call duration*) και ενδέχεται να μην διαθέτει πάντα το ζητούμενο είδος καυσίμου. Τρίτον, οι κανονισμοί περί θείου (MARPOL Annex VI, SECA zones) επιβάλλουν τη χρήση χαμηλόθειων καυσίμων σε συγκεκριμένες περιοχές, προσθέτοντας επιπλέον τύπους καυσίμου στο πρόβλημα: HSFO (*High Sulfur Fuel Oil*), VLSFO (*Very Low Sulfur Fuel Oil*), LSDIS (*Low Sulfur Distillate*), ULSFO (*Ultra Low Sulfur Fuel Oil*), μεθανόλη. Τέταρτον, το EU ETS Maritime (βλ. Κεφ. 2.4), που ισχύει από το 2024, προσθέτει ένα επιπλέον κόστος άνθρακα ανά tonne εκπομπών στο αντικειμενικό άθροισμα κόστους της βελτιστοποίησης.
+Τα βασικά στοιχεία της πολυπλοκότητας είναι τα ακόλουθα. Πρώτον, η τιμή καυσίμου διαφέρει σημαντικά μεταξύ λιμανιών και κυμαίνεται στον χρόνο: ένας χειριστής (*operator*) μπορεί να επιλέξει να φορτώσει περισσότερο καύσιμο σε ένα φθηνό λιμάνι και λιγότερο σε ένα ακριβό, εφόσον το πλοίο έχει επαρκή αποθηκευτική ικανότητα. Δεύτερον, κάθε λιμάνι έχει περιορισμένο διαθέσιμο χρόνο παραμονής (*port call duration*) και ενδέχεται να μην διαθέτει πάντα το ζητούμενο είδος καυσίμου. Τρίτον, οι κανονισμοί περί θείου (MARPOL Annex VI, SECA zones) επιβάλλουν τη χρήση χαμηλόθειων καυσίμων σε συγκεκριμένες περιοχές, προσθέτοντας επιπλέον τύπους καυσίμου στο πρόβλημα: HSFO (*High Sulfur Fuel Oil*), VLSFO (*Very Low Sulfur Fuel Oil*), LSDIS (*Low Sulfur Distillate*), ULSFO (*Ultra Low Sulfur Fuel Oil*), μεθανόλη. Τέταρτον, το EU ETS Maritime (βλ. Κεφ. 2.4), που ισχύει από το 2024, προσθέτει ένα επιπλέον κόστος άνθρακα ανά tonne εκπομπών στο αντικειμενικό άθροισμα κόστους της βελτιστοποίησης.
 
 Ο στόχος είναι η ελαχιστοποίηση του συνολικού δαπανώμενου ποσού για καύσιμα κατά τη διάρκεια ενός ορίζοντα σχεδιασμού (*planning horizon*), που συνήθως αντιστοιχεί σε ένα πλήρες voyage rotation. Η επίλυση αυτού του προβλήματος απαιτεί γραμμικό προγραμματισμό (*linear programming*) με δεκάδες μεταβλητές απόφασης, γεγονός που καθιστά αναγκαία τη χρήση εξειδικευμένου επιλυτή (*solver*).
 
@@ -1162,20 +1160,21 @@ end
 
 ## 7.2 BOPS: Bunker Optimization Planning System
 
-Το σύστημα που υλοποιεί τον πυλώνα ανεφοδιασμού ονομάζεται BOPS (*Bunker Optimization Planning System*). Αποτελεί επανα-πλατφόρμωση (*replatforming*) ενός υπάρχοντος συστήματος της Maersk Energy Markets, με στόχο τη σύγχρονη αρχιτεκτονική, τη συντηρησιμότητα και τη δυνατότητα ενσωμάτωσης με τα υπόλοιπα components του NRG monorepo (βλ. Κεφ. 9.3).
+Το σύστημα που υλοποιεί τον πυλώνα ανεφοδιασμού ονομάζεται BOPS (*Bunker Optimization Planning System*). Αποτελεί αναδημιουργία ενός υπάρχοντος συστήματος της Maersk Energy Markets, με στόχο τη σύγχρονη αρχιτεκτονική, τη συντηρησιμότητα και τη δυνατότητα ενσωμάτωσης με τα υπόλοιπα components του NRG monorepo (βλ. Κεφ. 9.3).
 
 Το BOPS οργανώνεται σε τρία διακριτά επίπεδα:
 
-**Επίπεδο 1 — API** (`bunker/api/`): Πρόκειται για τον συντονιστή (*coordinator*) της βελτιστοποίησης. Διαχειρίζεται την ουρά εργασιών, επικοινωνεί με τον C++ επιλυτή μέσω Erlang Ports και επιστρέφει τα αποτελέσματα. Περιέχει περίπου 8.816 γραμμές Elixir κώδικα.
+**Επίπεδο 1 — API** (`bunker/api/`): Πρόκειται για τον συντονιστή (*coordinator*) της βελτιστοποίησης. Διαχειρίζεται την ουρά εργασιών, επικοινωνεί με τον C++ επιλυτή μέσω Erlang Ports και επιστρέφει τα αποτελέσματα.
 
-**Επίπεδο 2 — BoW (Bunker on Water Workbench)** (`bunker/bow/`): Η web εφαρμογή που χρησιμοποιούν οι χειριστές για να παρακολουθούν και να τροποποιούν τα bunker plans. Υλοποιείται με Phoenix LiveView και αντιπροσωπεύει 16.738 γραμμές κώδικα.
+**Επίπεδο 2 — BoW (Bunker on Water Workbench)** (`bunker/bow/`): Η web εφαρμογή που χρησιμοποιούν οι χειριστές για να παρακολουθούν και να τροποποιούν τα bunker plans.
 
 **Επίπεδο 3 — MBC (*Multi-Bundle Connector*)**: Ο C++ γραμμικός επιλυτής που εκτελεί τους πραγματικούς βελτιστοποιητικούς υπολογισμούς. Εκτελείται ως ξεχωριστή διεργασία του λειτουργικού συστήματος και επικοινωνεί με τον BEAM μέσω `Port`.
 
 Η συνολική ροή δεδομένων ακολουθεί την παρακάτω πορεία:
 
 ```
-Shiptech → API → BoW UI → Operator edits → API → MBC Solver → Results → BoW → Shiptech writeback
+Shiptech → API → BoW UI → Operator edits → API →
+ MBC Solver → Results → BoW → Shiptech writeback
 ```
 
 Αρχικά, τα δεδομένα πλοίου και δρομολογίου αντλούνται από το Shiptech (το legacy σύστημα σχεδιασμού ναυτιλιακών δρομολογίων). Ο χειριστής εισάγει στο BoW τυχόν αλλαγές (π.χ. διορθώσεις στις τιμές καυσίμου ανά λιμάνι ή τροποποίηση διαθεσιμότητας). Το API συγκεντρώνει τα δεδομένα, δρομολογεί το αίτημα στον MBC solver, λαμβάνει τα αποτελέσματα και τα επιστρέφει στο Shiptech για εγγραφή (*writeback*), ενώ ταυτόχρονα τα εμφανίζει στο BoW για επισκόπηση.
@@ -1268,7 +1267,7 @@ defmodule BopsApi.Server do
   end
 ```
 
-*Listing 7.4.1: BopsApi.Server — δομή κατάστασης και αρχικοποίηση GenServer (`bunker/api/lib/bops_api/server.ex`, γραμμές 1–44)*
+*Listing 7.4.1: BopsApi.Server — δομή κατάστασης και αρχικοποίηση GenServer*
 
 Στη δομή `State` αποθηκεύεται η εντολή εκτέλεσης του MBC (`cmd`), η αίτηση που επεξεργάζεται (`request`), το `traceparent` για distributed tracing με OpenTelemetry, και ένας buffer (`logs`) για τα μηνύματα εξόδου του solver.
 
@@ -1351,7 +1350,7 @@ resource "azurerm_postgresql_flexible_server_configuration" "shared_preload_libr
 }
 ```
 
-*Listing 7.5.1: Terraform ορισμός PostgreSQL Flexible Server για το BOPS staging περιβάλλον (`bunker/terraform/staging/database.tf`, γραμμές 1–53)*
+*Listing 7.5.1: Terraform ορισμός PostgreSQL Flexible Server για το BOPS staging περιβάλλον*
 
 Αξιοσημείωτα στοιχεία αυτής της δήλωσης: ο server χρησιμοποιεί SKU `GP_Standard_D4s_v3` (4 vCores, general purpose) με 512 GB αποθηκευτικό χώρο, η δημόσια πρόσβαση είναι απενεργοποιημένη (`public_network_access_enabled = false`), και δημιουργούνται δύο ξεχωριστές βάσεις: `bops` (για τα δεδομένα εισόδου/εξόδου του BoW) και `solver` (αποκλειστικά για τα ενδιάμεσα δεδομένα του MBC). Το extension `pg_cron` φορτώνεται ως preload library για χρονοδρομολογημένες εργασίες, ενώ το `pg_stat_statements` επιτρέπει την παρακολούθηση επιδόσεων ερωτημάτων.
 
@@ -1423,7 +1422,7 @@ end
 
 Η Elixir ως **συναρτησιακή** (*functional*) γλώσσα ενθαρρύνει φυσικά pipelines μετασχηματισμού δεδομένων με αμετάβλητες δομές (*immutable data structures*). Μόνο στα άκρα του pipeline — εισαγωγή δεδομένων και αποθήκευση — υπάρχουν παρενέργειες (*side effects*), γεγονός που περιορίζει σημαντικά τα σημεία αστοχίας.
 
-**Listing 8.1.1** — Pipeline μετασχηματισμού αρχείου εισόδου (`nrg/components/emissions_workbench/lib/nrg/ocean/ingest/converters.ex`, γραμμές 55–73):
+**Listing 8.1.1** — Pipeline μετασχηματισμού αρχείου εισόδου:
 
 ```elixir
 def from_raw(%Ingest.RawOceanContainerMove{record: record}, to: :shipment_attrs) do
@@ -1457,7 +1456,7 @@ end
 
 Η σύγκριση με SPA frameworks (React, Vue): η προσέγγιση με LiveView μειώνει τον κώδικα που συντηρεί η ομάδα και εξαλείφει το «impedance mismatch» μεταξύ backend και frontend τύπων. Το μειονέκτημα είναι η απαίτηση μόνιμης WebSocket σύνδεσης, άρα αυξημένη εξάρτηση από τη διαθεσιμότητα του server.
 
-**Listing 8.2.1** — `mount/3` και `handle_event/3` από `OceanSimulatorLive` (`nrg/components/emissions_workbench/lib/nrg_web/live/ocean_simulator_live.ex`, γραμμές 34–79):
+**Listing 8.2.1** — `mount/3` και `handle_event/3` από `OceanSimulatorLive`:
 
 ```elixir
 @impl Phoenix.LiveView
@@ -1518,7 +1517,7 @@ end
 
 Η βιβλιοθήκη **Ecto** είναι το επίπεδο αλληλεπίδρασης με τη βάση στην Elixir. Αποτελείται από τέσσερα στρώματα: *Adapter* (σύνδεση με PostgreSQL driver), *Schema* (αντιστοίχηση Elixir struct σε πίνακα), *Changeset* (επικύρωση και μετασχηματισμός δεδομένων πριν την αποθήκευση) και *Query* (composable DSL για SQL queries). Η προσέγγιση αυτή διαχωρίζει σαφώς τον ορισμό δεδομένων από την επικύρωση, επιτρέποντας διαφορετικά changesets για δημιουργία, ενημέρωση και επικύρωση στο ίδιο schema.
 
-**Listing 8.3.1** — Ecto schema `ContainerMove` (`nrg/components/emissions_workbench/lib/nrg/ocean/container_move.ex`, γραμμές 33–54):
+**Listing 8.3.1** — Ecto schema `ContainerMove`:
 
 ```elixir
 schema "ocean_container_moves" do
@@ -1613,7 +1612,7 @@ end
 
 Στο NRG, ολόκληρο το περιβάλλον ανάπτυξης — Elixir, Erlang, Node.js, εργαλεία CI, k8s binary — ορίζεται στο `flake.nix`. Η ενσωμάτωση **nix-darwin** επιτρέπει τη χρήση Nix σε macOS, καλύπτοντας το development laptop κάθε μηχανικού. Το **Home Manager** διαχειρίζεται ρυθμίσεις χρήστη (`.zshrc`, git config, packages). Το **direnv** φορτώνει αυτόματα το περιβάλλον `flake.nix` κάθε φορά που ο χρήστης μπαίνει στον κατάλογο του project.
 
-**Listing 8.10.1** — Ορισμός εφαρμογής `nrg` στο `flake.nix` (γραμμές 100–105):
+**Listing 8.10.1** —`flake.nix`:
 
 ```nix
 nrg = addK8sToApp {
@@ -1654,7 +1653,7 @@ nrg = addK8sToApp {
 
 **Alerts**: Κανόνες ειδοποίησης (*alert rules*) ορίζονται ως κώδικας στο `/alerts/` directory, με **13+ κανόνες** σε YAML. Ειδοποιήσεις αποστέλλονται μέσω **Hedwig** (εσωτερικό Maersk routing layer) σε Microsoft Teams channels ή email.
 
-**Listing 8.13.1** — Κανόνας ειδοποίησης για ETW requests (`nrg/alerts/metrics/alerts.yaml`, γραμμές 40–49):
+**Listing 8.13.1** — Κανόνας ειδοποίησης για ETW requests:
 
 ```yaml
 - alert: Too many concurrent requests to ETW
