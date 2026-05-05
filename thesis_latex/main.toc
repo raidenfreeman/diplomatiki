@@ -1,0 +1,326 @@
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {chapter}{Περίληψη}{i}{}%
+\contentsline {chapter}{\textenglish {Abstract}}{iii}{}%
+\xpg@aux {}{english}
+\xpg@aux {}{greek}
+\xpg@aux {}{english}
+\xpg@aux {}{greek}
+\contentsline {chapter}{Ευχαριστίες}{vii}{}%
+\contentsline {chapter}{Πρόλογος}{ix}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {chapter}{Περιεχόμενα}{xvi}{}%
+\contentsline {chapter}{\selectlanguage {greek}Κατάλογος σχημάτων}{xvii}{}%
+\addvspace {1em}
+\contentsline {chapter}{\numberline {1}Κεφάλαιο 1 --- Εισαγωγή}{1}{}%
+\contentsline {section}{\numberline {1.1}1.1 Πλαίσιο της εργασίας}{1}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {section}{\numberline {1.2}1.2 Στόχος της εργασίας}{2}{}%
+\contentsline {section}{\numberline {1.3}1.3 Συνεισφορές της εργασίας}{2}{}%
+\contentsline {section}{\numberline {1.4}1.4 Δομή του κειμένου}{3}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {chapter}{\numberline {2}Κεφάλαιο 2 --- Πλαίσιο και πρόβλημα}{5}{}%
+\contentsline {section}{\numberline {2.1}2.1 Η Maersk και ο τομέας της θαλάσσιας μεταφοράς}{5}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {section}{\numberline {2.2}2.2 Συνεισφορά της ναυτιλίας στις παγκόσμιες εκπομπές}{6}{}%
+\contentsline {section}{\numberline {2.3}2.3 Ο στόχος Net Zero 2040 της Maersk}{7}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {section}{\numberline {2.4}2.4 Ρυθμιστικό πλαίσιο}{8}{}%
+\contentsline {subsection}{\numberline {2.4.1}CSRD --- Οδηγία Εταιρικής Βιωσιμότητας}{8}{}%
+\contentsline {subsection}{\numberline {2.4.2}EU ETS Maritime --- Ευρωπαϊκό Σύστημα Εμπορίας Εκπομπών για τη Ναυτιλία}{8}{}%
+\contentsline {subsection}{\numberline {2.4.3}FuelEU Maritime}{9}{}%
+\contentsline {subsection}{\numberline {2.4.4}IMO MEPC --- Στρατηγική GHG 2023}{9}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {subsection}{\numberline {2.4.5}Εθελοντικά πλαίσια αναφοράς: CDP και GRESB}{10}{}%
+\contentsline {section}{\numberline {2.5}2.5 Η προηγούμενη χειρωνακτική διαδικασία}{10}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {section}{\numberline {2.6}2.6 Ομάδες χρηστών και ανάγκες τους}{12}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {section}{\numberline {2.7}2.7 Ο εσωτερικός έλεγχος GIA του 2023}{14}{}%
+\contentsline {chapter}{\numberline {3}Κεφάλαιο 3 --- Θεωρητικό υπόβαθρο: Λογιστική αερίων θερμοκηπίου}{17}{}%
+\contentsline {section}{\numberline {3.1}3.1 Το Πρωτόκολλο GHG (Greenhouse Gas Protocol)}{17}{}%
+\contentsline {subsection}{\numberline {3.1.1}Ιστορικό και θεσμικό πλαίσιο}{17}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {subsection}{\numberline {3.1.2}Η έννοια του CO₂e και του Global Warming Potential}{18}{}%
+\contentsline {subsection}{\numberline {3.1.3}Σχέση με άλλα πρότυπα}{18}{}%
+\contentsline {section}{\numberline {3.2}3.2 Κατηγορίες Εκπομπών (Scopes)}{18}{}%
+\contentsline {subsection}{\numberline {3.2.1}Κατηγορία 1 (Scope 1): Άμεσες εκπομπές}{19}{}%
+\contentsline {subsection}{\numberline {3.2.2}Κατηγορία 2 (Scope 2): Έμμεσες εκπομπές από ενέργεια}{19}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {subsection}{\numberline {3.2.3}Κατηγορία 3 (Scope 3): Εκπομπές αλυσίδας αξίας}{20}{}%
+\contentsline {section}{\numberline {3.3}3.3 Μεθοδολογίες Μέτρησης}{20}{}%
+\contentsline {subsection}{\numberline {3.3.1}3.3.1 Μεθοδολογία βάσει κόστους (Cost-based)}{20}{}%
+\contentsline {subsection}{\numberline {3.3.2}3.3.2 Μεθοδολογία βάσει δραστηριότητας (Activity-based)}{21}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {subsection}{\numberline {3.3.3}3.3.3 Υβριδική μεθοδολογία (Hybrid)}{22}{}%
+\contentsline {section}{\numberline {3.4}3.4 TTW έναντι WTW: Όρια του συστήματος εκπομπών}{22}{}%
+\contentsline {subsection}{\numberline {3.4.1}Tank-to-Wake (TTW)}{22}{}%
+\contentsline {subsection}{\numberline {3.4.2}Well-to-Wake (WTW)}{22}{}%
+\contentsline {section}{\numberline {3.5}3.5 Mass Balance και Book-and-Claim}{23}{}%
+\contentsline {subsection}{\numberline {3.5.1}Φυσική ροή έναντι λογιστικής ροής}{23}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {subsection}{\numberline {3.5.2}Mass Balance (Ισοζύγιο μάζας)}{24}{}%
+\contentsline {subsection}{\numberline {3.5.3}Book-and-Claim (Αναφορά αποσυνδεδεμένη από φυσική ροή)}{24}{}%
+\contentsline {subsection}{\numberline {3.5.4}Πλεονεκτήματα και περιορισμοί}{25}{}%
+\contentsline {section}{\numberline {3.6}3.6 Πρότυπα και Πιστοποιήσεις}{25}{}%
+\contentsline {subsection}{\numberline {3.6.1}ISCC (International Sustainability and Carbon Certification)}{25}{}%
+\contentsline {subsection}{\numberline {3.6.2}SBTi Maritime (Science Based Targets initiative)}{25}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {subsection}{\numberline {3.6.3}GLEC Framework (Global Logistics Emissions Council)}{26}{}%
+\contentsline {subsection}{\numberline {3.6.4}CDP και ISO 14001}{26}{}%
+\contentsline {subsection}{\numberline {3.6.5}Σύνοψη κανονιστικού και προτυπικού πλαισίου}{27}{}%
+\contentsline {subsection}{\numberline {3.6.6}Βιβλιογραφικές αναφορές κεφαλαίου}{27}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {chapter}{\numberline {4}Κεφάλαιο 4 --- Ο Πάγκος Εργασίας Εκπομπών: Επισκόπηση}{29}{}%
+\contentsline {section}{\numberline {4.1}4.1 Στόχοι και αποστολή της ομάδας ET Platform}{29}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {section}{\numberline {4.2}4.2 Οι τέσσερις πυλώνες του ET Platform}{30}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {section}{\numberline {4.3}4.3 Επιτεύγματα και αντίκτυπος}{32}{}%
+\contentsline {section}{\numberline {4.4}4.4 Επισκόπηση χαρακτηριστικών διεπαφής χρήστη}{33}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {chapter}{\numberline {5}Κεφάλαιο 5 --- Πυλώνας Α: Ocean Emissions και STAR Connect}{35}{}%
+\contentsline {section}{\numberline {5.1}5.1 Πρόκληση: Ακριβής καταγραφή εκπομπών στόλου}{35}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {section}{\numberline {5.2}5.2 Πηγές δεδομένων}{36}{}%
+\contentsline {subsection}{\numberline {5.2.1}5.2.1 Dremio Data Lake}{36}{}%
+\contentsline {subsection}{\numberline {5.2.2}5.2.2 Shiptech}{36}{}%
+\contentsline {subsection}{\numberline {5.2.3}5.2.3 Δομή κίνησης εμπορευματοκιβωτίου (ContainerMove)}{37}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {section}{\numberline {5.3}5.3 Vessel Master Data (ocean\_api)}{38}{}%
+\contentsline {section}{\numberline {5.4}5.4 STAR Connect: Real-time Τηλεμετρία Καυσίμων}{38}{}%
+\contentsline {subsection}{\numberline {5.4.1}5.4.1 Τι είναι το STAR Connect}{38}{}%
+\contentsline {subsection}{\numberline {5.4.2}5.4.2 Ροή δεδομένων: STAR Connect → Kafka → BoW}{39}{}%
+\contentsline {subsection}{\numberline {5.4.3}5.4.3 Δομή δεδομένων RemainingFuelOnBoard}{39}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {subsection}{\numberline {5.4.4}5.4.4 API πρόσβασης}{40}{}%
+\contentsline {section}{\numberline {5.5}5.5 Υπολογισμός Εκπομπών}{40}{}%
+\contentsline {subsection}{\numberline {5.5.1}5.5.1 Trade Factors: ο πυρήνας της μεθοδολογίας}{40}{}%
+\contentsline {subsection}{\numberline {5.5.2}5.5.2 EmissionsCalculator: η δημόσια API υπολογισμού}{40}{}%
+\contentsline {subsection}{\numberline {5.5.3}5.5.3 Pipeline μετασχηματισμού εισαγωγής}{41}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {section}{\numberline {5.6}5.6 EU ETS Surcharges}{42}{}%
+\contentsline {subsection}{\numberline {5.6.1}5.6.1 Ρυθμιστικό πλαίσιο}{42}{}%
+\contentsline {subsection}{\numberline {5.6.2}5.6.2 Υλοποίηση στο NRG}{42}{}%
+\contentsline {subsection}{\numberline {5.6.3}5.6.3 Τριμηνιαία εγκυρότητα και audit trail}{43}{}%
+\contentsline {section}{\numberline {5.7}5.7 Customer Baseline Emissions}{43}{}%
+\contentsline {subsection}{\numberline {5.7.1}5.7.1 Σκοπός και λειτουργικότητα}{43}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {subsection}{\numberline {5.7.2}5.7.2 Backend: BaselineEmissionsReport}{44}{}%
+\contentsline {subsection}{\numberline {5.7.3}5.7.3 Audit trail ανά αναζήτηση}{44}{}%
+\contentsline {subsection}{\numberline {5.7.4}5.7.4 Σύνδεση με downstream χρήσεις}{44}{}%
+\contentsline {chapter}{\numberline {6}Κεφάλαιο 6 --- Πυλώνας Β: ECO Product Delivery και πιστοποιητικά}{45}{}%
+\contentsline {section}{\numberline {6.1}6.1 Τι είναι τα ECO Products}{45}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {section}{\numberline {6.2}6.2 ECOv1 vs ECOv2: Δύο μεθοδολογίες υπολογισμού}{46}{}%
+\contentsline {subsection}{\numberline {6.2.1}ECOv1: Υπολογισμός βάσει απόλυτης διαφοράς CO₂}{46}{}%
+\contentsline {subsection}{\numberline {6.2.2}ECOv2: Υπολογισμός βάσει ποσοστιαίας εξοικονόμησης CO₂e}{47}{}%
+\contentsline {section}{\numberline {6.3}6.3 Energy Bank: λογιστική πράσινου καυσίμου}{47}{}%
+\contentsline {subsection}{\numberline {6.3.1}6.3.1 Το πρόβλημα του ισοζυγίου μάζας}{47}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {subsection}{\numberline {6.3.2}6.3.2 Event Sourcing και CQRS στην Energy Bank}{48}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {subsection}{\numberline {6.3.3}6.3.3 Καταθέσεις, Αναλήψεις και Λογαριασμοί Εκκαθάρισης}{50}{}%
+\contentsline {subsection}{\numberline {6.3.4}6.3.4 Η αρχή του ισοζυγίου μάζας ως περιορισμός συστήματος}{50}{}%
+\contentsline {section}{\numberline {6.4}6.4 Proof of Sustainability (POS) και ISCC}{51}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {section}{\numberline {6.5}6.5 Έκδοση πιστοποιητικών}{52}{}%
+\contentsline {subsection}{\numberline {6.5.1}6.5.1 Δομή πιστοποιητικού}{52}{}%
+\contentsline {subsection}{\numberline {6.5.2}6.5.2 Παραγωγή PDF και αποθήκευση στο Azure Blob Storage}{52}{}%
+\contentsline {subsection}{\numberline {6.5.3}6.5.3 Επανέκδοση, ακύρωση και ιστορικό}{53}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {section}{\numberline {6.6}6.6 ECO Delivery Surcharges: τιμολόγηση και κόστος αποφυγής}{55}{}%
+\contentsline {subsection}{\numberline {6.6.1}6.6.1 Cost of Abatement}{55}{}%
+\contentsline {subsection}{\numberline {6.6.2}6.6.2 Υπολογισμός χρέωσης πελάτη}{55}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {chapter}{\numberline {7}Κεφάλαιο 7 --- Πυλώνας Γ: Bunker Optimization (Energy Markets)}{57}{}%
+\contentsline {section}{\numberline {7.1}7.1 Το πρόβλημα ανεφοδιασμού}{57}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {section}{\numberline {7.2}7.2 BOPS: Bunker Optimization Planning System}{58}{}%
+\contentsline {section}{\numberline {7.3}7.3 BoW: Bunker on Water Workbench}{59}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {section}{\numberline {7.4}7.4 Ο C++ Solver μέσω Erlang Ports}{60}{}%
+\contentsline {subsection}{\numberline {7.4.1}7.4.1 Αρχιτεκτονική σύνδεσης με εξωτερικό επιλυτή}{60}{}%
+\contentsline {subsection}{\numberline {7.4.2}7.4.2 Υλοποίηση: BopsApi.Server}{60}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {section}{\numberline {7.5}7.5 Ενσωμάτωση με το Shiptech}{62}{}%
+\contentsline {subsection}{\numberline {7.5.1}7.5.1 Αρχιτεκτονική ανταλλαγής δεδομένων}{62}{}%
+\contentsline {subsection}{\numberline {7.5.2}7.5.2 Ορισμός υποδομής με Terraform}{63}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {section}{\numberline {7.6}7.6 Χρονοπρογραμματισμός εκτελέσεων Plan Run}{64}{}%
+\contentsline {section}{\numberline {7.7}7.7 Σύνδεση με EU ETS και πράσινα καύσιμα}{65}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {chapter}{\numberline {8}Κεφάλαιο 8 --- Τεχνολογίες}{67}{}%
+\contentsline {section}{\numberline {8.1}8.1 BEAM, Erlang και Elixir}{67}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {section}{\numberline {8.2}8.2 Phoenix Framework και LiveView}{68}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {section}{\numberline {8.3}8.3 PostgreSQL και Ecto}{70}{}%
+\contentsline {section}{\numberline {8.4}8.4 Apache Kafka}{71}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {section}{\numberline {8.5}8.5 Dremio}{72}{}%
+\contentsline {section}{\numberline {8.6}8.6 ODBC ενσωματώσεις}{72}{}%
+\contentsline {section}{\numberline {8.7}8.7 Microsoft Azure}{72}{}%
+\contentsline {section}{\numberline {8.8}8.8 Kubernetes}{73}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {section}{\numberline {8.9}8.9 Terraform}{74}{}%
+\contentsline {section}{\numberline {8.10}8.10 Nix και nix-darwin}{74}{}%
+\contentsline {section}{\numberline {8.11}8.11 GitHub Actions και Custom Runner}{75}{}%
+\contentsline {section}{\numberline {8.12}8.12 Maersk Design System (MDS)}{75}{}%
+\contentsline {section}{\numberline {8.13}8.13 Observability stack}{75}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {section}{\numberline {8.14}8.14 HashiCorp Vault και agenix}{76}{}%
+\contentsline {section}{\numberline {8.15}8.15 Oban}{77}{}%
+\contentsline {section}{\numberline {8.16}8.16 Commanded και EventStore}{77}{}%
+\contentsline {section}{\numberline {8.17}8.17 Λοιπά υποστηρικτικά εργαλεία}{77}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {chapter}{\numberline {9}Κεφάλαιο 9 --- Αρχιτεκτονική του συστήματος}{79}{}%
+\contentsline {section}{\numberline {9.1}9.1 Επισκόπηση συστήματος}{79}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {section}{\numberline {9.2}9.2 Clean Architecture στην πράξη}{80}{}%
+\contentsline {section}{\numberline {9.3}9.3 Monorepo οργάνωση}{81}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {section}{\numberline {9.4}9.4 Components και τα όριά τους}{82}{}%
+\contentsline {section}{\numberline {9.5}9.5 Data ingestion pipeline}{83}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {subsection}{\numberline {9.5.1}9.5.1 Polling sources}{84}{}%
+\contentsline {subsection}{\numberline {9.5.2}9.5.2 Streaming}{84}{}%
+\contentsline {subsection}{\numberline {9.5.3}9.5.3 Job processing και GenServer Director}{85}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {section}{\numberline {9.6}9.6 Web layer}{86}{}%
+\contentsline {section}{\numberline {9.7}9.7 Authentication και Authorization}{87}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {section}{\numberline {9.8}9.8 Persistence layer}{88}{}%
+\contentsline {section}{\numberline {9.9}9.9 Event sourcing για Energy Bank}{88}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {section}{\numberline {9.10}9.10 Observability αρχιτεκτονική}{91}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {section}{\numberline {9.11}9.11 Deployment topology}{92}{}%
+\contentsline {section}{\numberline {9.12}9.12 Disaster recovery και αναπαραγωγιμότητα}{93}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {chapter}{\numberline {10}Κεφάλαιο 10 --- Εργασιακές μέθοδοι}{95}{}%
+\contentsline {section}{\numberline {10.1}10.1 Agile και Extreme Programming}{95}{}%
+\contentsline {subsection}{\numberline {10.1.1}Ιστορικό και φιλοσοφία}{95}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {subsection}{\numberline {10.1.2}Οι 12 πρακτικές XP}{96}{}%
+\contentsline {subsection}{\numberline {10.1.3}Σύγκριση με Scrum και επιλογή XP}{96}{}%
+\contentsline {section}{\numberline {10.2}10.2 Pair Programming}{97}{}%
+\contentsline {subsection}{\numberline {10.2.1}Ρόλοι και ρυθμός}{97}{}%
+\contentsline {subsection}{\numberline {10.2.2}Εργαλεία σε distributed περιβάλλον}{97}{}%
+\contentsline {subsection}{\numberline {10.2.3}Mob/Ensemble Programming}{97}{}%
+\contentsline {subsection}{\numberline {10.2.4}Εμπειρικά αποτελέσματα και αντιμετώπιση κριτικής}{97}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {section}{\numberline {10.3}10.3 TDD --- Test Driven Development}{98}{}%
+\contentsline {subsection}{\numberline {10.3.1}Red-Green-Refactor}{98}{}%
+\contentsline {subsection}{\numberline {10.3.2}Test Pyramid}{98}{}%
+\contentsline {subsection}{\numberline {10.3.3}Κουλτούρα test coverage}{99}{}%
+\contentsline {subsection}{\numberline {10.3.4}Code Λήμμα 10.3.1: LiveView Acceptance Test}{99}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {section}{\numberline {10.4}10.4 Continuous Integration / Continuous Delivery}{100}{}%
+\contentsline {subsection}{\numberline {10.4.1}Trunk-based Development}{100}{}%
+\contentsline {subsection}{\numberline {10.4.2}Ρυθμός παραδόσεων}{101}{}%
+\contentsline {subsection}{\numberline {10.4.3}GitHub Actions και Workflow Κατηγορίες}{101}{}%
+\contentsline {subsection}{\numberline {10.4.4}Affected Workspace και Incremental Builds}{101}{}%
+\contentsline {subsection}{\numberline {10.4.5}Rollback}{101}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {section}{\numberline {10.5}10.5 Vertical Ownership}{102}{}%
+\contentsline {subsection}{\numberline {10.5.1}Έννοια και εφαρμογή}{102}{}%
+\contentsline {subsection}{\numberline {10.5.2}Πλεονεκτήματα}{102}{}%
+\contentsline {subsection}{\numberline {10.5.3}Μειονεκτήματα και αντιμετώπισή τους}{102}{}%
+\contentsline {section}{\numberline {10.6}10.6 Feedback Loops}{103}{}%
+\contentsline {subsection}{\numberline {10.6.1}Η αρχή}{103}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {subsection}{\numberline {10.6.2}Βρόγχοι από δευτερόλεπτα έως μήνες}{104}{}%
+\contentsline {subsection}{\numberline {10.6.3}Ασύγχρονη ανατροφοδότηση στην πράξη}{104}{}%
+\contentsline {section}{\numberline {10.7}10.7 Onboarding και Knowledge Sharing}{104}{}%
+\contentsline {subsection}{\numberline {10.7.1}Φιλοσοφία και στόχοι}{104}{}%
+\contentsline {subsection}{\numberline {10.7.2}Buddy System}{105}{}%
+\contentsline {subsection}{\numberline {10.7.3}KT Sessions}{105}{}%
+\contentsline {section}{\numberline {10.8}10.8 Code Review μέσω Pairing}{105}{}%
+\contentsline {subsection}{\numberline {10.8.1}Συνεχής αναθεώρηση ως αρχιτεκτονική επιλογή}{105}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {subsection}{\numberline {10.8.2}Ροή χωρίς PRs εσωτερικά}{106}{}%
+\contentsline {subsection}{\numberline {10.8.3}Trade-offs}{106}{}%
+\contentsline {chapter}{\numberline {11}Κεφάλαιο 11 --- Συμπεράσματα}{107}{}%
+\contentsline {section}{\numberline {11.1}11.1 Σύνοψη της λύσης}{107}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {section}{\numberline {11.2}11.2 Επιτυχίες και μετρήσεις αντίκτυπου}{108}{}%
+\contentsline {section}{\numberline {11.3}11.3 Μαθήματα από την υλοποίηση}{109}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {chapter}{\numberline {12}Κεφάλαιο 12 --- Μελλοντική εργασία}{111}{}%
+\contentsline {section}{\numberline {12.1}12.1 Scope 2 measurements: Γραφεία, Τερματικά και Cold Ironing}{111}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {section}{\numberline {12.2}12.2 Επεκτάσεις Στόλου και Κάλυψης Δραστηριοτήτων}{112}{}%
+\contentsline {section}{\numberline {12.3}12.3 Επέκταση SBTi Αναφοράς}{113}{}%
+\contentsline {section}{\numberline {12.4}12.4 Προηγμένα Analytics: Προβλεπτικές Εκπομπές και Σενάρια Απανθρακοποίησης}{113}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {section}{\numberline {12.5}12.5 Σύνδεση Bunker Optimization με την Energy Bank}{114}{}%
+\contentsline {chapter}{\numberline {13}Κεφάλαιο 13 --- Βιβλιογραφία}{115}{}%
+\contentsline {section}{\numberline {13.1}13.1 Διεθνή πρότυπα και πρωτόκολλα}{115}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {section}{\numberline {13.2}13.2 Διεθνής Ναυτιλιακός Οργανισμός (IMO)}{116}{}%
+\contentsline {section}{\numberline {13.3}13.3 Ευρωπαϊκή νομοθεσία}{116}{}%
+\contentsline {section}{\numberline {13.4}13.4 Βιβλία και τεχνική βιβλιογραφία}{117}{}%
+\contentsline {section}{\numberline {13.5}13.5 Διαδικτυακοί πόροι και τεκμηρίωση τεχνολογιών}{117}{}%
+\xpg@aux {}{greek}
+\xpg@aux {}{greek}
+\contentsline {section}{\numberline {13.6}13.6 Πηγές εικόνων}{118}{}%
+\contentsline {subparagraph}{}{119}{}%

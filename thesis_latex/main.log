@@ -1,0 +1,1971 @@
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.5.4)  5 MAY 2026 11:30
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**main.tex
+(./main.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+(./ceid-thesis-xe.cls
+
+LaTeX Warning: You have requested document class `ceid-thesis-xe',
+               but the document class provides `ceid-thesis'.
+
+Document Class: ceid-thesis 2014/10/25 1.0 LaTeX document class.
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
+)
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+)
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: xetex.def on input line 106.
+
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/graphics-def/xetex.def
+File: xetex.def 2025/11/01 v5.0p Graphics/color driver for xetex
+))
+\Gin@req@height=\dimen148
+\Gin@req@width=\dimen149
+)
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2025/07/09 v2.17z AMS math features
+\@mathmargin=\skip49
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2024/11/17 v2.01 AMS text
+
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks18
+\ex@=\dimen150
+))
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen151
+)
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count271
+LaTeX Info: Redefining \frac on input line 233.
+\uproot@=\count272
+\leftroot@=\count273
+LaTeX Info: Redefining \overline on input line 398.
+LaTeX Info: Redefining \colon on input line 409.
+\classnum@=\count274
+\DOTSCASE@=\count275
+LaTeX Info: Redefining \ldots on input line 495.
+LaTeX Info: Redefining \dots on input line 498.
+LaTeX Info: Redefining \cdots on input line 619.
+\Mathstrutbox@=\box53
+\strutbox@=\box54
+LaTeX Info: Redefining \big on input line 721.
+LaTeX Info: Redefining \Big on input line 722.
+LaTeX Info: Redefining \bigg on input line 723.
+LaTeX Info: Redefining \Bigg on input line 724.
+\big@size=\dimen152
+LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+\macc@depth=\count276
+LaTeX Info: Redefining \bmod on input line 904.
+LaTeX Info: Redefining \pmod on input line 909.
+LaTeX Info: Redefining \smash on input line 939.
+LaTeX Info: Redefining \relbar on input line 969.
+LaTeX Info: Redefining \Relbar on input line 970.
+\c@MaxMatrixCols=\count277
+\dotsspace@=\muskip17
+\c@parentequation=\count278
+\dspbrk@lvl=\count279
+\tag@help=\toks19
+\row@=\count280
+\column@=\count281
+\maxfields@=\count282
+\andhelp@=\toks20
+\eqnshift@=\dimen153
+\alignsep@=\dimen154
+\tagshift@=\dimen155
+\tagwidth@=\dimen156
+\totwidth@=\dimen157
+\lineht@=\dimen158
+\@envbody=\toks21
+\multlinegap=\skip50
+\multlinetaggap=\skip51
+\mathdisplay@stack=\toks22
+LaTeX Info: Redefining \[ on input line 2950.
+LaTeX Info: Redefining \] on input line 2951.
+)
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
+
+\f@nch@headwidth=\skip52
+\f@nch@offset@elh=\skip53
+\f@nch@offset@erh=\skip54
+\f@nch@offset@olh=\skip55
+\f@nch@offset@orh=\skip56
+\f@nch@offset@elf=\skip57
+\f@nch@offset@erf=\skip58
+\f@nch@offset@olf=\skip59
+\f@nch@offset@orf=\skip60
+\f@nch@height=\skip61
+\f@nch@footalignment=\skip62
+\f@nch@widthL=\skip63
+\f@nch@widthC=\skip64
+\f@nch@widthR=\skip65
+\@temptokenb=\toks23
+)
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2025/01/22 v1.4n Standard LaTeX document class
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/base/bk11.clo
+File: bk11.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count283
+\c@chapter=\count284
+\c@section=\count285
+\c@subsection=\count286
+\c@subsubsection=\count287
+\c@paragraph=\count288
+\c@subparagraph=\count289
+\c@figure=\count290
+\c@table=\count291
+\abovecaptionskip=\skip66
+\belowcaptionskip=\skip67
+\bibindent=\dimen159
+))
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/fontspec/fontspec.sty
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2026-01-19 L3 programming layer (loader) 
+
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/l3backend/l3backend-xetex.de
+f
+File: l3backend-xetex.def 2025-10-09 L3 backend support: XeTeX
+\g__graphics_track_int=\count292
+\g__pdfannot_backend_int=\count293
+\g__pdfannot_backend_link_int=\count294
+))
+Package: xparse 2025-10-09 L3 Experimental document command parser
+)
+Package: fontspec 2025/09/29 v2.9g Font selection for XeLaTeX and LuaLaTeX
+
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
+Package: fontspec-xetex 2025/09/29 v2.9g Font selection for XeLaTeX and LuaLaTe
+X
+\l__fontspec_script_int=\count295
+\l__fontspec_language_int=\count296
+\l__fontspec_strnum_int=\count297
+\l__fontspec_tmp_int=\count298
+\l__fontspec_tmpa_int=\count299
+\l__fontspec_tmpb_int=\count300
+\l__fontspec_tmpc_int=\count301
+\l__fontspec_em_int=\count302
+\l__fontspec_emdef_int=\count303
+\l__fontspec_strong_int=\count304
+\l__fontspec_strongdef_int=\count305
+\l__fontspec_tmpa_dim=\dimen160
+\l__fontspec_tmpb_dim=\dimen161
+\l__fontspec_tmpc_dim=\dimen162
+
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
+)
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/fontspec/fontspec.cfg)))
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/polyglossia/polyglossia.sty
+Package: polyglossia 2025/12/01 v2.9 Modern multilingual typesetting with XeLaT
+eX and LuaLaTeX
+
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count306
+)
+(/usr/local/texlive/2026basic/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+)
+\l_xpg_alias_keyvals_int=\count307
+
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/polyglossia/gloss-latex.ldf
+File: gloss-latex.ldf polyglossia: module for default language
+))
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/polyglossia/gloss-greek.ldf
+File: gloss-greek.ldf polyglossia: module for Greek
+
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/polyglossia/xgreek-fixes.def
+)
+\@attic@num=\count308
+)
+
+Package polyglossia Info: Default language is greek
+
+
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/polyglossia/gloss-english.ld
+f
+File: gloss-english.ldf polyglossia: module for English
+)
+
+Package fontspec Info: 
+(fontspec)             Font family 'FreeSans(0)' created for font 'FreeSans'
+(fontspec)             with options [Ligatures=TeX].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"FreeSans/OT:script=latn;language=dflt;mapping=tex-te
+xt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
+(fontspec)             <->"FreeSans/OT:script=latn;language=dflt;+smcp;mapping=
+tex-text;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->"FreeSans/B/OT:script=latn;language=dflt;mapping=tex-
+text;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
+(fontspec)             <->"FreeSans/B/OT:script=latn;language=dflt;+smcp;mappin
+g=tex-text;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->"FreeSans/I/OT:script=latn;language=dflt;mapping=tex-
+text;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->"FreeSans/BI/OT:script=latn;language=dflt;mapping=tex
+-text;"
+
+
+Package fontspec Info: 
+(fontspec)             Font family 'FreeSans(1)' created for font 'FreeSans'
+(fontspec)             with options
+(fontspec)             [WordSpace={1,0,0},HyphenChar=None,PunctuationSpace=Word
+Space].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"FreeSans/OT:script=latn;language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
+(fontspec)             <->"FreeSans/OT:script=latn;language=dflt;+smcp;"
+(fontspec)             and font adjustment code:
+(fontspec)             \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font
+(fontspec)             =0\fontdimen 3\font \fontdimen 4\font =0\fontdimen
+(fontspec)             4\font \fontdimen 7\font =0\fontdimen 2\font
+(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->"FreeSans/B/OT:script=latn;language=dflt;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
+(fontspec)             <->"FreeSans/B/OT:script=latn;language=dflt;+smcp;"
+(fontspec)             and font adjustment code:
+(fontspec)             \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font
+(fontspec)             =0\fontdimen 3\font \fontdimen 4\font =0\fontdimen
+(fontspec)             4\font \fontdimen 7\font =0\fontdimen 2\font
+(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->"FreeSans/I/OT:script=latn;language=dflt;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->"FreeSans/BI/OT:script=latn;language=dflt;"
+
+ (/usr/local/texlive/2026basic/texmf-dist/tex/latex/tools/indentfirst.sty
+Package: indentfirst 2023/07/02 v1.03 Indent first paragraph (DPC)
+)
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/xurl/xurl.sty
+Package: xurl 2022/01/09 v 0.10 modify URL breaks
+
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip18
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+))
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2025-10-13 v4.24 Multi-page Table package (DPC)
+\LTleft=\skip68
+\LTright=\skip69
+\LTpre=\skip70
+\LTpost=\skip71
+\LTchunksize=\count309
+\LTcapwidth=\dimen163
+\LT@head=\box55
+\LT@firsthead=\box56
+\LT@foot=\box57
+\LT@lastfoot=\box58
+\LT@gbox=\box59
+\LT@cols=\count310
+\LT@rows=\count311
+\c@LT@tables=\count312
+\c@LT@chunks=\count313
+\LT@p@ftn=\toks24
+)
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen164
+\lightrulewidth=\dimen165
+\cmidrulewidth=\dimen166
+\belowrulesep=\dimen167
+\belowbottomsep=\dimen168
+\aboverulesep=\dimen169
+\abovetopsep=\dimen170
+\cmidrulesep=\dimen171
+\cmidrulekern=\dimen172
+\defaultaddspace=\dimen173
+\@cmidla=\count314
+\@cmidlb=\count315
+\@aboverulesep=\dimen174
+\@belowrulesep=\dimen175
+\@thisruleclass=\count316
+\@lastruleclass=\count317
+\@thisrulewidth=\dimen176
+)
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/tools/array.sty
+Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
+\col@sep=\dimen177
+\ar@mcellbox=\box60
+\extrarowheight=\dimen178
+\NC@list=\toks25
+\extratabsurround=\skip72
+\backup@length=\skip73
+\ar@cellbox=\box61
+)
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2025/03/01 v4.3b Infix arithmetic (KKT,FJ)
+\calc@Acount=\count318
+\calc@Bcount=\count319
+\calc@Adimen=\dimen179
+\calc@Bdimen=\dimen180
+\calc@Askip=\skip74
+\calc@Bskip=\skip75
+LaTeX Info: Redefining \setlength on input line 86.
+LaTeX Info: Redefining \addtolength on input line 87.
+\calc@Ccount=\count320
+\calc@Cskip=\skip76
+)
+
+Package fontspec Info: 
+(fontspec)             Font family 'FreeSans(2)' created for font 'FreeSans'
+(fontspec)             with options [Ligatures=TeX,Script=Greek].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"FreeSans/OT:script=grek;language=dflt;mapping=tex-te
+xt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
+(fontspec)             <->"FreeSans/OT:script=grek;language=dflt;+smcp;mapping=
+tex-text;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->"FreeSans/B/OT:script=grek;language=dflt;mapping=tex-
+text;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
+(fontspec)             <->"FreeSans/B/OT:script=grek;language=dflt;+smcp;mappin
+g=tex-text;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->"FreeSans/I/OT:script=grek;language=dflt;mapping=tex-
+text;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->"FreeSans/BI/OT:script=grek;language=dflt;mapping=tex
+-text;"
+
+
+
+LaTeX Warning: Unused global option(s):
+    [greek].
+
+(./main.aux (./front_matter/abstract.aux) (./front_matter/acknowledgements.aux)
+(./front_matter/prologue.aux))
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+
+Package fontspec Info: 
+(fontspec)             Adjusting the maths setup (use [no-math] to avoid
+(fontspec)             this).
+
+\symlegacymaths=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 78.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 78.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 78.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 78.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 78.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 78.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 78.
+LaTeX Font Info:    Redeclaring math accent \check on input line 78.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 78.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 78.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 78.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 78.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 78.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 78.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 78.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 78.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 78.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 78.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 78.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 78.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 78.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 78.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 78.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 78.
+LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
+(Font)              `operators' in the math version `normal' on input line 78.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> TU/FreeSans(0)/m/n on input line 78.
+LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
+(Font)              `operators' in the math version `bold' on input line 78.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> TU/FreeSans(0)/m/n on input line 78.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  TU/FreeSans(0)/m/n --> TU/FreeSans(0)/m/n on input line
+ 78.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> TU/FreeSans(0)/m/it on input line 78.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> TU/FreeSans(0)/b/n on input line 78.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> TU/FreeSans(0)/m/n on input line 78.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> TU/FreeSans(1)/m/n on input line 78.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  TU/FreeSans(0)/m/n --> TU/FreeSans(0)/b/n on input line
+ 78.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> TU/FreeSans(0)/b/it on input line 78.
+
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> TU/FreeSans(0)/b/n on input line 78.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> TU/FreeSans(1)/b/n on input line 78.
+File: static/figures/PatrasLogo.png Graphic file (type bmp)
+<static/figures/PatrasLogo.png>
+ [1
+
+
+] [2
+
+]
+File: static/figures/PatrasLogo.png Graphic file (type bmp)
+<static/figures/PatrasLogo.png>
+
+Overfull \hbox (18.70393pt too wide) in paragraph at lines 80--80
+[]$[]$ 
+ []
+
+[3] [4]
+File: static/figures/PatrasLogo.png Graphic file (type bmp)
+<static/figures/PatrasLogo.png>
+ [5
+
+] [6
+
+]
+\openout2 = `front_matter/abstract.aux'.
+
+ (./front_matter/abstract.tex
+Underfull \hbox (badness 2050) in paragraph at lines 11--13
+[]\TU/FreeSans(2)/m/n/10.95 Εκπομπές αερίων θερμοκηπίου, CO$[]$, Ναυτιλία, Maer
+sk, Elixir, BEAM, Phoenix
+ []
+
+[1
+
+
+] [2
+
+]) [3] [4
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 88--88
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 88--88
+
+ []
+
+[5]
+\openout2 = `front_matter/acknowledgements.aux'.
+
+ (./front_matter/acknowledgements.tex [6
+
+
+]) [7]
+\openout2 = `front_matter/prologue.aux'.
+
+ (./front_matter/prologue.tex
+[8
+
+
+
+
+]) [9] [10
+
+
+
+] (./main.toc [11]
+LaTeX Font Info:    Font shape `TU/FreeSans(2)/m/sl' in size <10.95> not availa
+ble
+(Font)              Font shape `TU/FreeSans(2)/m/it' tried instead on input lin
+e 110.
+ [12] [13] [14]
+Overfull \hbox (1.29208pt too wide) detected at line 269
+ \TU/FreeSans(2)/m/n/10.95 100
+ []
+
+
+Overfull \hbox (1.29208pt too wide) detected at line 270
+ \TU/FreeSans(2)/m/n/10.95 100
+ []
+
+
+Overfull \hbox (1.29208pt too wide) detected at line 271
+ \TU/FreeSans(2)/m/n/10.95 101
+ []
+
+
+Overfull \hbox (1.29208pt too wide) detected at line 272
+ \TU/FreeSans(2)/m/n/10.95 101
+ []
+
+
+Overfull \hbox (1.29208pt too wide) detected at line 273
+ \TU/FreeSans(2)/m/n/10.95 101
+ []
+
+
+Overfull \hbox (1.29208pt too wide) detected at line 274
+ \TU/FreeSans(2)/m/n/10.95 101
+ []
+
+
+Overfull \hbox (1.29208pt too wide) detected at line 277
+ \TU/FreeSans(2)/m/n/10.95 102
+ []
+
+
+Overfull \hbox (1.29208pt too wide) detected at line 278
+ \TU/FreeSans(2)/m/n/10.95 102
+ []
+
+
+Overfull \hbox (1.29208pt too wide) detected at line 279
+ \TU/FreeSans(2)/m/n/10.95 102
+ []
+
+
+Overfull \hbox (1.29208pt too wide) detected at line 280
+ \TU/FreeSans(2)/m/n/10.95 102
+ []
+
+
+Overfull \hbox (1.29208pt too wide) detected at line 281
+ \TU/FreeSans(2)/m/n/10.95 103
+ []
+
+
+Overfull \hbox (1.29208pt too wide) detected at line 282
+ \TU/FreeSans(2)/m/n/10.95 103
+ []
+
+
+Overfull \hbox (1.29208pt too wide) detected at line 285
+ \TU/FreeSans(2)/m/n/10.95 104
+ []
+
+
+Overfull \hbox (1.29208pt too wide) detected at line 286
+ \TU/FreeSans(2)/m/n/10.95 104
+ []
+
+
+Overfull \hbox (1.29208pt too wide) detected at line 287
+ \TU/FreeSans(2)/m/n/10.95 104
+ []
+
+
+Overfull \hbox (1.29208pt too wide) detected at line 288
+ \TU/FreeSans(2)/m/n/10.95 104
+ []
+
+
+Overfull \hbox (1.29208pt too wide) detected at line 289
+ \TU/FreeSans(2)/m/n/10.95 105
+ []
+
+
+Overfull \hbox (1.29208pt too wide) detected at line 290
+ \TU/FreeSans(2)/m/n/10.95 105
+ []
+
+
+Overfull \hbox (1.29208pt too wide) detected at line 291
+ \TU/FreeSans(2)/m/n/10.95 105
+ []
+
+[15]
+Overfull \hbox (1.29208pt too wide) detected at line 292
+ \TU/FreeSans(2)/m/n/10.95 105
+ []
+
+
+Overfull \hbox (1.29208pt too wide) detected at line 295
+ \TU/FreeSans(2)/m/n/10.95 106
+ []
+
+
+Overfull \hbox (1.29208pt too wide) detected at line 296
+ \TU/FreeSans(2)/m/n/10.95 106
+ []
+
+
+Overfull \hbox (1.29208pt too wide) detected at line 298
+ \TU/FreeSans(2)/m/n/10.95 107
+ []
+
+
+Overfull \hbox (1.29208pt too wide) detected at line 301
+ \TU/FreeSans(2)/m/n/10.95 108
+ []
+
+
+Overfull \hbox (1.29208pt too wide) detected at line 302
+ \TU/FreeSans(2)/m/n/10.95 109
+ []
+
+
+Overfull \hbox (1.29208pt too wide) detected at line 306
+ \TU/FreeSans(2)/m/n/10.95 111
+ []
+
+
+Overfull \hbox (1.29208pt too wide) detected at line 309
+ \TU/FreeSans(2)/m/n/10.95 112
+ []
+
+
+Overfull \hbox (1.29208pt too wide) detected at line 310
+ \TU/FreeSans(2)/m/n/10.95 113
+ []
+
+
+Overfull \hbox (1.29208pt too wide) detected at line 311
+ \TU/FreeSans(2)/m/n/10.95 113
+ []
+
+
+Overfull \hbox (1.29208pt too wide) detected at line 314
+ \TU/FreeSans(2)/m/n/10.95 114
+ []
+
+
+Overfull \hbox (1.29208pt too wide) detected at line 316
+ \TU/FreeSans(2)/m/n/10.95 115
+ []
+
+
+Overfull \hbox (1.29208pt too wide) detected at line 319
+ \TU/FreeSans(2)/m/n/10.95 116
+ []
+
+
+Overfull \hbox (1.29208pt too wide) detected at line 320
+ \TU/FreeSans(2)/m/n/10.95 116
+ []
+
+
+Overfull \hbox (1.29208pt too wide) detected at line 321
+ \TU/FreeSans(2)/m/n/10.95 117
+ []
+
+
+Overfull \hbox (1.29208pt too wide) detected at line 322
+ \TU/FreeSans(2)/m/n/10.95 117
+ []
+
+
+Overfull \hbox (1.29208pt too wide) detected at line 325
+ \TU/FreeSans(2)/m/n/10.95 118
+ []
+
+)
+\tf@toc=\write3
+\openout3 = `main.toc'.
+
+ [16] (./main.lof
+Overfull \hbox (1.29208pt too wide) detected at line 13
+ \TU/FreeSans(2)/m/n/10.95 103
+ []
+
+)
+\tf@lof=\write4
+\openout4 = `main.lof'.
+
+ [17
+
+] [18
+
+] (./body.tex
+Κεφάλαιο 1.
+[1
+
+]
+LaTeX Font Info:    Font shape `TU/FreeSans(0)/m/sl' in size <10.95> not availa
+ble
+(Font)              Font shape `TU/FreeSans(0)/m/it' tried instead on input lin
+e 105.
+ [2]
+Underfull \hbox (badness 1424) in paragraph at lines 112--117
+\TU/FreeSans(2)/m/it/10.95 development\TU/FreeSans(2)/m/n/10.95 , \TU/FreeSans(
+2)/m/it/10.95 continuous integration \TU/FreeSans(2)/m/n/10.95 και \TU/FreeSans
+(2)/m/it/10.95 vertical ownership \TU/FreeSans(2)/m/n/10.95 λειτούργησαν στην
+ []
+
+[3]
+
+Package fontspec Info: 
+(fontspec)             Font family 'FreeSans(3)' created for font 'FreeSans'
+(fontspec)             with options
+(fontspec)             [WordSpace={1,0,0},HyphenChar=None,PunctuationSpace=Word
+Space,Script=Greek].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"FreeSans/OT:script=grek;language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
+(fontspec)             <->"FreeSans/OT:script=grek;language=dflt;+smcp;"
+(fontspec)             and font adjustment code:
+(fontspec)             \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font
+(fontspec)             =0\fontdimen 3\font \fontdimen 4\font =0\fontdimen
+(fontspec)             4\font \fontdimen 7\font =0\fontdimen 2\font
+(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->"FreeSans/B/OT:script=grek;language=dflt;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
+(fontspec)             <->"FreeSans/B/OT:script=grek;language=dflt;+smcp;"
+(fontspec)             and font adjustment code:
+(fontspec)             \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font
+(fontspec)             =0\fontdimen 3\font \fontdimen 4\font =0\fontdimen
+(fontspec)             4\font \fontdimen 7\font =0\fontdimen 2\font
+(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->"FreeSans/I/OT:script=grek;language=dflt;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->"FreeSans/BI/OT:script=grek;language=dflt;"
+
+
+Overfull \hbox (0.21313pt too wide) in paragraph at lines 180--185
+[]\TU/FreeSans(2)/b/n/10.95 Κεφάλαιο 10 — Εργασιακές μέθοδοι \TU/FreeSans(2)/m/
+n/10.95 εξετάζει τις πρακτικές \TU/FreeSans(2)/m/it/10.95 Extreme Programming
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [4]
+Κεφάλαιο 2.
+[5
+
+]
+Underfull \hbox (badness 1377) in paragraph at lines 292--298
+\TU/FreeSans(2)/m/n/10.95 τάσταση των υγρών υδρογονανθράκων από εναλλακτικά καύ
+σιμα (υδρογόνο,
+ []
+
+[6] [7]
+Underfull \hbox (badness 1205) in paragraph at lines 378--387
+\TU/FreeSans(2)/m/n/10.95 σε \TU/FreeSans(2)/b/n/10.95 ανεξάρτητο έλεγχο \TU/Fr
+eeSans(2)/m/n/10.95 (\TU/FreeSans(2)/m/it/10.95 limited assurance\TU/FreeSans(2
+)/m/n/10.95 ) από πιστοποιημένους ελεγκτές. Αυτό
+ []
+
+[8]
+Underfull \hbox (badness 1199) in paragraph at lines 448--451
+[]\TU/FreeSans(2)/m/n/10.95 Στο διεθνές επίπεδο, η \TU/FreeSans(2)/b/n/10.95 Επ
+ιτροπή Προστασίας Θαλάσσιου Περιβάλλοντος
+ []
+
+[9] [10] [11]
+ignored: Infinite glue shrinkage found in box being split [12] [13]
+Underfull \hbox (badness 2717) in paragraph at lines 718--722
+\TU/FreeSans(2)/m/n/10.95 υψηλότερο ποσοστό σφαλμάτων σε σχέση με αυτοματοποιημ
+ένες. Ο έλεγ-
+ []
+
+[14]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [15]
+[16
+
+]
+Κεφάλαιο 3.
+
+Underfull \hbox (badness 2042) in paragraph at lines 758--769
+[]\TU/FreeSans(2)/m/n/10.95 Η μέτρηση, η καταγραφή και η αναφορά των εκπομπών α
+ερίων θερμοκηπίου
+ []
+
+
+Underfull \hbox (badness 1024) in paragraph at lines 758--769
+\TU/FreeSans(2)/m/n/10.95 (greenhouse gas emissions) αποτελεί σήμερα θεμελιώδη 
+προϋπόθεση για κάθε ορ-
+ []
+
+
+Underfull \hbox (badness 1107) in paragraph at lines 758--769
+\TU/FreeSans(2)/m/n/10.95 γανισμό που επιδιώκει τεκμηριωμένη απεξάρτηση από τα 
+ορυκτά καύσιμα. Για να
+ []
+
+
+Underfull \hbox (badness 1655) in paragraph at lines 778--791
+\TU/FreeSans(2)/m/n/10.95 GHGP). Το πρωτόκολλο αναπτύχθηκε από κοινού από το Πα
+γκόσμιο Επιχειρημα-
+ []
+
+
+Underfull \hbox (badness 1173) in paragraph at lines 778--791
+\TU/FreeSans(2)/m/n/10.95 τικό Συμβούλιο για τη Βιώσιμη Ανάπτυξη (\TU/FreeSans(
+2)/m/it/10.95 World Business Council for Sustainable
+ []
+
+[17]
+File: ./Carbon_Accounting_Scopes.png Graphic file (type bmp)
+<./Carbon_Accounting_Scopes.png>
+ [18] [19] [20]
+Underfull \hbox (badness 1043) in paragraph at lines 968--970
+[]\TU/FreeSans(2)/b/n/10.95 Ναυτικά μίλια \TU/FreeSans(2)/m/n/10.95 × \TU/FreeS
+ans(2)/b/n/10.95 κατανάλωση καυσίμου ανά μίλι \TU/FreeSans(2)/m/n/10.95 για συγ
+κεκριμένο τύπο
+ []
+
+
+Underfull \hbox (badness 3482) in paragraph at lines 987--994
+\TU/FreeSans(2)/m/n/10.95 based δεδομένα όπου είναι διαθέσιμα, και συμπληρώνει 
+τα κενά με cost-based
+ []
+
+
+Underfull \vbox (badness 1107) has occurred while \output is active []
+
+ [21]
+[22] [23]
+Underfull \hbox (badness 1533) in paragraph at lines 1140--1146
+[]\TU/FreeSans(2)/m/n/10.95 Στη ναυτιλία, το book-and-claim εισάγεται σταδιακά,
+ ιδίως για προϊόντα ECO
+ []
+
+
+Underfull \hbox (badness 1448) in paragraph at lines 1140--1146
+\TU/FreeSans(2)/m/n/10.95 (\TU/FreeSans(2)/m/it/10.95 Eco-delivery\TU/FreeSans(
+2)/m/n/10.95 ). Η Maersk χρησιμοποιεί book-and-claim για το ECO Delivery Ocean
+ []
+
+
+Underfull \vbox (badness 1454) has occurred while \output is active []
+
+ [24]
+Underfull \hbox (badness 1014) in paragraph at lines 1174--1181
+\TU/FreeSans(2)/m/n/10.95 ροσκαφών (SAF) και ανανεώσιμα καύσιμα μη βιολογικής π
+ροέλευσης (RFNBO). Η
+ []
+
+[25]
+Overfull \hbox (37.57729pt too wide) in alignment at lines 1264--1274
+ [] [] [] 
+ []
+
+
+Overfull \hbox (37.57729pt too wide) in alignment at lines 1274--1276
+ [] [] [] 
+ []
+
+[26]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in longtable 0 on input line 1289.
+
+
+Underfull \hbox (badness 1571) in paragraph at lines 1311--1314
+[]\TU/FreeSans(2)/m/n/10.95 [GHG Protocol Scope 2 Guidance, 2015] World Resourc
+es Institute. \TU/FreeSans(2)/m/it/10.95 Scope 2
+ []
+
+[27]
+Underfull \hbox (badness 1253) in paragraph at lines 1318--1321
+[]\TU/FreeSans(2)/m/n/10.95 [IPCC AR5, 2013] IPCC. \TU/FreeSans(2)/m/it/10.95 C
+limate Change 2013: The Physical Science Basis\TU/FreeSans(2)/m/n/10.95 .
+ []
+
+
+Underfull \hbox (badness 2221) in paragraph at lines 1324--1329
+\TU/FreeSans(2)/m/it/10.95 1:2018 — Greenhouse gases — Part 1: Specification wi
+th guidance at the
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [28]
+Κεφάλαιο 4.
+
+Underfull \hbox (badness 2452) in paragraph at lines 1388--1397
+\TU/FreeSans(3)/m/n/10.95 emissions-workbench.maersk.com\TU/FreeSans(2)/m/n/10.
+95 , σχεδιασμένη να εξυπηρετεί ετερογενείς ομάδες
+ []
+
+[29
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1445--1448
+[]\TU/FreeSans(2)/m/n/10.95 “Support transported, fulfilled and managed by Maer
+sk customers to
+ []
+
+[30]
+Underfull \hbox (badness 1769) in paragraph at lines 1491--1495
+\TU/FreeSans(2)/m/n/10.95 for optimizing green fuel sourcing in an emissions tr
+ading system (ETS)
+ []
+
+[31] [32] [33]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [34]
+Κεφάλαιο 5.
+[35
+
+] [36]
+Underfull \hbox (badness 1748) in paragraph at lines 1776--1792
+[]\TU/FreeSans(2)/m/n/10.95 Αξίζει να σημειωθούν μερικές σχεδιαστικές επιλογές.
+ Τα πεδία \TU/FreeSans(3)/m/n/10.95 container_size
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1776--1792
+\TU/FreeSans(2)/m/n/10.95 και \TU/FreeSans(3)/m/n/10.95 container_type \TU/Free
+Sans(2)/m/n/10.95 ορίζονται ως \TU/FreeSans(3)/m/n/10.95 Ecto.Enum\TU/FreeSans(
+2)/m/n/10.95 , εξασφαλίζοντας ότι μόνο επιτρε-
+ []
+
+
+Underfull \hbox (badness 5105) in paragraph at lines 1776--1792
+\TU/FreeSans(2)/m/n/10.95 πτές τιμές μπορούν να αποθηκευτούν — οι επιτρεπτές τι
+μές ορίζονται δυνα-
+ []
+
+
+Underfull \hbox (badness 1975) in paragraph at lines 1776--1792
+\TU/FreeSans(2)/m/n/10.95 μικά από τα \TU/FreeSans(3)/m/n/10.95 Nrg.Ocean.Conta
+iner.sizes() \TU/FreeSans(2)/m/n/10.95 και \TU/FreeSans(3)/m/n/10.95 Nrg.Ocean.
+Container.types()\TU/FreeSans(2)/m/n/10.95 . Το πεδίο
+ []
+
+
+Underfull \hbox (badness 1789) in paragraph at lines 1776--1792
+\TU/FreeSans(2)/m/n/10.95 ορίζονται ως \TU/FreeSans(3)/m/n/10.95 virtual: true\
+TU/FreeSans(2)/m/n/10.95 , δηλαδή δεν αποθηκεύονται στη βάση αλλά εμπλουτίζο-
+ []
+
+
+Underfull \vbox (badness 2318) has occurred while \output is active []
+
+ [37]
+Underfull \hbox (badness 6364) in paragraph at lines 1802--1810
+[]\TU/FreeSans(2)/b/n/10.95 Αρχιτεκτονική GenServer με \TU/FreeSans(3)/b/n/10.9
+5 :pg\TU/FreeSans(2)/b/n/10.95 . \TU/FreeSans(2)/m/n/10.95 Το \TU/FreeSans(3)/m
+/n/10.95 OceanApi.VesselApi \TU/FreeSans(2)/m/n/10.95 υλοποιείται ως
+ []
+
+
+Underfull \hbox (badness 6725) in paragraph at lines 1802--1810
+\TU/FreeSans(3)/m/n/10.95 GenServer \TU/FreeSans(2)/m/n/10.95 που εκκινεί με \T
+U/FreeSans(3)/m/n/10.95 start_link/1 \TU/FreeSans(2)/m/n/10.95 και εγγράφεται σ
+ε process group μέσω
+ []
+
+
+Underfull \hbox (badness 1681) in paragraph at lines 1802--1810
+\TU/FreeSans(3)/m/n/10.95 :pg.join(@name, self())\TU/FreeSans(2)/m/n/10.95 . Αυ
+τή η επιλογή επιτρέπει σε πολλαπλές επαναλήψεις του
+ []
+
+
+Underfull \hbox (badness 4531) in paragraph at lines 1824--1829
+\TU/FreeSans(2)/m/n/10.95 κτησίας (\TU/FreeSans(2)/m/it/10.95 ownership\TU/Free
+Sans(2)/m/n/10.95 ), \TU/FreeSans(2)/m/it/10.95 flag state \TU/FreeSans(2)/m/n/
+10.95 (σημαία) και κατάσταση. Η αντιστοίχηση με το
+ []
+
+
+Underfull \hbox (badness 7273) in paragraph at lines 1824--1829
+\TU/FreeSans(3)/m/n/10.95 Bops.ExternalDataFeeds.RemainingFuelOnBoard \TU/FreeS
+ans(2)/m/n/10.95 γίνεται μέσω \TU/FreeSans(3)/m/n/10.95 imo_number\TU/FreeSans(
+2)/m/n/10.95 , πεδίου
+ []
+
+[38]
+Underfull \hbox (badness 1789) in paragraph at lines 1886--1888
+[]\TU/FreeSans(2)/m/n/10.95 Το Ecto schema \TU/FreeSans(3)/m/n/10.95 Bops.Exter
+nalDataFeeds.RemainingFuelOnBoard \TU/FreeSans(2)/m/n/10.95 αποτυπώνει τη
+ []
+
+
+Underfull \hbox (badness 4673) in paragraph at lines 1906--1915
+[]\TU/FreeSans(2)/m/n/10.95 Κάθε εγγραφή αντιστοιχεί σε μία χρονική στιγμή (\TU
+/FreeSans(3)/m/n/10.95 period_end\TU/FreeSans(2)/m/n/10.95 ) για ένα συ-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1906--1915
+\TU/FreeSans(2)/m/n/10.95 γκεκριμένο πλοίο (\TU/FreeSans(3)/m/n/10.95 imo_numbe
+r\TU/FreeSans(2)/m/n/10.95 ). Τα πεδία καυσίμων χρησιμοποιούν τον τύπο
+ []
+
+
+Underfull \hbox (badness 2846) in paragraph at lines 1906--1915
+\TU/FreeSans(3)/m/n/10.95 Measurement.Ecto.Type \TU/FreeSans(2)/m/n/10.95 με μο
+νάδα \TU/FreeSans(3)/m/n/10.95 :tonnes\TU/FreeSans(2)/m/n/10.95 , εξασφαλίζοντα
+ς type-safe μετατροπές
+ []
+
+[39] [40]
+Underfull \hbox (badness 10000) in paragraph at lines 1983--1988
+[]\TU/FreeSans(2)/m/n/10.95 Ο \TU/FreeSans(3)/m/n/10.95 Nrg.Ocean.Container.equ
+ivalent_container_size_for_co2e/1 \TU/FreeSans(2)/m/n/10.95 κανονικοποιεί ορι-
+ []
+
+
+Underfull \hbox (badness 1389) in paragraph at lines 2019--2031
+\TU/FreeSans(2)/m/n/10.95 ελέγχων που πρέπει όλοι να επιτύχουν· αν οποιοσδήποτε
+ αποτύχει, εκτελείται ο
+ []
+
+
+Underfull \hbox (badness 1406) in paragraph at lines 2019--2031
+\TU/FreeSans(2)/m/n/10.95 μετατροπή \TU/FreeSans(3)/m/n/10.95 dremio_product_to
+_product/1 \TU/FreeSans(2)/m/n/10.95 μεταφράζει τους κωδικούς προϊόντων του
+ []
+
+[41]
+Underfull \hbox (badness 10000) in paragraph at lines 2032--2038
+[]\TU/FreeSans(2)/m/n/10.95 Μια παρόμοια λογική εφαρμόζεται στους converter για
+ customer_attrs και
+ []
+
+
+Underfull \hbox (badness 1253) in paragraph at lines 2032--2038
+\TU/FreeSans(2)/m/n/10.95 consignee_attrs, δομώντας τη φάση εισαγωγής δεδομένων
+ ως σειρά ανεξάρτητων
+ []
+
+
+Overfull \hbox (29.5754pt too wide) in paragraph at lines 2067--2070
+[]\TU/FreeSans(3)/m/n/10.95 EUETSEmissionsTradeFactor \TU/FreeSans(2)/m/n/10.95
+ — συντελεστές εκπομπών ανά διαδρομή/κατεύθυνση/τύπο
+ []
+
+[42]
+Overfull \hbox (72.93028pt too wide) in paragraph at lines 2086--2090
+[]\TU/FreeSans(2)/m/n/10.95 Ο βαθμός εισαγωγής στο ETS (40%/70%/100%) ενσωματών
+εται στον \TU/FreeSans(3)/m/n/10.95 EUETSEmissionsTradeFactor\TU/FreeSans(2)/m/
+n/10.95 ,
+ []
+
+
+Overfull \hbox (0.57817pt too wide) in paragraph at lines 2094--2101
+[]\TU/FreeSans(2)/m/n/10.95 Κάθε run υπολογισμού λαμβάνει μοναδικό \TU/FreeSans
+(2)/m/it/10.95 run ID\TU/FreeSans(2)/m/n/10.95 , αποθηκευμένο στο \TU/FreeSans(
+3)/m/n/10.95 EUETSMetadata\TU/FreeSans(2)/m/n/10.95 .
+ []
+
+
+Underfull \hbox (badness 2582) in paragraph at lines 2102--2108
+[]\TU/FreeSans(2)/m/n/10.95 Η φιλτράρισμένη ροή (\TU/FreeSans(3)/m/n/10.95 Stre
+am.filter(&valid?/2)\TU/FreeSans(2)/m/n/10.95 ) απορρίπτει εγγραφές με άκυρη
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2102--2108
+\TU/FreeSans(2)/m/n/10.95 κατάσταση \TU/FreeSans(3)/m/n/10.95 isPromoted\TU/Fre
+eSans(2)/m/n/10.95 , καταγράφοντας παράλληλα μετρικά τηλεμετρίας μέσω
+ []
+
+
+Underfull \hbox (badness 1430) in paragraph at lines 2102--2108
+\TU/FreeSans(3)/m/n/10.95 :telemetry.execute/3\TU/FreeSans(2)/m/n/10.95 . Αυτές
+ οι μετρικές επιτρέπουν παρακολούθηση της αναλογίας
+ []
+
+
+Underfull \hbox (badness 4096) in paragraph at lines 2148--2153
+[]\TU/FreeSans(2)/m/n/10.95 Το module \TU/FreeSans(3)/m/n/10.95 Nrg.Ocean.Basel
+ineEmissionsReport \TU/FreeSans(2)/m/n/10.95 εκτελεί τις aggregated queries
+ []
+
+
+Underfull \hbox (badness 1953) in paragraph at lines 2148--2153
+\TU/FreeSans(2)/m/n/10.95 και κατασκευάζει το report model. Κεντρική λειτουργία
+ είναι η επεξεργασία των
+ []
+
+[43]
+Underfull \hbox (badness 7133) in paragraph at lines 2154--2160
+[]\TU/FreeSans(2)/m/n/10.95 Η αρχιτεκτονική ακολουθεί το pattern που ορίζεται σ
+τα εσωτερικά guides
+ []
+
+
+Underfull \hbox (badness 2435) in paragraph at lines 2154--2160
+\TU/FreeSans(2)/m/n/10.95 (\TU/FreeSans(2)/m/it/10.95 clean architecture\TU/Fre
+eSans(2)/m/n/10.95 ): η LiveView αναλαμβάνει αποκλειστικά presentation logic, ε
+νώ
+ []
+
+
+Underfull \hbox (badness 1122) in paragraph at lines 2187--2195
+[]\TU/FreeSans(2)/m/n/10.95 Ο πυλώνας Ocean Emissions αποτελεί το θεμέλιο του σ
+υνολικού συστήματος.
+ []
+
+[44]
+Κεφάλαιο 6.
+[45
+
+] [46]
+Underfull \hbox (badness 1803) in paragraph at lines 2319--2325
+\TU/FreeSans(3)/m/n/10.95 wtw_emissions_savings_percentage\TU/FreeSans(2)/m/n/1
+0.95 ) που παρέχεται ως παράμετρος των \TU/FreeSans(2)/m/it/10.95 emissions
+ []
+
+
+Overfull \hbox (47.33264pt too wide) in paragraph at lines 2330--2330
+[]\TU/FreeSans(3)/m/n/10.95 ttw_savings = ttw_on_full_grey_fuel × ttw_emissions
+_savings_percentage × green_fuel_percentage[] 
+ []
+
+
+Overfull \hbox (61.85234pt too wide) in paragraph at lines 2337--2337
+[]\TU/FreeSans(3)/m/n/10.95 wtw_savings = wtw_on_full_grey_fuel × wtw_emissions
+_savings_percentage × green_fuel_percentage[] 
+ []
+
+[47]
+Underfull \hbox (badness 1242) in paragraph at lines 2394--2399
+[]\TU/FreeSans(2)/m/n/10.95 Η υλοποίηση στηρίζεται στη βιβλιοθήκη \TU/FreeSans(
+3)/m/n/10.95 Commanded \TU/FreeSans(2)/m/n/10.95 που παρέχει πλαίσιο για
+ []
+
+[48]
+Underfull \hbox (badness 1546) in paragraph at lines 2447--2458
+[]\TU/FreeSans(2)/m/n/10.95 Στον κώδικα αυτό φαίνεται καθαρά το διπλό pattern π
+ου ακολουθεί η Energy
+ []
+
+
+Underfull \hbox (badness 2393) in paragraph at lines 2447--2458
+\TU/FreeSans(2)/m/n/10.95 pipeline. Αυτό εξασφαλίζει ότι καμία ανάληψη δεν μπορ
+εί να εκτελεστεί με ελ-
+ []
+
+[49]
+Underfull \hbox (badness 1859) in paragraph at lines 2465--2475
+[]\TU/FreeSans(2)/b/n/10.95 Καταθέσεις (Deposits)\TU/FreeSans(2)/m/n/10.95 : κά
+θε φορά που ένα πλοίο παραλαμβάνει βυθιζόμενο
+ []
+
+
+Underfull \hbox (badness 7486) in paragraph at lines 2465--2475
+\TU/FreeSans(2)/m/n/10.95 πράσινο καύσιμο (\TU/FreeSans(2)/m/it/10.95 bunkered 
+green fuel\TU/FreeSans(2)/m/n/10.95 ), η αντίστοιχη ποσότητα σε gigajoules
+ []
+
+
+Underfull \hbox (badness 5771) in paragraph at lines 2465--2475
+\TU/FreeSans(2)/m/n/10.95 εγγράφεται ως κατάθεση. Τα δεδομένα αντλούνται από το
+ν \TU/FreeSans(3)/m/n/10.95 FuelOrderTracking
+ []
+
+
+Underfull \hbox (badness 4660) in paragraph at lines 2465--2475
+\TU/FreeSans(2)/m/n/10.95 component, ο οποίος παρακολουθεί τις φυσικές παραγγελ
+ίες καυσίμου και τις
+ []
+
+
+Underfull \hbox (badness 2799) in paragraph at lines 2465--2475
+\TU/FreeSans(2)/m/n/10.95 παραδόσεις τους ανά πλοίο και λιμάνι ανεφοδιασμού (\T
+U/FreeSans(2)/m/it/10.95 Port of Supply \TU/FreeSans(2)/m/n/10.95 — POS).
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2465--2475
+\TU/FreeSans(2)/m/n/10.95 Το projection \TU/FreeSans(3)/m/n/10.95 EnergyBank.Pr
+ojections.FuelOrdersProjector \TU/FreeSans(2)/m/n/10.95 ακούει events από τον
+ []
+
+
+Overfull \hbox (103.67038pt too wide) in paragraph at lines 2465--2475
+\TU/FreeSans(3)/m/n/10.95 FuelOrderTracking.Dispatcher \TU/FreeSans(2)/m/n/10.9
+5 και δημιουργεί εγγραφές στους πίνακες \TU/FreeSans(3)/m/n/10.95 energy_bank_p
+rojections.fuel_orders_2
+ []
+
+
+Underfull \hbox (badness 4899) in paragraph at lines 2483--2490
+[]\TU/FreeSans(2)/b/n/10.95 Λογαριασμοί Εκκαθάρισης (Clearing Accounts)\TU/Free
+Sans(2)/m/n/10.95 : για λόγους λογικού δια-
+ []
+
+
+Underfull \hbox (badness 5050) in paragraph at lines 2483--2490
+\TU/FreeSans(2)/m/n/10.95 χωρισμού, η Energy Bank υποστηρίζει πολλαπλούς λογαρι
+ασμούς εκκαθάρισης,
+ []
+
+
+Underfull \hbox (badness 1248) in paragraph at lines 2483--2490
+\TU/FreeSans(2)/m/n/10.95 οργανωμένους ανά προμηθευτή, ανά POS (λιμάνι ανεφοδια
+σμού) και ανά χρονική
+ []
+
+
+Underfull \vbox (badness 2486) has occurred while \output is active []
+
+ [50]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [51]
+Underfull \hbox (badness 2027) in paragraph at lines 2614--2619
+[]\TU/FreeSans(2)/m/n/10.95 Η δημιουργία του πιστοποιητικού ως PDF αρχείου ακολ
+ουθεί ντετερμινιστική
+ []
+
+
+Underfull \hbox (badness 5431) in paragraph at lines 2614--2619
+\TU/FreeSans(2)/m/n/10.95 διαδικασία που διασφαλίζει ότι το PDF που αποστέλλετα
+ι στον πελάτη αντι-
+ []
+
+
+Underfull \hbox (badness 1400) in paragraph at lines 2614--2619
+\TU/FreeSans(2)/m/n/10.95 στοιχεί ακριβώς στα δεδομένα που είναι αποθηκευμένα σ
+το σύστημα. Το module
+ []
+
+
+Overfull \hbox (118.16728pt too wide) in paragraph at lines 2633--2637
+\TU/FreeSans(2)/m/n/10.95 ονομασίας αρχείου που επιτρέπει αναζήτηση και ανάκτησ
+η: \TU/FreeSans(3)/m/n/10.95 {concern}_{year}_{template}_{certificate_id}.pdf\T
+U/FreeSans(2)/m/n/10.95 . 
+ []
+
+
+Underfull \hbox (badness 4291) in paragraph at lines 2639--2645
+\TU/FreeSans(2)/m/n/10.95 από τον controller \TU/FreeSans(3)/m/n/10.95 lib/nrg_
+web/controllers/ocean/certificates_controller.ex \TU/FreeSans(2)/m/n/10.95 (συν
+άρτηση
+ []
+
+[52]
+Overfull \hbox (24.58876pt too wide) in paragraph at lines 2663--2670
+[]\TU/FreeSans(2)/m/n/10.95 Η επανέκδοση εκτελείται ασύγχρονα μέσω Oban worker.
+ Το module \TU/FreeSans(3)/m/n/10.95 Nrg.Ocean.Certificates
+ []
+
+[53]
+Overfull \hbox (8.72293pt too wide) in paragraph at lines 2715--2715
+[]    \TU/FreeSans(3)/m/n/10.95 last_updated = NaiveDateTime.from_iso8601!(date
+) |> DateTime.from_naive!("Etc/UTC")[] 
+ []
+
+
+Underfull \hbox (badness 3471) in paragraph at lines 2729--2737
+\TU/FreeSans(2)/m/n/10.95 που επιστρέφει χρονολογική λίστα αλλαγών ανά πιστοποι
+ητικό: αρχική έκδοση,
+ []
+
+
+Underfull \hbox (badness 2103) in paragraph at lines 2729--2737
+\TU/FreeSans(3)/m/n/10.95 Nrg.Ocean.Certificates \TU/FreeSans(2)/m/n/10.95 υπολ
+ογίζει και ταξινομεί την απόκλιση μεταξύ αρχικής και
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [54]
+Overfull \hbox (4.26627pt too wide) in paragraph at lines 2768--2768
+[]    \TU/FreeSans(3)/m/n/10.95 Decimal.mult(grey_fuel_to_wtw, Decimal.div(wtw_
+emissions_savings_percentage, 100))[] 
+ []
+
+[55]
+Underfull \vbox (badness 6047) has occurred while \output is active []
+
+ [56]
+Κεφάλαιο 7.
+[57
+
+]
+Underfull \hbox (badness 1590) in paragraph at lines 2918--2924
+\TU/FreeSans(2)/m/n/10.95 που έχει κυρίως αναλυτικό χαρακτήρα. Το BOPS είναι κα
+τά βάση συναλλακτικό
+ []
+
+[58]
+Underfull \hbox (badness 3260) in paragraph at lines 2988--2995
+\TU/FreeSans(2)/m/n/10.95 γραμμικού προγραμματισμού απαιτούν ώριμες βιβλιοθήκες
+ σε χαμηλού επιπέδου
+ []
+
+
+Underfull \hbox (badness 1533) in paragraph at lines 2988--2995
+\TU/FreeSans(2)/m/n/10.95 Δεύτερον, ο MBC προϋπήρχε ήδη ως αποδεδειγμένο σύστημ
+α στη Maersk και η
+ []
+
+
+Underfull \vbox (badness 1292) has occurred while \output is active []
+
+ [59]
+[60] [61]
+Underfull \hbox (badness 1102) in paragraph at lines 3125--3132
+[]\TU/FreeSans(2)/m/n/10.95 Η ανάγνωση δεδομένων από το Shiptech γίνεται μέσω O
+DBC (\TU/FreeSans(2)/m/it/10.95 Open Database
+ []
+
+
+Overfull \hbox (7.67996pt too wide) in paragraph at lines 3133--3140
+\TU/FreeSans(2)/m/n/10.95 διαδικασιών (\TU/FreeSans(2)/m/it/10.95 stored proced
+ures\TU/FreeSans(2)/m/n/10.95 ). Η βασικότερη είναι η \TU/FreeSans(3)/m/n/10.95
+ sp_CreateModelRunDataWithString\TU/FreeSans(2)/m/n/10.95 ,
+ []
+
+
+Underfull \hbox (badness 1975) in paragraph at lines 3133--3140
+\TU/FreeSans(2)/m/n/10.95 αποθηκεύει σε πολλαπλούς πίνακες ατομικά (\TU/FreeSan
+s(2)/m/it/10.95 atomically\TU/FreeSans(2)/m/n/10.95 ), εντός μίας SQL Server
+ []
+
+[62] [63] [64]
+Underfull \hbox (badness 1478) in paragraph at lines 3246--3256
+[]\TU/FreeSans(2)/m/n/10.95 Το pattern είναι απλό αλλά αξιόπιστο: κατά την εκκί
+νηση (\TU/FreeSans(3)/m/n/10.95 init/1\TU/FreeSans(2)/m/n/10.95 ) ο GenServer
+ []
+
+
+Underfull \hbox (badness 3919) in paragraph at lines 3246--3256
+\TU/FreeSans(2)/m/n/10.95 εξωτερική παρέμβαση. Το \TU/FreeSans(3)/m/n/10.95 han
+dle_info(:schedule, ...) \TU/FreeSans(2)/m/n/10.95 εντοπίζει τα μεταναστευμένα
+ []
+
+[65]
+Underfull \hbox (badness 1960) in paragraph at lines 3310--3320
+[]\TU/FreeSans(2)/m/n/10.95 Σε πιο μακροπρόθεσμο ορίζοντα, η Maersk σχεδιάζει τ
+ην προ-δέσμευση (\TU/FreeSans(2)/m/it/10.95 pre-
+ []
+
+
+Underfull \hbox (badness 1478) in paragraph at lines 3310--3320
+\TU/FreeSans(2)/m/n/10.95 η ολοκληρωμένη οπτική μετατρέπει το BOPS από εργαλείο
+ μείωσης κόστους σε
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [66]
+Κεφάλαιο 8.
+
+Underfull \hbox (badness 1953) in paragraph at lines 3348--3358
+[]\TU/FreeSans(2)/m/n/10.95 Η BEAM υλοποιεί έναν \TU/FreeSans(2)/b/n/10.95 pree
+mptive scheduler \TU/FreeSans(2)/m/n/10.95 με τόσα νήματα λειτουργικού
+ []
+
+
+Underfull \hbox (badness 1377) in paragraph at lines 3348--3358
+\TU/FreeSans(2)/m/n/10.95 scheduler εκτελεί εκατοντάδες χιλιάδες \TU/FreeSans(2
+)/b/n/10.95 BEAM processes \TU/FreeSans(2)/m/n/10.95 — ελαφριές εικονικές
+ []
+
+[67
+
+] [68]
+Underfull \hbox (badness 1895) in paragraph at lines 3420--3431
+\TU/FreeSans(2)/b/n/10.95 LiveView\TU/FreeSans(2)/m/n/10.95 : αντί να αποστέλλε
+ται στατικό HTML ή να επικοινωνεί το frontend με
+ []
+
+[69] [70]
+Underfull \hbox (badness 2065) in paragraph at lines 3561--3568
+\TU/FreeSans(2)/m/n/10.95 εισαγωγή container move δεδομένων από εσωτερικά Maers
+k συστήματα. - \TU/FreeSans(2)/b/n/10.95 Event
+ []
+
+[71] [72]
+Underfull \hbox (badness 1515) in paragraph at lines 3629--3633
+[]\TU/FreeSans(2)/b/n/10.95 Azure Logic Apps\TU/FreeSans(2)/m/n/10.95 : ορχήστρ
+ωση ροών εργασίας στο BOPS (8 Logic Apps:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3648--3653
+[]\TU/FreeSans(2)/m/n/10.95 Το \TU/FreeSans(2)/b/n/10.95 Kubernetes \TU/FreeSan
+s(2)/m/n/10.95 (\TU/FreeSans(2)/m/it/10.95 K8s\TU/FreeSans(2)/m/n/10.95 ) είναι
+ πλατφόρμα ορχήστρωσης containers (\TU/FreeSans(2)/m/it/10.95 container
+ []
+
+
+Underfull \hbox (badness 1721) in paragraph at lines 3648--3653
+\TU/FreeSans(2)/m/it/10.95 orchestration\TU/FreeSans(2)/m/n/10.95 ) που αναλαμβ
+άνει την εκτέλεση, κλιμάκωση, αυτόματη επανεκκίνηση
+ []
+
+
+Underfull \vbox (badness 8019) has occurred while \output is active []
+
+ [73]
+Underfull \hbox (badness 2065) in paragraph at lines 3688--3696
+[]\TU/FreeSans(2)/m/n/10.95 Το \TU/FreeSans(2)/b/n/10.95 Nix \TU/FreeSans(2)/m/
+n/10.95 είναι διαχειριστής πακέτων (\TU/FreeSans(2)/m/it/10.95 package manager\
+TU/FreeSans(2)/m/n/10.95 ) και γλώσσα δήλωσης
+ []
+
+
+Underfull \hbox (badness 4168) in paragraph at lines 3688--3696
+\TU/FreeSans(2)/m/n/10.95 ρυθμίσεων (\TU/FreeSans(2)/m/it/10.95 configuration l
+anguage\TU/FreeSans(2)/m/n/10.95 ) με κεντρική αρχή την \TU/FreeSans(2)/b/n/10.
+95 αναπαραγωγιμότητα
+ []
+
+[74]
+Underfull \hbox (badness 2799) in paragraph at lines 3747--3751
+[]\TU/FreeSans(2)/m/n/10.95 Μια σημαντική βελτιστοποίηση είναι το \TU/FreeSans(
+2)/b/n/10.95 affected workspace detection\TU/FreeSans(2)/m/n/10.95 : στο
+ []
+
+
+Underfull \hbox (badness 1019) in paragraph at lines 3766--3769
+[]\TU/FreeSans(2)/m/n/10.95 Η παρακολούθηση (\TU/FreeSans(2)/m/it/10.95 observa
+bility\TU/FreeSans(2)/m/n/10.95 ) ενός κατανεμημένου, event-driven συστήματος
+ []
+
+[75]
+Underfull \hbox (badness 1062) in paragraph at lines 3838--3845
+[]\TU/FreeSans(2)/m/n/10.95 Το \TU/FreeSans(2)/b/n/10.95 Oban \TU/FreeSans(2)/m
+/n/10.95 είναι βιβλιοθήκη επεξεργασίας εργασιών υποβάθρου (\TU/FreeSans(2)/m/it
+/10.95 background job
+ []
+
+[76]
+Overfull \hbox (0.194pt too wide) in paragraph at lines 3855--3861
+[]\TU/FreeSans(2)/m/n/10.95 Το \TU/FreeSans(2)/b/n/10.95 Commanded \TU/FreeSans
+(2)/m/n/10.95 είναι βιβλιοθήκη υλοποίησης \TU/FreeSans(2)/b/n/10.95 CQRS \TU/Fr
+eeSans(2)/m/n/10.95 (\TU/FreeSans(2)/m/it/10.95 Command Query Responsibility
+ []
+
+
+Overfull \hbox (63.0406pt too wide) in paragraph at lines 3862--3867
+[]\TU/FreeSans(2)/m/n/10.95 Το backend αποθήκευσης events είναι το \TU/FreeSans
+(2)/b/n/10.95 EventStore \TU/FreeSans(2)/m/n/10.95 (μέσω του \TU/FreeSans(3)/m/
+n/10.95 commanded_eventstore_adapter\TU/FreeSans(2)/m/n/10.95 ),
+ []
+
+
+Underfull \hbox (badness 1755) in paragraph at lines 3894--3898
+[]\TU/FreeSans(2)/b/n/10.95 Workspace\TU/FreeSans(2)/m/n/10.95 : εργαλείο διαχε
+ίρισης Elixir monorepo — ορίζει DAG εξαρτήσεων
+ []
+
+[77]
+Underfull \hbox (badness 1082) in paragraph at lines 3904--3907
+[]\TU/FreeSans(2)/b/n/10.95 ChromicPDF\TU/FreeSans(2)/m/n/10.95 : βιβλιοθήκη δη
+μιουργίας PDF μέσω headless Chromium, χρησιμο-
+ []
+
+
+Underfull \hbox (badness 1838) in paragraph at lines 3910--3917
+\TU/FreeSans(2)/m/n/10.95 συνειδητή απόφαση με αιτιολογημένη σύνδεση στις απαιτ
+ήσεις του συστήματος.
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [78]
+Κεφάλαιο 9.
+File: ./system_overview_diagram.png Graphic file (type bmp)
+<./system_overview_diagram.png>
+
+Underfull \hbox (badness 1371) in paragraph at lines 3953--3962
+[]\TU/FreeSans(2)/m/n/10.95 Η φυσική άποψη περιλαμβάνει δύο ανεξάρτητα deployme
+nt περιβάλλοντα (πα-
+ []
+
+
+Underfull \hbox (badness 2080) in paragraph at lines 3953--3962
+\TU/FreeSans(2)/m/n/10.95 παρουσίασης (LiveView) → αποθήκευση αποτελεσμάτων (Po
+stgreSQL, Azure Blob
+ []
+
+[79
+
+]
+Underfull \hbox (badness 1024) in paragraph at lines 3996--4003
+[]\TU/FreeSans(2)/b/n/10.95 Use Cases (Περιπτώσεις Χρήσης): \TU/FreeSans(2)/m/n
+/10.95 Η επιχειρησιακή λογική της εφαρμογής,
+ []
+
+
+Underfull \hbox (badness 1558) in paragraph at lines 3996--4003
+\TU/FreeSans(2)/m/n/10.95 ανεξάρτητη από web frameworks, βάσεις δεδομένων και λ
+οιπές υποδομές. Παρά-
+ []
+
+[80]
+Underfull \hbox (badness 1490) in paragraph at lines 4045--4052
+\TU/FreeSans(2)/m/n/10.95 applications. Αυτή η επιλογή αντανακλά μια συνειδητή 
+αρχιτεκτονική απόφαση: η
+ []
+
+[81]
+Underfull \hbox (badness 1783) in paragraph at lines 4083--4087
+[]\TU/FreeSans(2)/m/n/10.95 Ένα εγγενές μειονέκτημα είναι η αυξημένη πολυπλοκότ
+ητα κατασκευής (\TU/FreeSans(2)/m/it/10.95 build
+ []
+
+
+Underfull \hbox (badness 1852) in paragraph at lines 4083--4087
+\TU/FreeSans(2)/m/it/10.95 complexity\TU/FreeSans(2)/m/n/10.95 ): η ατομική εκτ
+έλεση ενός component απαιτεί κατανόηση του γράφου
+ []
+
+
+Underfull \hbox (badness 1946) in paragraph at lines 4083--4087
+\TU/FreeSans(2)/m/n/10.95 εξαρτήσεων. Αυτό αντιμετωπίζεται μέσω τεκμηρίωσης και
+ εργαλείων ανίχνευσης
+ []
+
+
+Overfull \hbox (72.25977pt too wide) in alignment at lines 4109--4119
+ [] [] [] 
+ []
+
+
+Overfull \hbox (72.25977pt too wide) in alignment at lines 4119--4121
+ [] [] [] 
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in longtable 0 on input line 4133.
+
+
+ignored: Infinite glue shrinkage found in box being split [82]
+Underfull \hbox (badness 1939) in paragraph at lines 4181--4187
+\TU/FreeSans(2)/m/n/10.95 μέσω περιοδικής δειγματοληψίας που ενορχηστρώνεται απ
+ό Oban workers. Κάθε
+ []
+
+[83] [84] [85]
+Underfull \hbox (badness 2027) in paragraph at lines 4298--4306
+\TU/FreeSans(2)/m/n/10.95 Η χρήση \TU/FreeSans(3)/m/n/10.95 {:continue, :apply_
+current_worker_config} \TU/FreeSans(2)/m/n/10.95 στο \TU/FreeSans(3)/m/n/10.95 
+init/1 \TU/FreeSans(2)/m/n/10.95 εξασφαλίζει ότι η αρ-
+ []
+
+
+Underfull \hbox (badness 5563) in paragraph at lines 4329--4334
+[]\TU/FreeSans(2)/m/n/10.95 Τα LiveView modules ακολουθούν το Humble Object pat
+tern: η παρουσίαση
+ []
+
+
+Underfull \hbox (badness 3148) in paragraph at lines 4335--4341
+[]\TU/FreeSans(2)/m/n/10.95 Η ενσωμάτωση με το Maersk Design System (MDS) — μια
+ βιβλιοθήκη Web
+ []
+
+[86]
+Underfull \hbox (badness 2538) in paragraph at lines 4371--4378
+\TU/FreeSans(2)/m/n/10.95 ρόλους της εφαρμογής. Στα LiveView mounts, ο έλεγχος 
+ρόλων πραγματοποιεί-
+ []
+
+
+Underfull \hbox (badness 3780) in paragraph at lines 4371--4378
+\TU/FreeSans(2)/m/n/10.95 ται με helper macros τύπου \TU/FreeSans(3)/m/n/10.95 
+with_authenticated_request(ctx, roles: ~ROLES(admin))\TU/FreeSans(2)/m/n/10.95 
+,
+ []
+
+
+Underfull \hbox (badness 7595) in paragraph at lines 4379--4386
+[]\TU/FreeSans(2)/m/n/10.95 Για πρόσβαση σε production περιβάλλον, χρησιμοποιεί
+ται Privileged Identity
+ []
+
+[87]
+Underfull \hbox (badness 1565) in paragraph at lines 4404--4406
+[]\TU/FreeSans(2)/m/n/10.95 Η κεντρική αποθήκευση δεδομένων του συστήματος βασί
+ζεται σε PostgreSQL
+ []
+
+[88]
+Underfull \hbox (badness 1831) in paragraph at lines 4456--4459
+[]\TU/FreeSans(2)/m/n/10.95 Η αρχιτεκτονική ακολουθεί το μοτίβο Commands → Aggr
+egates → Events →
+ []
+
+
+Underfull \hbox (badness 3019) in paragraph at lines 4456--4459
+\TU/FreeSans(2)/m/n/10.95 Projections, υλοποιούμενο με τη βιβλιοθήκη \TU/FreeSa
+ns(3)/m/n/10.95 Commanded \TU/FreeSans(2)/m/n/10.95 και EventStore backend
+ []
+
+
+Underfull \hbox (badness 1789) in paragraph at lines 4460--4469
+[]\TU/FreeSans(2)/m/n/10.95 Η δομή λειτουργεί ως εξής: ένα \TU/FreeSans(2)/b/n/
+10.95 Command \TU/FreeSans(2)/m/n/10.95 εκφράζει πρόθεση (πχ “ανάληψη
+ []
+
+
+Underfull \hbox (badness 1466) in paragraph at lines 4460--4469
+\TU/FreeSans(2)/m/n/10.95 ποσότητας ενέργειας”), επικυρώνεται και διαβιβάζεται 
+στο αντίστοιχο \TU/FreeSans(2)/b/n/10.95 Aggregate
+ []
+
+[89]
+Underfull \hbox (badness 1142) in paragraph at lines 4536--4547
+\TU/FreeSans(2)/m/n/10.95 event εγγράφεται στο EventStore, αλλά η projection εν
+δέχεται να μην έχει ακόμη
+ []
+
+[90]
+Underfull \hbox (badness 1527) in paragraph at lines 4605--4610
+[]\TU/FreeSans(2)/m/n/10.95 Ο κανόνας αυτός αξιολογείται κάθε λεπτό και ενεργοπ
+οιείται αν εντοπιστούν
+ []
+
+[91]
+Overfull \hbox (23.36682pt too wide) in paragraph at lines 4639--4648
+\TU/FreeSans(2)/m/n/10.95 ντικό σημείο του συστήματος εκπέμπει named events (πχ
+ \TU/FreeSans(3)/m/n/10.95 [:nrg, :ocean, :emissions_calculation,
+ []
+
+
+Underfull \hbox (badness 1796) in paragraph at lines 4639--4648
+\TU/FreeSans(2)/m/n/10.95 Ecto και Oban telemetry events, δημιουργώντας Prometh
+eus metrics χωρίς χειρο-
+ []
+
+
+Underfull \hbox (badness 4859) in paragraph at lines 4639--4648
+\TU/FreeSans(2)/m/n/10.95 κίνητο instrumentation. Για custom business metrics (
+πχ \TU/FreeSans(3)/m/n/10.95 nrg_etw_requests_count\TU/FreeSans(2)/m/n/10.95 ,
+ []
+
+
+Underfull \hbox (badness 2478) in paragraph at lines 4639--4648
+\TU/FreeSans(3)/m/n/10.95 nrg_worker_ingestion_sum\TU/FreeSans(2)/m/n/10.95 ), 
+η ομάδα ορίζει ρητά telemetry events στα κατάλληλα
+ []
+
+[92]
+Underfull \hbox (badness 1005) in paragraph at lines 4715--4718
+[]\TU/FreeSans(2)/m/n/10.95 Η αρχιτεκτονική αναπαραγωγιμότητας του NRG βασίζετα
+ι σε τρεις αλληλοσυ-
+ []
+
+[93]
+Overfull \hbox (3.25531pt too wide) in paragraph at lines 4732--4737
+\TU/FreeSans(2)/m/n/10.95 μένη επαλήθευση αντιγράφων ασφαλείας μέσω του workflo
+w \TU/FreeSans(3)/m/n/10.95 db-restore-from-backup.yml\TU/FreeSans(2)/m/n/10.95
+ .
+ []
+
+
+Underfull \hbox (badness 1057) in paragraph at lines 4751--4757
+\TU/FreeSans(3)/m/n/10.95 CrashLoopBackOff \TU/FreeSans(2)/m/n/10.95 alerts (30
+ δευτερόλεπτα interval) εξασφαλίζουν ότι η ομάδα ει-
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [94]
+Κεφάλαιο 10.
+
+Underfull \vbox (badness 4967) has occurred while \output is active []
+
+ [95
+
+]
+Underfull \hbox (badness 2469) in paragraph at lines 4858--4863
+\TU/FreeSans(2)/m/n/10.95 retrospective, review). Το XP, αντίθετα, δίνει έμφαση
+ στις \TU/FreeSans(2)/b/n/10.95 τεχνικές πρακτικές
+ []
+
+[96] [97] [98]
+Overfull \hbox (28.23587pt too wide) in paragraph at lines 5055--5055
+[]      \TU/FreeSans(3)/m/n/10.95 [selected_year] = html |> Hq.all("#date optio
+n[selected]") |> Enum.map(&Hq.attr(&1, "value"))[] 
+ []
+
+[99] [100] [101] [102]
+File: ./Extreme_Programming_Loops.png Graphic file (type bmp)
+<./Extreme_Programming_Loops.png>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [103]
+Underfull \hbox (badness 1281) in paragraph at lines 5243--5248
+\TU/FreeSans(2)/m/n/10.95 tests που εκτελούνται σε πραγματικό περιβάλλον, σε συ
+νδυασμό με τα δεδομένα
+ []
+
+
+Underfull \hbox (badness 1038) in paragraph at lines 5253--5257
+[]\TU/FreeSans(2)/b/n/10.95 Strategic Alignment (μήνας)\TU/FreeSans(2)/m/n/10.9
+5 : Σε μηνιαία κλίμακα, πιο αφηρημένα στρατηγικά
+ []
+
+[104] [105] [106]
+Κεφάλαιο 11.
+
+Underfull \hbox (badness 1173) in paragraph at lines 5403--5417
+[]\TU/FreeSans(2)/m/n/10.95 Η τεχνολογική βάση της πλατφόρμας (Κεφ. 8) επιλέχθη
+κε με γνώμονα τις μη
+ []
+
+
+Underfull \hbox (badness 1454) in paragraph at lines 5403--5417
+\TU/FreeSans(2)/m/n/10.95 λαπλές πηγές δεδομένων, μηδενικό \TU/FreeSans(2)/m/it
+/10.95 downtime \TU/FreeSans(2)/m/n/10.95 κατά τις αναβαθμίσεις, αδιάσπαστη
+ []
+
+
+Underfull \hbox (badness 1466) in paragraph at lines 5403--5417
+\TU/FreeSans(2)/m/n/10.95 ιχνηλασιμότητα για ελεγκτικούς σκοπούς. Η BEAM/Elixir
+ ως πυρήνας, το Phoenix
+ []
+
+
+Underfull \hbox (badness 3417) in paragraph at lines 5403--5417
+\TU/FreeSans(2)/m/n/10.95 LiveView για διαδραστικά interfaces πραγματικού χρόνο
+υ, η αρχιτεκτονική \TU/FreeSans(2)/m/it/10.95 event
+ []
+
+[107
+
+] [108] [109]
+Underfull \vbox (badness 7558) has occurred while \output is active []
+
+ [110]
+Κεφάλαιο 12.
+
+Underfull \hbox (badness 4084) in paragraph at lines 5582--5592
+[]\TU/FreeSans(2)/m/n/10.95 Η παρούσα εργασία παρουσίασε τον Πάγκο Εργασίας Εκπ
+ομπών (Emissions
+ []
+
+
+Underfull \hbox (badness 1681) in paragraph at lines 5582--5592
+\TU/FreeSans(2)/m/n/10.95 τη μέτρηση, πιστοποίηση και βελτιστοποίηση εκπομπών α
+ερίων θερμοκηπίου από
+ []
+
+[111
+
+] [112] [113]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [114]
+Κεφάλαιο 13.
+
+Underfull \hbox (badness 1028) in paragraph at lines 5770--5775
+[]\TU/FreeSans(2)/m/n/10.95 [GHG Protocol Corporate Standard, 2004] — World Res
+ources Institute & World
+ []
+
+
+Underfull \hbox (badness 3250) in paragraph at lines 5770--5775
+\TU/FreeSans(2)/m/n/10.95 Business Council for Sustainable Development. \TU/Fre
+eSans(2)/m/it/10.95 The Greenhouse Gas Protocol: A
+ []
+
+
+Underfull \hbox (badness 1460) in paragraph at lines 5770--5775
+\TU/FreeSans(2)/m/it/10.95 Corporate Accounting and Reporting Standard \TU/Free
+Sans(2)/m/n/10.95 (Revised Edition). Washington, DC /
+ []
+
+
+Underfull \hbox (badness 1603) in paragraph at lines 5781--5786
+[]\TU/FreeSans(2)/m/n/10.95 [GHG Protocol Scope 3 Standard, 2011] — World Resou
+rces Institute & World
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5781--5786
+\TU/FreeSans(2)/m/n/10.95 Business Council for Sustainable Development. \TU/Fre
+eSans(2)/m/it/10.95 Corporate Value Chain (Scope
+ []
+
+
+Underfull \hbox (badness 1997) in paragraph at lines 5781--5786
+\TU/FreeSans(2)/m/it/10.95 3) Accounting and Reporting Standard\TU/FreeSans(2)/
+m/n/10.95 . Washington, DC / Geneva. Διαθέσιμο στο
+ []
+
+
+Underfull \hbox (badness 1019) in paragraph at lines 5787--5792
+\TU/FreeSans(2)/m/it/10.95 Council Framework for Logistics Emissions Accounting
+ and Reporting \TU/FreeSans(2)/m/n/10.95 (Version 3.0).
+ []
+
+
+Overfull \hbox (7.17624pt too wide) in paragraph at lines 5787--5792
+\TU/FreeSans(2)/m/n/10.95 Amsterdam: Smart Freight Centre. Διαθέσιμο στο https:
+//www.smartfreightcentre.org/en/our-
+ []
+
+[115
+
+]
+Underfull \hbox (badness 1502) in paragraph at lines 5819--5822
+[]\TU/FreeSans(2)/m/n/10.95 [IMO 4th GHG Study, 2020] — International Maritime 
+Organization. \TU/FreeSans(2)/m/it/10.95 Fourth IMO
+ []
+
+
+Overfull \hbox (140.01436pt too wide) in paragraph at lines 5819--5822
+\TU/FreeSans(2)/m/it/10.95 Greenhouse Gas Study 2020\TU/FreeSans(2)/m/n/10.95 .
+ London: IMO. Διαθέσιμο στο https://www.imo.org/en/OurWork/Environment/Pages/Fo
+urth-
+ []
+
+
+Underfull \hbox (badness 4108) in paragraph at lines 5841--5845
+\TU/FreeSans(2)/m/it/10.95 επέκταση του Ευρωπαϊκού Συστήματος Εμπορίας Εκπομπών
+ στις θαλάσσιες
+ []
+
+
+Underfull \hbox (badness 4353) in paragraph at lines 5841--5845
+\TU/FreeSans(2)/m/it/10.95 μεταφορές\TU/FreeSans(2)/m/n/10.95 . \TU/FreeSans(2)
+/m/it/10.95 Επίσημη Εφημερίδα της ΕΕ \TU/FreeSans(2)/m/n/10.95 L 130/134. Διαθέ
+σιμη στο https://eur-
+ []
+
+
+Underfull \hbox (badness 4608) in paragraph at lines 5846--5852
+[]\TU/FreeSans(2)/m/n/10.95 [FuelEU Maritime, 2023] — Ευρωπαϊκή Ένωση. \TU/Free
+Sans(2)/m/it/10.95 Κανονισμός (ΕΕ) 2023/1805
+ []
+
+
+Underfull \hbox (badness 1394) in paragraph at lines 5846--5852
+\TU/FreeSans(2)/m/it/10.95 σχετικά με τη χρήση ανανεώσιμων και χαμηλών εκπομπών
+ άνθρακα καυσίμων
+ []
+
+
+Underfull \hbox (badness 1354) in paragraph at lines 5866--5869
+[]\TU/FreeSans(2)/m/n/10.95 [Armstrong, 2013] — Armstrong, J. (2013). \TU/FreeS
+ans(2)/m/it/10.95 Programming Erlang: Software for a
+ []
+
+[116]
+Underfull \hbox (badness 1117) in paragraph at lines 5873--5876
+[]\TU/FreeSans(2)/m/n/10.95 [Beck & Andres, 2004] — Beck, K. & Andres, C. (2004
+). \TU/FreeSans(2)/m/it/10.95 Extreme Programming
+ []
+
+
+Overfull \hbox (0.11732pt too wide) in paragraph at lines 5914--5917
+[]\TU/FreeSans(2)/m/n/10.95 [Commanded, 2024] — Commanded Library Authors. \TU/
+FreeSans(2)/m/it/10.95 Commanded — Use Commanded
+ []
+
+
+Overfull \hbox (66.92854pt too wide) in paragraph at lines 5921--5925
+\TU/FreeSans(2)/m/it/10.95 by 2040\TU/FreeSans(2)/m/n/10.95 . Copenhagen: A.P. 
+Møller-Mærsk. Διαθέσιμο στο https://www.maersk.com/sustainability/reports-
+ []
+
+[117]
+Underfull \hbox (badness 3815) in paragraph at lines 5935--5938
+[]\TU/FreeSans(2)/m/n/10.95 [OpenTelemetry, 2024] — Cloud Native Computing Foun
+dation. \TU/FreeSans(2)/m/it/10.95 OpenTelemetry
+ []
+
+
+Underfull \hbox (badness 1571) in paragraph at lines 5939--5943
+[]\TU/FreeSans(2)/m/n/10.95 [Phoenix Framework, 2024] — Phoenix Framework Autho
+rs. \TU/FreeSans(2)/m/it/10.95 Phoenix Framework
+ []
+
+
+Underfull \hbox (badness 1789) in paragraph at lines 5944--5947
+[]\TU/FreeSans(2)/m/n/10.95 [PostgreSQL, 2024] — PostgreSQL Global Development 
+Group. \TU/FreeSans(2)/m/it/10.95 PostgreSQL 16
+ []
+
+
+Overfull \hbox (165.75241pt too wide) in paragraph at lines 5948--5950
+[]\TU/FreeSans(2)/m/n/10.95 [Terraform, 2024] — HashiCorp. \TU/FreeSans(2)/m/it
+/10.95 Terraform Documentation\TU/FreeSans(2)/m/n/10.95 . Διαθέσιμο στο https:/
+/developer.hashicorp.com/terraform/docs. 
+ []
+
+) [118]
+
+Package longtable Warning: Table widths have changed. Rerun LaTeX.
+
+[119
+
+] (./main.aux (./front_matter/abstract.aux)
+(./front_matter/acknowledgements.aux) (./front_matter/prologue.aux))
+ ***********
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+ ***********
+ ) 
+Here is how much of TeX's memory you used:
+ 6884 strings out of 469692
+ 185270 string characters out of 5465141
+ 631839 words of memory out of 5000000
+ 35370 multiletter control sequences out of 15000+600000
+ 633881 words of font info for 119 fonts, out of 8000000 for 9000
+ 319 hyphenation exceptions out of 8191
+ 73i,13n,105p,689b,883s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+Output written on main.pdf (143 pages).

@@ -1,0 +1,110 @@
+\documentclass[11pt,a4paper,greek,twoside]{ceid-thesis-xe}
+
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setdefaultlanguage{greek}
+\setotherlanguage{english}
+
+\setmainfont{FreeSans}
+\setsansfont{FreeSans}
+\setmonofont{FreeSans}
+
+\usepackage{graphicx}
+\usepackage{indentfirst}
+\usepackage{amsmath}
+\usepackage{xurl}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{calc}
+\setlength{\emergencystretch}{3em}
+
+% pandoc-generated commands
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\pandocbounded}[1]{#1}
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+
+% 1.5 spacing
+\renewcommand{\baselinestretch}{1.2}
+
+% typeset short english phrases
+\newcommand{\en}[1]{\textenglish{#1}}
+\newcommand{\tl}[1]{\textenglish{#1}}
+\newcommand{\tg}[1]{\textgreek{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% THESIS INFO
+
+\title{Πλατφόρμα λογισμικού για την επίτευξη του στόχου μηδενικές εκπομπές CO\textsubscript{2}: Η περίπτωση της Mærsk}
+
+% "του" ή "της"
+\edef\toutis{του}
+
+% Ονοματεπώνυμο σπουδαστή (ΚΕΦΑΛΑΙΑ, γενική πτώση)
+\edef\authorNameCapital{ΓΚΙΝΗ ΚΩΝΣΤΑΝΤΙΝΟΥ}
+
+% Ονοματεπώνυμο σπουδαστή (πεζά, ονομαστική πτώση)
+\author{Κωνσταντίνος Γκίνης}
+
+% Επιβλέπων Καθηγητής
+\supervisor{Μπούρας Χρήστος}
+\edef\supervisorTitle{Καθηγητής}
+
+% Δεύτερος επιβλέπων (κενό αν δεν υπάρχει)
+\supervisorSecond{}
+
+% "Επιβλέπων" ή "Επιβλέπουσα" ή "Επιβλέποντες"
+\edef\supervisorMaleFemale{Επιβλέπων}
+
+% 1ος εξεταστής
+\epitropiF{Γαροφαλάκης Ιωάννης}
+\edef\epitropiFTitle{Καθηγητής}
+
+% 2ος εξεταστής
+\epitropiS{Παπαϊωάννου Εύη}
+\edef\epitropiSTitle{Επίκουρη Καθηγήτρια}
+
+% Τόπος, μήνας και έτος
+\edef\thesisPlaceDate{Πάτρα, Μάιος 2026}
+
+% Ημερομηνία εξέτασης
+\edef\examinationDate{~~~~~~~~~~~~~~~~~~~~~ 2026}
+
+% Έτος Copyright
+\edef\copyrightYear{2026}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\selectlanguage{greek}
+\maketitle
+
+\frontmatter
+
+% Περίληψη
+\include{front_matter/abstract}
+
+% Αφιέρωση
+\thesisDedication{Στους γονείς μου}
+
+% Ευχαριστίες
+\include{front_matter/acknowledgements}
+
+% Πρόλογος
+\include{front_matter/prologue}
+
+% Πίνακας Περιεχομένων
+\tableofcontents
+
+% Κατάλογος Σχημάτων
+\listoffigures
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mainmatter
+
+\input{body}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\backmatter
+
+\end{document}
