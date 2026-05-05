@@ -1,0 +1,78 @@
+\documentclass[12pt]{report} %thesis uses report class
+\usepackage[greek]{babel} %to use greek as primary language remove this to use ENG
+% When using greek babel package in order to write latin use \textlatin{}
+% Όταν το πακέτο greek babel είναι ενεργοποιημένο,
+%χρησιμοποιήστε \textlatin{} για να γράψετε λατινικούς χαρακτήρες
+%\usepackage[english]{babel} % and uncomment this
+\usepackage[utf8]{inputenc}
+\usepackage[LGR, T1]{fontenc}
+\usepackage{comment} %για σχόλια κειμένου πολλών γραμμών
+\usepackage{amsmath} %για μαθηματικές εκφράσεις
+\usepackage[shortlabels]{enumitem}
+\usepackage{indentfirst} %για να κάνει δύο κενά στην πρώτη παράγραφο
+\usepackage[a4paper, margin=0.5in, bottom=1.5cm]{geometry} 
+\usepackage{graphicx,wrapfig,csquotes} 
+\graphicspath{{images/}}
+\usepackage{gensymb} %για τις μοίρες
+\usepackage{afterpage} %για τις κενές σελίδες στην αρχή 
+\usepackage{multicol} %για τους καθηγητές στο cert.tex
+\usepackage{float}%για τις περιγραφές ->
+\usepackage[labelfont=bf]{caption,subcaption} %κάτω από τις εικόνες
+\makeatletter
+\let\anw@true\anw@false %για να μην τονίζονται τα γράμματα της αλφαβήτου
+\makeatother
+\addto\captionsgreek{\renewcommand{\figurename}{Εικόνα}} %για να γράφει την λέξη εικόνα κάτω από τιε εικόνες
+\usepackage{tempora} %κάνει την γραμματοσειρά Times New Roman
+\usepackage[dvipsnames]{xcolor} %χρωματίζει τα γράμματα, για τα links,url
+\usepackage{fancyhdr} %για τα headers πάνω από κάθε σελίδα
+\usepackage[hidelinks,unicode,bookmarksopen=false,linktoc=all]{hyperref} %για την σελίδα με τα περιεχόμενα
+\usepackage{bookmark}
+\usepackage[natbib, sorting=none]{biblatex}
+%\usepackage[sorting=none]{biblatex} %για την ->
+%\addbibresource{bibliography.bib} %βιβλιογραφία
+\usepackage{tocloft} %για την κάθετη απόσταση στο toc
+\usepackage{ragged2e} % gia to \justify 
+\usepackage{listings} %in order to insert code (programming language) 
+\usepackage{lscape}
+\usepackage{rotating}
+\usepackage[toc,page]{appendix}
+%\usepackage{matlab-prettifier}
+
+\hypersetup{
+    colorlinks=true,
+    citecolor=black,
+    linkcolor=black,
+    urlcolor=blue,
+}
+
+\begin{document}
+
+
+  \pagenumbering{gobble} %για να μην έχω page numbering στο toc για τα αρχικά
+    \input{titlepage}
+    
+    \afterpage{\null\newpage}
+    
+    \large
+    \newgeometry{width=17cm, top=2.5cm, bottom=2.5cm}
+    \pagestyle{fancy}
+    \fancyhf{}
+    \fancyhead[L]{\textit{\leftmark}}
+    \fancyfoot[C]{\thepage}
+    \pagenumbering{Roman}
+    \tableofcontents
+    
+    \pagebreak
+    %\afterpage{\null\newpage}
+    \newpage\thispagestyle{empty}
+    
+    \fontdimen2\font=1.3mm
+    %\fontdimen3\font=1.4mm
+    %\fontdimen4\font=1.2mm
+    % original inter word space
+    \frenchspacing
+    \justify
+    \setlength{\headheight}{15pt}
+  
+
+\end{document}
