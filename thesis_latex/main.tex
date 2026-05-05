@@ -29,17 +29,18 @@
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{calc}
-\setlength{\emergencystretch}{3em}
+\setlength{\emergencystretch}{6em}
 
 % Syntax highlighting (tango theme)
 \usepackage{color}
 \usepackage{fancyvrb}
+\usepackage{fvextra}
 \usepackage{framed}
 \definecolor{shadecolor}{RGB}{248,248,248}
 \newenvironment{Shaded}{\begin{english}\begin{snugshade}}{\end{snugshade}\end{english}}
 \newcommand{\VerbBar}{|}
 \newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\},fontsize=\small}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\},fontsize=\small,breaklines=true,breakanywhere=true}
 \newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
 \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
