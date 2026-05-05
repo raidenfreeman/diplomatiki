@@ -82,6 +82,10 @@
 % Disable auto-numbering — headings already contain numbers in the source text
 \setcounter{secnumdepth}{-1}
 
+% Chapter titles already include the number, so drop the "Κεφάλαιο 0." prefix from headers
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+
 % 1.5 line spacing
 \renewcommand{\baselinestretch}{1.2}
 
