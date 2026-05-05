@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.5.4)  5 MAY 2026 11:53
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.5.4)  5 MAY 2026 12:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -381,22 +381,22 @@ LaTeX Warning: Unused global option(s):
 (./front_matter/prologue.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
 
 Package fontspec Info: 
 (fontspec)             Adjusting the maths setup (use [no-math] to avoid
@@ -404,59 +404,59 @@ Package fontspec Info:
 
 \symlegacymaths=\mathgroup4
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 78.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 78.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 78.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 78.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 78.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 78.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 78.
-LaTeX Font Info:    Redeclaring math accent \check on input line 78.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 78.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 78.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 78.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 78.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 78.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 78.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 78.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 78.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 78.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 78.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 78.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 78.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 78.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 78.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 78.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 78.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 81.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 81.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 81.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 81.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 81.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 81.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 81.
+LaTeX Font Info:    Redeclaring math accent \check on input line 81.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 81.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 81.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 81.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 81.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 81.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 81.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 81.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 81.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 81.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 81.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 81.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 81.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 81.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 81.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 81.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 81.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 78.
+(Font)              `operators' in the math version `normal' on input line 81.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/FreeSans(0)/m/n on input line 78.
+(Font)                  OT1/cmr/m/n --> TU/FreeSans(0)/m/n on input line 81.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 78.
+(Font)              `operators' in the math version `bold' on input line 81.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/FreeSans(0)/m/n on input line 78.
+(Font)                  OT1/cmr/bx/n --> TU/FreeSans(0)/m/n on input line 81.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  TU/FreeSans(0)/m/n --> TU/FreeSans(0)/m/n on input line
- 78.
+ 81.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/FreeSans(0)/m/it on input line 78.
+(Font)                  OT1/cmr/m/it --> TU/FreeSans(0)/m/it on input line 81.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/FreeSans(0)/b/n on input line 78.
+(Font)                  OT1/cmr/bx/n --> TU/FreeSans(0)/b/n on input line 81.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/FreeSans(0)/m/n on input line 78.
+(Font)                  OT1/cmss/m/n --> TU/FreeSans(0)/m/n on input line 81.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/FreeSans(1)/m/n on input line 78.
+(Font)                  OT1/cmtt/m/n --> TU/FreeSans(1)/m/n on input line 81.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  TU/FreeSans(0)/m/n --> TU/FreeSans(0)/b/n on input line
- 78.
+ 81.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> TU/FreeSans(0)/b/it on input line 78.
+(Font)                  OT1/cmr/bx/it --> TU/FreeSans(0)/b/it on input line 81.
 
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/FreeSans(0)/b/n on input line 78.
+(Font)                  OT1/cmss/bx/n --> TU/FreeSans(0)/b/n on input line 81.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/FreeSans(1)/b/n on input line 78.
+(Font)                  OT1/cmtt/m/n --> TU/FreeSans(1)/b/n on input line 81.
 File: static/figures/PatrasLogo.png Graphic file (type bmp)
 <static/figures/PatrasLogo.png>
  [1
@@ -468,7 +468,7 @@ File: static/figures/PatrasLogo.png Graphic file (type bmp)
 File: static/figures/PatrasLogo.png Graphic file (type bmp)
 <static/figures/PatrasLogo.png>
 
-Overfull \hbox (18.70393pt too wide) in paragraph at lines 80--80
+Overfull \hbox (18.70393pt too wide) in paragraph at lines 83--83
 []$[]$ 
  []
 
@@ -730,9 +730,7 @@ Overfull \hbox (1.29208pt too wide) detected at line 13
 
 ] [16
 
-] (./body.tex
-Κεφάλαιο 1.
-[1
+] (./body.tex [1
 
 ]
 LaTeX Font Info:    Font shape `TU/FreeSans(0)/m/sl' in size <10.95> not availa
@@ -790,7 +788,6 @@ n/10.95 εξετάζει τις πρακτικές \TU/FreeSans(2)/m/it/10.95 Ex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [4]
-Κεφάλαιο 2.
 [5
 
 ]
@@ -826,8 +823,6 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [16
 
 ]
-Κεφάλαιο 3.
-
 Underfull \hbox (badness 2042) in paragraph at lines 758--769
 []\TU/FreeSans(2)/m/n/10.95 Η μέτρηση, η καταγραφή και η αναφορά των εκπομπών α
 ερίων θερμοκηπίου
@@ -860,7 +855,11 @@ Underfull \hbox (badness 1173) in paragraph at lines 778--791
 [17]
 File: ./Carbon_Accounting_Scopes.png Graphic file (type bmp)
 <./Carbon_Accounting_Scopes.png>
- [18] [19] [20]
+ [18]
+Underfull \vbox (badness 2318) has occurred while \output is active []
+
+ [19]
+[20]
 Underfull \hbox (badness 1043) in paragraph at lines 968--970
 []\TU/FreeSans(2)/b/n/10.95 Ναυτικά μίλια \TU/FreeSans(2)/m/n/10.95 × \TU/FreeS
 ans(2)/b/n/10.95 κατανάλωση καυσίμου ανά μίλι \TU/FreeSans(2)/m/n/10.95 για συγ
@@ -935,8 +934,6 @@ th guidance at the
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [28]
-Κεφάλαιο 4.
-
 Underfull \hbox (badness 2452) in paragraph at lines 1388--1397
 \TU/FreeSans(3)/m/n/10.95 emissions-workbench.maersk.com\TU/FreeSans(2)/m/n/10.
 95 , σχεδιασμένη να εξυπηρετεί ετερογενείς ομάδες
@@ -956,11 +953,14 @@ Underfull \hbox (badness 1769) in paragraph at lines 1491--1495
 ading system (ETS)
  []
 
-[31] [32] [33]
+[31]
+Underfull \vbox (badness 4378) has occurred while \output is active []
+
+ [32]
+[33]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [34]
-Κεφάλαιο 5.
 [35
 
 ] [36]
@@ -1156,9 +1156,7 @@ Underfull \hbox (badness 1122) in paragraph at lines 2187--2195
 υνολικού συστήματος.
  []
 
-[44]
-Κεφάλαιο 6.
-[45
+[44] [45
 
 ] [46]
 Underfull \hbox (badness 1803) in paragraph at lines 2319--2325
@@ -1196,7 +1194,7 @@ Underfull \hbox (badness 2393) in paragraph at lines 2447--2458
 εί να εκτελεστεί με ελ-
  []
 
-[49]
+
 Underfull \hbox (badness 1859) in paragraph at lines 2465--2475
 []\TU/FreeSans(2)/b/n/10.95 Καταθέσεις (Deposits)\TU/FreeSans(2)/m/n/10.95 : κά
 θε φορά που ένα πλοίο παραλαμβάνει βυθιζόμενο
@@ -1239,7 +1237,7 @@ Overfull \hbox (103.67038pt too wide) in paragraph at lines 2465--2475
 rojections.fuel_orders_2
  []
 
-
+[49]
 Underfull \hbox (badness 4899) in paragraph at lines 2483--2490
 []\TU/FreeSans(2)/b/n/10.95 Λογαριασμοί Εκκαθάρισης (Clearing Accounts)\TU/Free
 Sans(2)/m/n/10.95 : για λόγους λογικού δια-
@@ -1257,13 +1255,7 @@ Underfull \hbox (badness 1248) in paragraph at lines 2483--2490
 σμού) και ανά χρονική
  []
 
-
-Underfull \vbox (badness 2486) has occurred while \output is active []
-
- [50]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [51]
+[50] [51]
 Underfull \hbox (badness 2027) in paragraph at lines 2614--2619
 []\TU/FreeSans(2)/m/n/10.95 Η δημιουργία του πιστοποιητικού ως PDF αρχείου ακολ
 ουθεί ντετερμινιστική
@@ -1301,13 +1293,13 @@ Overfull \hbox (24.58876pt too wide) in paragraph at lines 2663--2670
  Το module \TU/FreeSans(3)/m/n/10.95 Nrg.Ocean.Certificates
  []
 
-[53]
+
 Overfull \hbox (8.72293pt too wide) in paragraph at lines 2715--2715
 []    \TU/FreeSans(3)/m/n/10.95 last_updated = NaiveDateTime.from_iso8601!(date
 ) |> DateTime.from_naive!("Etc/UTC")[] 
  []
 
-
+[53]
 Underfull \hbox (badness 3471) in paragraph at lines 2729--2737
 \TU/FreeSans(2)/m/n/10.95 που επιστρέφει χρονολογική λίστα αλλαγών ανά πιστοποι
 ητικό: αρχική έκδοση,
@@ -1319,21 +1311,19 @@ Underfull \hbox (badness 2103) in paragraph at lines 2729--2737
 ογίζει και ταξινομεί την απόκλιση μεταξύ αρχικής και
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [54]
+[54]
 Overfull \hbox (4.26627pt too wide) in paragraph at lines 2768--2768
 []    \TU/FreeSans(3)/m/n/10.95 Decimal.mult(grey_fuel_to_wtw, Decimal.div(wtw_
 emissions_savings_percentage, 100))[] 
  []
 
 [55]
-Underfull \vbox (badness 6047) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [56]
-Κεφάλαιο 7.
-[57
+Underfull \vbox (badness 2253) has occurred while \output is active []
+
+ [57
 
 ]
 Underfull \hbox (badness 1590) in paragraph at lines 2918--2924
@@ -1353,11 +1343,7 @@ Underfull \hbox (badness 1533) in paragraph at lines 2988--2995
 α στη Maersk και η
  []
 
-
-Underfull \vbox (badness 1292) has occurred while \output is active []
-
- [59]
-[60] [61]
+[59] [60] [61]
 Underfull \hbox (badness 1102) in paragraph at lines 3125--3132
 []\TU/FreeSans(2)/m/n/10.95 Η ανάγνωση δεδομένων από το Shiptech γίνεται μέσω O
 DBC (\TU/FreeSans(2)/m/it/10.95 Open Database
@@ -1376,7 +1362,7 @@ Underfull \hbox (badness 1975) in paragraph at lines 3133--3140
 s(2)/m/it/10.95 atomically\TU/FreeSans(2)/m/n/10.95 ), εντός μίας SQL Server
  []
 
-[62] [63] [64]
+[62] [63]
 Underfull \hbox (badness 1478) in paragraph at lines 3246--3256
 []\TU/FreeSans(2)/m/n/10.95 Το pattern είναι απλό αλλά αξιόπιστο: κατά την εκκί
 νηση (\TU/FreeSans(3)/m/n/10.95 init/1\TU/FreeSans(2)/m/n/10.95 ) ο GenServer
@@ -1388,7 +1374,7 @@ Underfull \hbox (badness 3919) in paragraph at lines 3246--3256
 dle_info(:schedule, ...) \TU/FreeSans(2)/m/n/10.95 εντοπίζει τα μεταναστευμένα
  []
 
-[65]
+[64] [65]
 Underfull \hbox (badness 1960) in paragraph at lines 3310--3320
 []\TU/FreeSans(2)/m/n/10.95 Σε πιο μακροπρόθεσμο ορίζοντα, η Maersk σχεδιάζει τ
 ην προ-δέσμευση (\TU/FreeSans(2)/m/it/10.95 pre-
@@ -1404,8 +1390,6 @@ Underfull \hbox (badness 1478) in paragraph at lines 3310--3320
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [66]
-Κεφάλαιο 8.
-
 Underfull \hbox (badness 1953) in paragraph at lines 3348--3358
 []\TU/FreeSans(2)/m/n/10.95 Η BEAM υλοποιεί έναν \TU/FreeSans(2)/b/n/10.95 pree
 mptive scheduler \TU/FreeSans(2)/m/n/10.95 με τόσα νήματα λειτουργικού
@@ -1419,13 +1403,13 @@ Underfull \hbox (badness 1377) in paragraph at lines 3348--3358
 
 [67
 
-] [68]
+]
 Underfull \hbox (badness 1895) in paragraph at lines 3420--3431
 \TU/FreeSans(2)/b/n/10.95 LiveView\TU/FreeSans(2)/m/n/10.95 : αντί να αποστέλλε
 ται στατικό HTML ή να επικοινωνεί το frontend με
  []
 
-[69] [70]
+[68] [69] [70]
 Underfull \hbox (badness 2065) in paragraph at lines 3561--3568
 \TU/FreeSans(2)/m/n/10.95 εισαγωγή container move δεδομένων από εσωτερικά Maers
 k συστήματα. - \TU/FreeSans(2)/b/n/10.95 Event
@@ -1450,10 +1434,7 @@ Underfull \hbox (badness 1721) in paragraph at lines 3648--3653
 άνει την εκτέλεση, κλιμάκωση, αυτόματη επανεκκίνηση
  []
 
-
-Underfull \vbox (badness 8019) has occurred while \output is active []
-
- [73]
+[73]
 Underfull \hbox (badness 2065) in paragraph at lines 3688--3696
 []\TU/FreeSans(2)/m/n/10.95 Το \TU/FreeSans(2)/b/n/10.95 Nix \TU/FreeSans(2)/m/
 n/10.95 είναι διαχειριστής πακέτων (\TU/FreeSans(2)/m/it/10.95 package manager\
@@ -1522,7 +1503,6 @@ Underfull \hbox (badness 1838) in paragraph at lines 3910--3917
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [78]
-Κεφάλαιο 9.
 File: ./system_overview_diagram.png Graphic file (type bmp)
 <./system_overview_diagram.png>
 
@@ -1723,11 +1703,7 @@ Underfull \hbox (badness 1057) in paragraph at lines 4751--4757
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [94]
-Κεφάλαιο 10.
-
-Underfull \vbox (badness 4967) has occurred while \output is active []
-
- [95
+[95
 
 ]
 Underfull \hbox (badness 2469) in paragraph at lines 4858--4863
@@ -1735,7 +1711,11 @@ Underfull \hbox (badness 2469) in paragraph at lines 4858--4863
  στις \TU/FreeSans(2)/b/n/10.95 τεχνικές πρακτικές
  []
 
-[96] [97] [98]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [96]
+[97] [98]
 Overfull \hbox (28.23587pt too wide) in paragraph at lines 5055--5055
 []      \TU/FreeSans(3)/m/n/10.95 [selected_year] = html |> Hq.all("#date optio
 n[selected]") |> Enum.map(&Hq.attr(&1, "value"))[] 
@@ -1760,8 +1740,6 @@ Underfull \hbox (badness 1038) in paragraph at lines 5253--5257
  []
 
 [104] [105] [106]
-Κεφάλαιο 11.
-
 Underfull \hbox (badness 1173) in paragraph at lines 5403--5417
 []\TU/FreeSans(2)/m/n/10.95 Η τεχνολογική βάση της πλατφόρμας (Κεφ. 8) επιλέχθη
 κε με γνώμονα τις μη
@@ -1788,11 +1766,9 @@ Underfull \hbox (badness 3417) in paragraph at lines 5403--5417
 [107
 
 ] [108] [109]
-Underfull \vbox (badness 7558) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [110]
-Κεφάλαιο 12.
-
 Underfull \hbox (badness 4084) in paragraph at lines 5582--5592
 []\TU/FreeSans(2)/m/n/10.95 Η παρούσα εργασία παρουσίασε τον Πάγκο Εργασίας Εκπ
 ομπών (Emissions
@@ -1810,8 +1786,6 @@ Underfull \hbox (badness 1681) in paragraph at lines 5582--5592
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [114]
-Κεφάλαιο 13.
-
 Underfull \hbox (badness 1028) in paragraph at lines 5770--5775
 []\TU/FreeSans(2)/m/n/10.95 [GHG Protocol Corporate Standard, 2004] — World Res
 ources Institute & World
@@ -1905,7 +1879,10 @@ Underfull \hbox (badness 1354) in paragraph at lines 5866--5869
 ans(2)/m/it/10.95 Programming Erlang: Software for a
  []
 
-[116]
+
+Underfull \vbox (badness 1472) has occurred while \output is active []
+
+ [116]
 Underfull \hbox (badness 1117) in paragraph at lines 5873--5876
 []\TU/FreeSans(2)/m/n/10.95 [Beck & Andres, 2004] — Beck, K. & Andres, C. (2004
 ). \TU/FreeSans(2)/m/it/10.95 Extreme Programming
@@ -1962,11 +1939,11 @@ L3 programming layer <2026-01-19>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 6884 strings out of 469692
- 185270 string characters out of 5465141
- 631836 words of memory out of 5000000
- 35370 multiletter control sequences out of 15000+600000
- 633881 words of font info for 119 fonts, out of 8000000 for 9000
+ 6881 strings out of 469692
+ 185176 string characters out of 5465141
+ 627927 words of memory out of 5000000
+ 35368 multiletter control sequences out of 15000+600000
+ 633873 words of font info for 118 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  73i,13n,105p,666b,883s stack positions out of 10000i,1000n,20000p,200000b,200000s
 

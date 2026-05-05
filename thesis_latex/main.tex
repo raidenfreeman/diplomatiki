@@ -24,6 +24,9 @@
 \providecommand{\pandocbounded}[1]{#1}
 \patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
 
+% Disable auto-numbering — headings already contain numbers in the source text
+\setcounter{secnumdepth}{-1}
+
 % 1.5 spacing
 \renewcommand{\baselinestretch}{1.2}
 
