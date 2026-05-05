@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.5.4)  5 MAY 2026 11:30
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.5.4)  5 MAY 2026 11:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -483,6 +483,20 @@ File: static/figures/PatrasLogo.png Graphic file (type bmp)
 \openout2 = `front_matter/abstract.aux'.
 
  (./front_matter/abstract.tex
+Underfull \hbox (badness 1668) in paragraph at lines 6--7
+[]\TU/FreeSans(2)/m/n/10.95 Τεχνικά, το σύστημα βασίζεται στην πλατφόρμα []\TU/
+FreeSans(0)/m/n/10.95 BEAM/Elixir []\TU/FreeSans(2)/m/n/10.95 με []\TU/FreeSans
+(0)/m/n/10.95 Phoenix Live-
+ []
+
+
+Underfull \hbox (badness 1365) in paragraph at lines 6--7
+\TU/FreeSans(2)/m/n/10.95 δεδομένων, []\TU/FreeSans(0)/m/n/10.95 event sourcing
+ []\TU/FreeSans(2)/m/n/10.95 για αδιάσπαστη ιχνηλασιμότητα της λογιστικής πράσι
+-
+ []
+
+
 Underfull \hbox (badness 2050) in paragraph at lines 11--13
 []\TU/FreeSans(2)/m/n/10.95 Εκπομπές αερίων θερμοκηπίου, CO$[]$, Ναυτιλία, Maer
 sk, Elixir, BEAM, Phoenix
@@ -493,45 +507,33 @@ sk, Elixir, BEAM, Phoenix
 
 ] [2
 
-]) [3] [4
-
-
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 88--88
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 88--88
-
- []
-
-[5]
+]) [3]
 \openout2 = `front_matter/acknowledgements.aux'.
 
- (./front_matter/acknowledgements.tex [6
+ (./front_matter/acknowledgements.tex [4
 
 
-]) [7]
+
+
+]) [5]
 \openout2 = `front_matter/prologue.aux'.
 
- (./front_matter/prologue.tex
-[8
+
+(./front_matter/prologue.tex [6
 
 
 
 
-]) [9] [10
+]) [7] [8
 
 
 
-] (./main.toc [11]
+] (./main.toc [9]
 LaTeX Font Info:    Font shape `TU/FreeSans(2)/m/sl' in size <10.95> not availa
 ble
 (Font)              Font shape `TU/FreeSans(2)/m/it' tried instead on input lin
 e 110.
- [12] [13] [14]
+ [10] [11] [12]
 Overfull \hbox (1.29208pt too wide) detected at line 269
  \TU/FreeSans(2)/m/n/10.95 100
  []
@@ -626,7 +628,7 @@ Overfull \hbox (1.29208pt too wide) detected at line 291
  \TU/FreeSans(2)/m/n/10.95 105
  []
 
-[15]
+[13]
 Overfull \hbox (1.29208pt too wide) detected at line 292
  \TU/FreeSans(2)/m/n/10.95 105
  []
@@ -715,7 +717,7 @@ Overfull \hbox (1.29208pt too wide) detected at line 325
 \tf@toc=\write3
 \openout3 = `main.toc'.
 
- [16] (./main.lof
+ [14] (./main.lof
 Overfull \hbox (1.29208pt too wide) detected at line 13
  \TU/FreeSans(2)/m/n/10.95 103
  []
@@ -724,9 +726,9 @@ Overfull \hbox (1.29208pt too wide) detected at line 13
 \tf@lof=\write4
 \openout4 = `main.lof'.
 
- [17
+ [15
 
-] [18
+] [16
 
 ] (./body.tex
 Κεφάλαιο 1.
@@ -1962,10 +1964,10 @@ L3 programming layer <2026-01-19>
 Here is how much of TeX's memory you used:
  6884 strings out of 469692
  185270 string characters out of 5465141
- 631839 words of memory out of 5000000
+ 631836 words of memory out of 5000000
  35370 multiletter control sequences out of 15000+600000
  633881 words of font info for 119 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 73i,13n,105p,689b,883s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 73i,13n,105p,666b,883s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (143 pages).
+Output written on main.pdf (141 pages).
